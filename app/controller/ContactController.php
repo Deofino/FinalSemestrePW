@@ -2,7 +2,7 @@
     
     namespace App\Controller;
 
-    class ProductController
+    class ContactController
     {
 
         public function index()

@@ -2,12 +2,18 @@
     
     namespace App\Controller;
 
-    class ProductController
+    class StaticController
     {
 
         public function index()
         {
 
         }
+
+        public function notFound()
+        {
+
+        }
+
 
     }
