@@ -1,0 +1,10 @@
+{
+    "name": "guizi/lib",
+    "authors": [
+        {
+            "name": "gDelps",
+            "email": "guilhermedelfino25@gmail.com"
+        }
+    ],
+    "require": {}
+}
