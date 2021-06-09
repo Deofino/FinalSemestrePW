@@ -14,39 +14,43 @@
     <meta id="meta-keywords" name="keywords" content="shoe, sapatos, tenis, nike, adidas, puma, elegante, bonito, all star, tenis casual, air max" />
     <meta id="meta-item-name" itemprop="name" content="Shoes" />
     <meta id="meta-item-description" itemprop="description" content="A melhor loja de todas para se encontrar tenis e sapatos lindissimos para programadores ainda mais lindissimos, com muito orgulho apresento a vocês... SHOES!" />
-    <!-- <meta id="meta-item-image" itemprop="image" content="" definir ICONE/> -->
+    <meta id="meta-item-image" itemprop="image" content="./img/logo.png"/> 
     <meta id="twt-card" name="twitter:card" content="summary" />
     <meta id="twt-site" name="twitter:site" content="@shoes" />
     <meta id="twt-title" name="twitter:title" content="Shoes" />
     <meta id="twt-description" name="twitter:description" content="A melhor loja de todas para se encontrar tenis e sapatos lindissimos para programadores ainda mais lindissimos, com muito orgulho apresento a vocês... SHOES!" />
     <meta id="twt-creator" name="twitter:creator" content="@shoes" />
-    <!-- <meta id="twt-image" name="twitter:image" content="" definir ICONE/> -->
+    <meta id="twt-image" name="twitter:image" content="./img/logo.png"/> 
     <meta id="og-title" property="og:title" content="Shoes" />
     <meta id="og-type" property="og:type" content="website" />
     <meta id="og-url" property="og:url" content="https://dvshoes.com.br" />
-    <!-- <meta id="og-image" property="og:image" content="" definir ICONE/> -->
+    <meta id="og-image" property="og:image" content="./img/logo.png"/> 
     <meta id="og-description" property="og:description" content="A melhor loja de todas para se encontrar tenis e sapatos lindissimos para programadores ainda mais lindissimos, com muito orgulho apresento a vocês... SHOES!" />
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Loja Kings Sneakers">
-    <meta property="og:url" content="https://www.lojakings.com.br/">
-    <meta property="og:site_name" content="Loja Kings Sneakers">
+    <meta property="og:title" content="Shoes">
+    <meta property="og:url" content="https://dvshoes.com.br">
+    <meta property="og:site_name" content="Shoes">
 
-    <!-- <link rel="shortcut icon" href="" type="image/png" />   definir ICONE  -->
+    <link rel="shortcut icon" href="./img/logo.png" type="image/png" />   
     {% block metas_data %}
         <meta name="description" content="Essa é minha descricao do site que aparece no negocio de busca">
     {% endblock %}
     <title>{% block title %}Title page{% endblock %}</title>
-    <link rel="stylesheet" href="./css/reset.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
-    {% block styles %}
+    <link rel="stylesheet" href="css/reset.css">
 
+    <link rel="stylesheet" href="./css/footer.css">
+    {% block styles %}
+    
     {% endblock %}
 </head>
 <body>
     
     {% include "./navbar.twig" %}
 
-    {% block body %}{% endblock %}
+    {% block body %}
+
+    {% endblock %}
 
     {% include "./footer.twig" %}
 

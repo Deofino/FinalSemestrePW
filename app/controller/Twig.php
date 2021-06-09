@@ -11,7 +11,6 @@ abstract class Twig
     {
         $this->loader = new \Twig\Loader\FilesystemLoader(['../app/view/','../app/view/template','../app/view/private']);
         $this->twig = new \Twig\Environment($this->loader, [
-            'cache' => '../app/view/cache',
             'auto_reload'=>true
         ]);
     }

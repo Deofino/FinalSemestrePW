@@ -4,16 +4,16 @@
 */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
 :root{
-	--background_color: '#E4E9F1';
-	--background_color_dark: '#282F3E';
-	--accent_color: '#EC5732';
-	--accent_color_dark: '#83240C';
-	--primary_color: '#5CA8FF';
-	--primary_color_dark: '#1F87FF';
-	--alternative_color: '#993BF7';
-	--white: '#F5F5Ff';
-	--gray: '#CAD3E3';
-	--black: '#101319';
+	--background_color: #E4E9F1;
+	--background_color_dark: #282F3E;
+	--accent_color: #EC5732;
+	--accent_color_dark: #83240C;
+	--primary_color: #5CA8FF;
+	--primary_color_dark: #1F87FF;
+	--alternative_color: #993BF7;
+	--white: #F5F5Ff;
+	--gray: #CAD3E3;
+	--black: #101319;
 }
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -32,7 +32,6 @@ time, mark, audio, video {
 	padding: 0;
 	border: 0;
 	font-family: 'Montserrat', Verdana, Arial, sans-serif;
-	font-weight: 500;
 	box-sizing: border-box;
 	font-size: 100%;
 	vertical-align: baseline;
@@ -59,9 +58,4 @@ q:before, q:after {
 table {
 	border-collapse: collapse;
 	border-spacing: 0;
-}
-
-html,body,a,p,h1,h2,h3,h4,h5,h6,strong,li,ul,ol,i,small,sub{
-	font-family: 'Montserrat', Verdana, Arial, sans-serif;
-	font-weight: 500;
 }

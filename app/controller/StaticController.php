@@ -10,7 +10,8 @@ class StaticController extends Twig
     public function index()
     {
 
-        echo $this->twig->render('index.twig');
+        echo $this->twig->render('index.twig',
+        ["nome"=>'Guilherme']);
     }
     public function notFound()
     {

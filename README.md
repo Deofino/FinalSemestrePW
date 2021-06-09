@@ -30,7 +30,7 @@ A aplicação será em volta de uma apresentação de SAPATOS e TÊNIS, semelhan
 - Gráficos usando API do Google Charts
 - Api do Google Maps
 - Leitura de PDF dinânica
-- More features...
+- Site responsivo
 - More features...
  
   
@@ -49,15 +49,15 @@ Entre no projeto
   cd FinalSemestrePW
 ```
 
-Instale as dependências com composer (Tenha instalado, npm i -g composer para instalar)
+Instale as dependências com composer (Tenha instalado, https://getcomposer.org/download/)
 
 ```bash
   cd lib/
   composer install
 ```
 
-### - Dentro da raiz do projeto, configure o arquivo config.php... Ele conterá as contantes globais
-### - Com servidor Apache ligado, entre no seu PhpMyAdmin, e importe o arquivo dentro de /app/model/Banco.sql
+### Dentro da raiz do projeto, configure o arquivo config.php... Ele conterá as contantes globais
+### Com servidor Apache ligado, entre no seu PhpMyAdmin, e importe o arquivo dentro de /app/model/Banco.sql
 
 Procure seu projeto no seu servidor Apache e entre na pasta "public"
 
