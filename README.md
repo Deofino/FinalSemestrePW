@@ -1,5 +1,4 @@
-![Logo](./public/img/logo.png =500x300)
-
+![Logo](./public/img/logo.png)
 # Shoes
 
 Este é nosso projeto realizado para menção do primeiro semestre da matéria de Projeto WEB III, desenvolvido com as features solicitadas pelo lecionador de conteúdo ALAN.
