@@ -1,4 +1,4 @@
-![Logo](./public/img/logo.png)
+![Logo](./public/img/logo.png=500x300)
 
 # Shoes
 
