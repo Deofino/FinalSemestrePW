@@ -1,6 +1,6 @@
-![Logo](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/th5xamgrr6se0x5ro4g6.png)
+![Logo](./public/img/logo.png)
 
-# Nome empresa
+# Shoes
 
 Este é nosso projeto realizado para menção do primeiro semestre da matéria de Projeto WEB III, desenvolvido com as features solicitadas pelo lecionador de conteúdo ALAN.
 Desejamos satisfazer e conseguirmos conquistar um belo de um MB pra nossa conta...
