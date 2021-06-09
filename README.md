@@ -10,14 +10,16 @@ A aplicação será em volta de uma apresentação de SAPATOS e TÊNIS, semelhan
 ## Authors
 
 - [@Deofino](https://www.github.com/Deofino)
-- [@Vitora](https://www.github.com/octokatherine) // Depois bota seu git
+- [@Vitoria](https://github.com/vitoriaGoncalves08)
 
      
+
 ## Tech Stack
 
 **Front-end:** Html, Css, Javascript, Twig, Apache.
 
 **Back-end:** Php, Mysql, Composer, Git, Github.
+
 
 
 ## Features
@@ -32,6 +34,7 @@ A aplicação será em volta de uma apresentação de SAPATOS e TÊNIS, semelhan
 - More features...
  
   
+
 ## Run Locally
 
 Clone o projeto dentro de um servidor APACHE (C:/xampp/htdocs/)
@@ -53,14 +56,16 @@ Instale as dependências com composer (Tenha instalado, npm i -g composer para i
   composer install
 ```
 
-#### - Dentro da raiz do projeto, configure o arquivo config.php... Ele conterá as contantes globais
-#### - Com servidor Apache ligado, entre no seu PhpMyAdmin, e importe o arquivo dentro de /app/model/Banco.sql
+### - Dentro da raiz do projeto, configure o arquivo config.php... Ele conterá as contantes globais
+### - Com servidor Apache ligado, entre no seu PhpMyAdmin, e importe o arquivo dentro de /app/model/Banco.sql
 
 Procure seu projeto no seu servidor Apache e entre na pasta "public"
 
 ```bash
   Exemplo Url: http://localhost/FinalSemestrePW/public/
 ```  
+
+
 
 
 # To do...
@@ -70,8 +75,7 @@ Procure seu projeto no seu servidor Apache e entre na pasta "public"
 ![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
 ![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
 ![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+
 
 
 ## API Reference

@@ -3,10 +3,6 @@
 namespace App\Core;
 
 use App\Controller\StaticController;
-use App\Controller\ContactController;
-use App\Controller\ProductController;
-
-
 class Core
 {
     private $controller = '\\App\\Controller\\StaticController';
@@ -39,15 +35,15 @@ class Core
             }
             
             try {
-                call_user_func(array(new $this->controller, $this->method), $this->params);
+                echo call_user_func(array(new $this->controller, $this->method), $this->params);
             } catch (\Throwable $th) {
-                call_user_func(array(new StaticController, 'notFound'));
+                echo call_user_func(array(new StaticController, 'notFound'));
             }
         } else {
-            call_user_func(array(new StaticController , 'index'), $this->params);
+            echo call_user_func(array(new StaticController , 'index'), $this->params);
         }
-        echo ("<hr>Controller: {$this->controller}");
-        echo ("<hr>Method: $this->method <hr>Params: ");
-        var_dump($this->params);
+        // echo ("<hr>Controller: {$this->controller}");
+        // echo ("<hr>Method: $this->method <hr>Params: ");
+        // var_dump($this->params);
     }
 }

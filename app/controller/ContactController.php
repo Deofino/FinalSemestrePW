@@ -1,13 +1,17 @@
 <?php
-    
-    namespace App\Controller;
 
-    class ContactController
+namespace App\Controller;
+
+use App\Controller\Twig;
+
+class ContactController extends Twig
+{
+    public function index()
     {
-
-        public function index()
-        {
-
-        }
-
+        echo $this->twig->render('contact.php');
     }
+    public function notFound()
+    {
+        echo $this->twig->render('notFound.php');
+    }
+}
