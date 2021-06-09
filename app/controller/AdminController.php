@@ -10,14 +10,14 @@ class AdminController extends Twig
 
     public function index()
     {
-        echo $this->twig->render('login.php');
+        echo $this->twig->render('login.twig');
     }
     public function login()
     {
-        echo $this->twig->render('login.php');
+        echo $this->twig->render('login.twig');
     }
     public function dashboard()
     {
-        echo $this->twig->render('./private/dashboard.php');
+        echo $this->twig->render('./private/dashboard.twig');
     }
 }

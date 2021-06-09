@@ -8,10 +8,10 @@ class ContactController extends Twig
 {
     public function index()
     {
-        echo $this->twig->render('contact.php');
+        echo $this->twig->render('contact.twig');
     }
     public function notFound()
     {
-        echo $this->twig->render('notFound.php');
+        echo $this->twig->render('notFound.twig');
     }
 }
