@@ -1,0 +1,129 @@
+header{
+   box-sizing: border-box;
+   height: 80px;
+   padding: 1rem;
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   background-color: var(--alternative_color);
+}
+a img{
+   width: 20%;
+   height: 20%;
+}
+#logotipo{
+  align-items: center;
+  padding-left: 1rem;
+}
+a#logo{
+   text-decoration: none;
+   color: var(--white);
+   font-weight: 700;
+   font-size: 1.8em;
+   text-align: center;
+}
+#menu{
+   display: flex; 
+   list-style: none;
+   gap: .5rem;  
+}
+#menu a{
+   display: block;
+   padding: .5rem;
+}
+#nav{
+   padding-right: 1rem;
+}
+li a{
+   color:var(--white);
+   text-decoration: none;
+   padding: 0.5rem;
+   border-radius: 100%;
+   font-weight: bold;
+}
+li a:hover{
+   background:var(--white);
+   color: var(--black);
+}
+#btn-mobile{
+   display: none;
+   color: var(--white);
+}
+
+@media(max-width: 600px){
+   #btn-mobile{
+       display: block;/*block = aparece*/
+   }
+   #menu{
+      display: block; 
+      position: absolute;
+      width: 100%;
+      top: 80px;
+      right: 0px;
+      background: var(--alternative_color);
+      height: 0px;
+      transition: .6s;/*só ocorre com display block*/
+      z-index: 1000;
+      visibility: hidden;
+      overflow-y:hidden;
+   }
+   #nav.active #menu{
+      height: calc(100vh - 80px);
+      visibility: visible;
+      overflow-y: auto;/*cria barra de rolagem se tiver muita aba no menu*/
+  }
+   li a {
+         padding: 2rem;
+         margin: .6rem 1rem;
+         border-radius: 0;
+         border-bottom: 2px solid rgba(0,0,0, .05);
+   }
+   li a:hover{
+      background-color: rgba(0,0,0, .05);
+      color: var(--white);
+   }
+
+   #btn-mobile{
+      display: flex;
+      padding: .5rem 1rem;
+      font-size: 1rem;
+      border: none;
+      background: none;
+      cursor: pointer;
+      gap: .5rem;
+  }
+  #hamburger{
+      display: block;
+      color: white;
+      border-top: 2px solid;
+      width: 20px;    
+      margin-top: 1px;   
+  }
+  #hamburger::after, #hamburger::before{
+      content: '';
+      display: block;
+      width: 20px;
+      height: 2px;
+      background: currentColor;/* mantém a mesma cor */
+      margin-top: 5px;
+      transition: .3s;
+      position: relative;
+  }
+  #nav.active #hamburger{
+      border-top-color: transparent;
+  }
+  #nav.active #hamburger::before{
+      transform: rotate(135deg);
+  }
+  #nav.active #hamburger::after{
+      transform: rotate(-135deg);
+      top:-7px;
+  }
+  a#logo{
+      font-size: 1.1em;
+   }
+   a img{
+      width: 20%;
+      height: 20%;
+   }
+}
