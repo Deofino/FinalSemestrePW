@@ -7,13 +7,14 @@
 	--background_color: #E4E9F1;
 	--background_color_dark: #282F3E;
 	--accent_color: #EC5732;
-	--accent_color_dark: #83240C;
-	--primary_color: #5CA8FF;
-	--primary_color_dark: #1F87FF;
-	--alternative_color: #993BF7;
+	--accent_color_dark: #411105;
+	--primary_color: #65a7f1;
+	--primary_color_dark: #4c9fff;
+	--alternative_color: #280c4455;
 	--white: #F5F5Ff;
 	--gray: #CAD3E3;
 	--black: #101319;
+	--shadow: #10131944;
 }
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -30,6 +31,7 @@ menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
 	margin: 0;
 	padding: 0;
+	color: var(--black);
 	border: 0;
 	font-family: 'Montserrat', Verdana, Arial, sans-serif;
 	box-sizing: border-box;
@@ -58,4 +60,9 @@ q:before, q:after {
 table {
 	border-collapse: collapse;
 	border-spacing: 0;
+}
+img{
+	width: 100%;
+	height: 100%;
+	image-rendering: pixelated;
 }

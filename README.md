@@ -29,7 +29,7 @@ A aplicação será em volta de uma apresentação de SAPATOS e TÊNIS, semelhan
 - Envio de E-mail
 - Gráficos usando API do Google Charts
 - Api do Google Maps
-- Leitura de PDF dinânica
+- Leitura de PDF dinâmica
 - Site responsivo
 - More features...
  
