@@ -25,7 +25,7 @@ section:nth-of-type(1) h1{
     font-weight: 900;
     border-bottom: 4px solid var(--white);
     width: 200px;
-    border-color: aqua;
+    border-color: black;
     padding: 1rem;
     border-bottom-left-radius: 20px;
     margin-left: 20vh;
