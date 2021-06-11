@@ -10,7 +10,7 @@ header{
    z-index: 999;
    align-items: center;
    justify-content: space-between;
-   background-color: var(--alternative_color);
+   background-color: var(--blue);
 }
 header a img{
    width: 20%;
@@ -54,14 +54,14 @@ header li a{
    }
    header li a::after{
       position: absolute;
-      bottom: -2px;
+      bottom: -4px;
       content: '';
       width: 0;
       opacity: .3;
       transition: .3s ease;
       height: 1px;
       left: 0;
-      background-color: #fff;
+      background-color: var(--white);
    }
    header li a:hover::after{
       width: 100%;
@@ -84,7 +84,7 @@ header #btn-mobile{
       z-index: 9999;
       top: 80px;
       right: 0px;
-      background: linear-gradient(var(--alternative_color),var(--alternative_color_dark));
+      background: linear-gradient(var(--blue),var(--dark_blue));
       height: 0px;
       transition: .6s ease;/*só ocorre com display block*/
       z-index: 1000;
@@ -113,7 +113,7 @@ header #btn-mobile{
       margin-top: 0;
   }
    header li a:hover {
-      background-color: var(--alternative_color_dark);
+      background-color: var(--dark_blue);
       opacity: 1;
    }
    header #btn-mobile{
@@ -127,7 +127,7 @@ header #btn-mobile{
   }
   header #hamburger{
       display: block;
-      color: white;
+      color: var(--white);
       border-top: 2px solid;
       width: 20px;    
       margin-top: 1px;   

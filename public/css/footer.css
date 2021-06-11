@@ -1,5 +1,5 @@
 footer{
-    background-image: linear-gradient(var(--primary_color_dark),var(--primary_color));
+    background-image: linear-gradient(var(--blue),var(--light_blue));
     padding: .3rem;
     display: flex;
     flex-direction: row;
@@ -20,11 +20,11 @@ footer img{
     height: 100%;
 }
 footer a, footer i, footer span{
-    color: var(--black);
+    color: var(--white);
     text-decoration: none;
     z-index: 10;
     font-size: max(14px, .8vw);
-    font-weight: 500;
+    font-weight: 700;
     text-shadow: 0 .2px .2px var(--shadow);
 }
 footer .footer-item{
@@ -51,8 +51,8 @@ footer .footer-item{
 }
 #div-copy > p{
     font-size: max(.6rem,1.7vw);
-    color: var(--black);
-    font-weight: 600;
+    color: var(--white);
+    font-weight: bold;
     margin-bottom: 5px;
     z-index: 10;
 } 
@@ -64,17 +64,17 @@ footer #under-nav{
 footer div .div-image{
     order: 2;
 }
-footer #under-nav > ul  h3{
-    font-size: max(20px, 1.2vw);
-    color: var(--black);
+footer #under-nav > ul  h2{
+    font-size: max(20px, 1.3vw);
+    color: var(--white);
     text-transform: uppercase;
     letter-spacing: 1px;
     text-shadow: 0 .5px 1px var(--shadow);
 }
 footer p{
     font-size: max(16px, 1vw);
-    font-weight: 700;
-    color: var(--black);
+    font-weight: bold;
+    color: var(--white);
     letter-spacing: .3px;
     margin-bottom: .2rem;
 }
@@ -82,17 +82,18 @@ footer li{
     margin: .35rem 0;
     margin-left: 1.3rem;
     position: relative;
+    padding: 0.2rem;
 }
 footer li::after{
     content: '';
     position: absolute;
     bottom: -1px;
-    left: -3px;
+    left: -4px;
     height: 1px;
     width: 0;
     transition: .4s ease;
     opacity: .3;
-    background-color: var(--black);
+    background-color: var(--dark_blue);
 }
 footer li:hover::after {
     width: 110%;
@@ -110,7 +111,7 @@ footer #div-logo{
     display: none;
 }
 
-@media screen and (min-width: 960px ) {
+@media screen and (min-width: 600px ) {
     footer{
         padding: 1rem;
         flex-wrap: nowrap;
@@ -126,7 +127,7 @@ footer #div-logo{
     }
     footer a, footer i, footer span{
         font-size: max(14px, .9vw);
-        font-weight: 500;
+        font-weight: 600;
     }
     footer .footer-item{
         margin: 1rem;
@@ -139,13 +140,13 @@ footer #div-logo{
         display: none;
     }
     #div-copy{
-        justify-content: flex-start;
+        justify-content: center;
         align-items: center;
     }
     #div-copy > p{
         font-size: .9rem;
         margin-bottom: 5px;
-        font-weight: 600;
+        font-weight: bold;
         margin-bottom: -10px;
         margin-left: 10px;
     } 
@@ -154,17 +155,16 @@ footer #div-logo{
     }
     footer p{
         font-size: max(16px, 1vw);
-        font-weight: 600;
+        font-weight: 700;
         margin-bottom: .8rem;
     }
     footer li{
         margin: .8rem 0;
         margin-left: .6em;
     }
-    footer  svg{
+    footer svg{
         opacity: 1;
     }
-    
     footer #div-logo{
         display: block;
         width: 120px;
