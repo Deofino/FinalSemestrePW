@@ -33,11 +33,12 @@ footer .footer-item{
     display: flex;
     margin: .5rem;
     z-index: 10;
-    /* background-color: #fff; */
+    align-items: flex-start;
     align-self: baseline;
     border-bottom: .5px solid var(--shadow);
     flex-direction: column;
 }
+
 #div-copy{
     position: absolute;
     height: 50px;
@@ -52,7 +53,6 @@ footer .footer-item{
     font-size: max(.6rem,1.7vw);
     color: var(--black);
     font-weight: 600;
-
     margin-bottom: 5px;
     z-index: 10;
 } 
@@ -60,7 +60,6 @@ footer #under-nav{
     flex-direction: row;
     position: relative;
     justify-content: space-between;
-    align-items: flex-start;
 }
 footer div .div-image{
     order: 2;
@@ -82,25 +81,24 @@ footer p{
 footer li{
     margin: .35rem 0;
     margin-left: 1.3rem;
-    width: 100%;
     position: relative;
 }
-footer a::after{
+footer li::after{
     content: '';
     position: absolute;
     bottom: -1px;
     left: -3px;
-    height: .1px;
+    height: 1px;
     width: 0;
     transition: .4s ease;
     opacity: .3;
     background-color: var(--black);
 }
-footer a:hover::after {
-    width: 100%;
-    opacity: .8;
+footer li:hover::after {
+    width: 110%;
+    opacity: 1;
 }
-li i span{
+footer li i span{
     margin-left: .35rem;
 }
 footer  svg{

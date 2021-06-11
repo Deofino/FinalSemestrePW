@@ -10,11 +10,13 @@
 	--accent_color_dark: #411105;
 	--primary_color: #65a7f1;
 	--primary_color_dark: #4c9fff;
-	--alternative_color: #280c4455;
+	--alternative_color: #B877F9;
+	--alternative_color_dark: #6d35a5;
 	--white: #F5F5Ff;
 	--gray: #CAD3E3;
 	--black: #101319;
 	--shadow: #10131944;
+	scroll-behavior: smooth;
 }
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -45,6 +47,7 @@ footer, header, hgroup, menu, nav, section {
 }
 body {
 	line-height: 1;
+	padding-top: 80px;
 }
 ol, ul {
 	list-style: none;
