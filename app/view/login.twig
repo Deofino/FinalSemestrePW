@@ -5,11 +5,49 @@
 {% endblock %}
 
 {% block styles %}
-    
+    <link rel="stylesheet" href="./css/login.css">
 {% endblock %}
 
 {% block body %}
-    login
+    <main id="main_container_login">
+        <div id="div_form">
+            <h2>Entrar como administrador</h2>
+            <form action="" method="post" class="form">
+                <div class="form-item col">
+                    <label for="name" class="item-label">Nome:</label>
+                    <input type="text" class="item-input" name="name" id="name" maxlength="100">
+                    <div class="div_message">
+                        <p class="message">o</p>
+                    </div>
+                </div>
+                <div class="form-item col">
+                    <label for="email" class="item-label">E-mail:</label>
+                    <input type="email" class="item-input" name="email" id="email" maxlength="100">
+                    <div class="div_message" >
+                        <p class="message">o</p>
+                    </div>
+                </div>
+                <div class="form-item col">
+                    <label for="password" class="item-label">Senha:</label>
+                    <input type="password" class="item-input" name="password" id="password" maxlength="50">
+                    <div class="div_message">
+                        <p class="message">o</p>
+                    </div>
+                </div>
+                <div class="form-item row">
+                    <label for="terms" class="item-label">Aceita os <strong>Termos de uso e privacidade</strong>?</label>
+                    <label for="terms" id="check"></label>
+                    <input type="checkbox" class="item-input" hidden name="terms" id="terms">
+                    <div class="div_message">
+                        <p class="message"></p>
+                    </div>
+                </div>
+                <div class="form-item">
+                    <input type="button" class="button button_primary" name="button_submit" value="Entrar" id="button_submit">
+                </div>
+            </form>
+        </div>
+    </main>
 {% endblock %}
 
 {% block scripts %}

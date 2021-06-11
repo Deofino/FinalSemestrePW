@@ -1,0 +1,102 @@
+input{
+    outline: none;
+    border: none;
+	font-family: 'Montserrat', Verdana, Arial, sans-serif;
+}
+main{
+    padding: 2rem 0;
+    height: 100%;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    background-image: linear-gradient(to right,var(--background_color_dark),var(--black));
+}
+main #div_form > h2{
+    color: var(--white);
+    margin-bottom: .5rem;
+    font-size: max(1.8rem, 1.2vw);
+}
+main #div_form{
+    padding: .5rem;
+    width: 100%;
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    align-items: center;
+}
+main > #div_form > form{
+    padding: 1rem;
+    width: 100%;
+    height: 100%;
+    max-width:760px;
+    min-height: 460px;
+    max-height: 760px;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    border-radius: 4px;
+    box-shadow: 0 2px 2px var(--background_color);
+    background-color: var(--background_color);
+}
+main > #div_form > form > div{
+    width: 100%;
+    padding: .5rem;
+    display: flex;
+    align-items: center;
+}
+main > #div_form > form > div.col{
+    flex-direction: column;
+}
+main > #div_form > form > div.row{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+}
+#div_form > form > div.col input{
+    width: 100%;
+    border-radius: 4px;
+    box-shadow: 0 1px 4px var(--shadow);
+    padding: .5rem;
+    font-size: .9rem;
+}
+#div_form > form > div.col label{
+    width: 100%;
+    font-weight: 500;
+    margin-bottom: .3rem;
+}
+
+#div_form > form > div.col .div_message{
+    display: none; /*Fazer mais tarde as validacoes com AJAX*/
+}
+#div_form > form > div.row label{
+    order: 2;
+    margin-left: 1rem;
+    font-size: .9rem;
+}
+#div_form > form > div.row #check{
+    content: 'x';
+    width: 18px;
+    position: absolute;
+    bottom: 50%;
+    margin: 0;
+    left: 0;
+    transform: translateY(50%);
+    border-radius: 4px;
+    height: 18px;
+    border: 1px solid var(--shadow);
+}
+#div_form > form > div #button_submit{
+    align-self: flex-end;
+    border-radius: 4px;
+    box-shadow: 0 3px 10px var(--accent_color_dark);
+    width: 100%;
+    padding: 1rem;
+    font-size: 1rem;
+    font-weight: bold;
+    max-width: 500px;
+    color: var(--white);
+    text-shadow: 0 2px 4px var(--black);
+    cursor: pointer;
+    background-image: linear-gradient(to right,var(--accent_color), var(--accent_color_dark)) ;
+}

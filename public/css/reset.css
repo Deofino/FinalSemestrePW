@@ -4,10 +4,10 @@
 */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
 :root{
-	--background_color: #E4E9F1;
+	--background_color: #f5f5f5;
 	--background_color_dark: #282F3E;
 	--accent_color: #EC5732;
-	--accent_color_dark: #411105;
+	--accent_color_dark: #df4924;
 	--primary_color: #65a7f1;
 	--primary_color_dark: #4c9fff;
 	--alternative_color: #B877F9;
@@ -16,6 +16,12 @@
 	--gray: #CAD3E3;
 	--black: #101319;
 	--shadow: #10131944;
+
+	--bg_success: #DFF2BF;
+	--success: #4F8A10;
+	--bg_error: #FFBABA;
+	--error: #D8000C;
+
 	scroll-behavior: smooth;
 }
 html, body, div, span, applet, object, iframe,
@@ -33,6 +39,8 @@ menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
 	margin: 0;
 	padding: 0;
+	outline: none;
+	border: none;
 	color: var(--black);
 	border: 0;
 	font-family: 'Montserrat', Verdana, Arial, sans-serif;
@@ -47,7 +55,7 @@ footer, header, hgroup, menu, nav, section {
 }
 body {
 	line-height: 1;
-	padding-top: 80px;
+	padding-top: 90px;
 }
 ol, ul {
 	list-style: none;
