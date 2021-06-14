@@ -88,12 +88,12 @@ footer li::after{
     content: '';
     position: absolute;
     bottom: -1px;
-    left: -4px;
+    left: -1px;
     height: 1px;
     width: 0;
     transition: .4s ease;
     opacity: .3;
-    background-color: var(--dark_blue);
+    background-color: var(--white);
 }
 footer li:hover::after {
     width: 110%;

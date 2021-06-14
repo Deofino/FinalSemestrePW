@@ -1,4 +1,4 @@
-input{
+input, button{
     outline: none;
     border: none;
 	font-family: 'Montserrat', Verdana, Arial, sans-serif;
@@ -29,9 +29,7 @@ main > #div_form > form{
     padding: 1rem;
     width: 100%;
     height: 100%;
-    max-width:760px;
-    min-height: 460px;
-    max-height: 760px;
+    min-height: 500px;
     display: flex;
     justify-content: space-evenly;
     flex-direction: column;
@@ -41,16 +39,20 @@ main > #div_form > form{
 }
 main > #div_form > form > div{
     width: 100%;
+    position: relative;
     padding: .5rem;
+    /* background-color: #333; */
     display: flex;
     align-items: center;
 }
 main > #div_form > form > div.col{
+    width: 100%;
     flex-direction: column;
 }
 main > #div_form > form > div.row{
     position: relative;
     display: flex;
+    width: 100%;
     flex-direction: row;
 }
 #div_form > form > div.col input{
@@ -65,38 +67,136 @@ main > #div_form > form > div.row{
     font-weight: 500;
     margin-bottom: .3rem;
 }
+.div_message{
+    opacity: 0;
+    width: 100%;
+    margin: .3rem 0 0 ;
+    /* background-color: #aaa; */
+    padding: .5rem;
+    transition: .3s ease;
+    margin-left: -50%;
+    box-shadow: 2px 2px 4px var(--shadow);
+    border-radius: 4px;
+}
 
-#div_form > form > div.col .div_message{
-    display: none; /*Fazer mais tarde as validacoes com AJAX*/
+.div_message > p{
+    font-weight: 600;
+    font-size: .8rem;
 }
-#div_form > form > div.row label{
-    order: 2;
-    margin-left: 1rem;
-    font-size: .9rem;
+@media screen and (max-width: 600px){
+    .div_message > p{
+        font-size: .7rem;
+    }  
 }
-#div_form > form > div.row #check{
-    content: 'x';
+.div_message.success{
+    border: 1px solid var(--success);
+    margin-left: 0;
+    opacity: 1;
+    background-color: var(--bg_success);
+    display: block !important;
+}
+.div_message.success > p{
+    color: var(--success);
+}
+.div_message.error{
+    border: 1px solid var(--error);
+    margin-left: 0;
+    opacity: 1;
+    background-color: var(--bg_error);
+    display: block !important;
+}
+.div_message.error > p{
+    color: var(--error);
+}
+#div_form > form div.col > div.row{
+    position: relative;
+}
+#div_form > form div.row{
+    width: 100%;
+}
+#div_form > form div.row #check{
+    content: '';
     width: 18px;
     position: absolute;
     bottom: 50%;
     margin: 0;
     left: 0;
-    transform: translateY(50%);
+    transition: .3s ease;
+    transform: translateY(45%);
+    opacity: .8;
     border-radius: 4px;
     height: 18px;
     border: 1px solid var(--shadow);
 }
-#div_form > form > div #button_submit{
-    align-self: flex-end;
+#div_form > form div.row #check.active{
+    border: 1px solid var(--black);
+    background-color: var(--accent_color);
+}
+#div_form > form div.col > div.row label{
+    order: 2;
+    margin-left: 2rem;
+    font-size: .9rem;
+}
+#div_form > form > .form-item #button_submit{
     border-radius: 4px;
+    margin-top: .5rem;
     box-shadow: 0 3px 10px var(--accent_color_dark);
     width: 100%;
     padding: 1rem;
     font-size: 1rem;
+    opacity: .85;
+    position: absolute;
+    right: 0;
     font-weight: bold;
-    max-width: 500px;
+    max-width: 400px;
+    transition: .6s ease;
     color: var(--white);
     text-shadow: 0 2px 4px var(--black);
     cursor: pointer;
     background-image: linear-gradient(to right,var(--accent_color), var(--accent_color_dark)) ;
+}
+#div_form > form > .form-item #button_submit:hover{
+    opacity: 1;
+}
+
+@media screen and (max-width: 600px){
+    main #div_form > h2{
+        font-size: 1.2rem;
+    }
+    #div_form > form > div.col input{
+        padding: .3rem;
+        font-size: .8rem;
+    }
+    #div_form > form > div.col label{
+        font-size: .9rem;
+        margin-bottom: .3rem;
+    }
+    #div_form > form > div.row label{
+        order: 2;
+        margin-left: 1rem;
+        font-size: .7rem;
+    }
+
+    main > #div_form > form{
+        padding: .5rem;
+        min-height: 50vh;
+    }
+
+    #div_form > form > .form-item #button_submit{
+        width: 100%;
+        max-width: 100%;
+        position: relative;
+        padding: .7rem;
+        font-size: .9rem;
+    }
+
+    #div_form > form > div.row #check{
+        width: 16px;
+        height: 16px;
+    }
+    #div_form > form div.col > div.row label{
+        order: 2;
+        margin-left: 1.5rem;
+        font-size: .7rem !important;
+    }
 }

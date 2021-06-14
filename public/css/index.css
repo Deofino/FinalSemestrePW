@@ -5,10 +5,11 @@ section:nth-of-type(1){
     text-align: center;
     padding: 2.5rem 4%;
     color: rgb(20,20,20);
-
+    
 
     background-position: center;
     background-size: cover;
+    image-rendering: pixelated;
     background-repeat: no-repeat;
     background-attachment: fixed;
 

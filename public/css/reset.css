@@ -11,7 +11,7 @@
 	--primary_color: #65a7f1;
 	--primary_color_dark: #4c9fff;
 	--alternative_color: #B877F9;
-	--alternative_color_dark: #6d35a5;
+	--alternative_color_dark: #542886;
 	--white: #F5F5Ff;
 	--gray: #CAD3E3;
 	--black: #101319;
@@ -23,13 +23,10 @@
 	--light_blue: #00ACEE;
 	--light_purple: #933D97;
 
-
-
-
 	--bg_success: #DFF2BF;
-	--success: #4F8A10;
+	--success: #62a818;
 	--bg_error: #FFBABA;
-	--error: #D8000C;
+	--error: #9c030a;
 
 	scroll-behavior: smooth;
 }
@@ -65,6 +62,7 @@ footer, header, hgroup, menu, nav, section {
 body {
 	line-height: 1;
 	padding-top: 80px;
+	transition: 1s all ease;
 }
 ol, ul {
 	list-style: none;
