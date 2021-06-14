@@ -18,7 +18,6 @@ class AdminController extends Twig
             if(trim($data->email) === trim('admin@admin.com')
             && password_verify($data->password,password_hash('12345678', PASSWORD_DEFAULT)) == 1)
             {
-            session_start();
             $_SESSION['user'] = password_hash($data->email,PASSWORD_DEFAULT);
             $_SESSION['data'] = $data;
             return json_encode([
@@ -50,13 +49,50 @@ class AdminController extends Twig
         $this->render();
     }
 
+    public function insert()
+    {
+        if(isset($_SESSION['user']) && isset($_SESSION['data'])){
+            echo $this->twig->render('./private/insert.twig',['file'=>URL_MAIN.'public/']);
+        }else{
+            echo $this->twig->render('login.twig',['file'=>URL_MAIN.'public/']);
+        }
+    }
+    public function delete()
+    {
+        if(isset($_SESSION['user']) && isset($_SESSION['data'])){
+            echo $this->twig->render('./private/delete.twig',['file'=>URL_MAIN.'public/']);
+        }else{
+            echo $this->twig->render('login.twig',['file'=>URL_MAIN.'public/']);
+        }
+    }
+    public function update()
+    {
+        if(isset($_SESSION['user']) && isset($_SESSION['data'])){
+            echo $this->twig->render('./private/update.twig',['file'=>URL_MAIN.'public/']);
+        }else{
+            echo $this->twig->render('login.twig',['file'=>URL_MAIN.'public/']);
+        }
+    }
+
+    public function logout(){
+        if(isset($_SESSION['user']) && isset($_SESSION['data'])){
+            unset($_SESSION['user']);
+            unset($_SESSION['data']);
+            session_destroy();
+        }
+        echo("
+            <script>
+                window.location.href = '".URL_MAIN."public/admin';
+            </script>
+        ");
+    }
+
     private function render()
     {
-        session_start();
         if(isset($_SESSION['user']) && isset($_SESSION['data'])){
-            echo $this->twig->render('./private/dashboard.twig',['user'=>$_SESSION['user'],'data'=>$_SESSION['data']]);
+            echo $this->twig->render('./private/dashboard.twig',['file'=>URL_MAIN.'public/']);
         }else{
-            echo $this->twig->render('login.twig');
+            echo $this->twig->render('login.twig',['file'=>URL_MAIN.'public/']);
         }
     } 
 }

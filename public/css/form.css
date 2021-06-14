@@ -20,6 +20,7 @@ main #div_form > h2{
 main #div_form{
     padding: .5rem;
     width: 100%;
+    max-width: 720px;
     display: flex;
     height: 100%;
     flex-direction: column;

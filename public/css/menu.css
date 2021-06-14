@@ -12,6 +12,9 @@ header{
    justify-content: space-between;
    background-color: var(--blue);
 }
+header hr{
+   width: 100%;
+}
 header a img{
    width: 20%;
    height: 20%;
@@ -39,7 +42,7 @@ header #menu a{
 header #nav{
    padding-right: 1rem;
 }
-header li a{
+header li a, header li i{
    color:var(--white);
    text-decoration: none;
    padding: 0.5rem;
@@ -52,7 +55,7 @@ header li a{
       margin:  0 .3rem;
       padding: 0 .5rem 0 0;
    }
-   header li a::after{
+   header #menu > li a::after{
       position: absolute;
       bottom: -4px;
       content: '';
@@ -63,7 +66,7 @@ header li a{
       left: 0;
       background-color: var(--white);
    }
-   header li a:hover::after{
+   header #menu > li > a:hover::after{
       width: 100%;
       opacity: 1;
    }
@@ -159,4 +162,41 @@ header #btn-mobile{
       width: 20%;
       height: 20%;
    }
+}
+header nav li{
+   position: relative;
+}
+header nav li ul{
+   transition: .6s ease;
+   display: flex;
+   position: absolute;
+   left: 0%;
+   opacity: 0;
+   margin: 0;
+   flex-direction: column;
+   width: 110%;
+   top: 110%;
+   height: 0;
+   border-radius: 4px;
+   overflow: hidden;
+}
+
+header nav #admin:hover ul{
+   box-shadow: 1px 2px 7px var(--black);
+   padding: .5rem;
+   opacity: 1;
+   background-color: var(--background_color_dark);
+   min-height: 200px;
+   max-height: 300px;
+}
+
+header nav #admin ul li{
+   margin: 10px 0;
+   width: 100%;
+}
+header nav #admin ul li a{
+   font-size: .8rem;
+   width: 100%;
+   font-weight: 500;
+   word-break: keep-all;
 }

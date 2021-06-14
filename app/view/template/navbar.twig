@@ -1,7 +1,7 @@
 <header id='navbar'>
     <div id="logotipo">
         <a onclick="scrollTo(0,0)" >
-          <img src="./img/logo.ico" alt='Logotipo'/>
+          <img src="{{file}}img/logo.ico" alt='Logotipo'/>
         </a>
         <a id="logo" href='#' onclick="scrollTo(0,0)">Shoes</a>
       </div>
@@ -11,10 +11,26 @@
         <span id="hamburger"></span>
         </button>
         <ul id="menu">
-            <li><a href="./">Inicio</a></li>
-            <li><a href="./product">Produto</a></li>
-            <li><a href="./contact">Contato</a></li>
-            <li><a href="./admin">Entrar</a></li>
+            <li><a href="{{file}}">Inicio</a></li>
+            <li><a href="{{file}}product">Produto</a></li>
+            <li><a href="{{file}}contact">Contato</a></li>
+            {% if session.user %}
+              <li id="admin">
+                <a href="{{file}}admin/">Administrador</a>
+                <ul id="dropdown">
+                  <li><a href="{{file}}admin/">Dashboard</a></li>
+                  <li><a href="{{file}}admin/insert">Inserir</a></li>
+                  <li><a href="{{file}}admin/update">Atualizar</a></li>
+                  <li><a href="{{file}}admin/delete">Excluir</a></li>
+                  <hr>
+                  <li>
+                    <a href="{{file}}admin/logout"><i class="fas fa-sign-out-alt "></i>Sair</a>
+                  </li>
+                </ul>
+              </li>
+            {% else %}
+              <li><a href="{{file}}admin">Entrar</a></li>
+            {% endif %}            
         </ul>
     </nav>
 </header>
