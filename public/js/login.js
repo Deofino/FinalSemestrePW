@@ -79,8 +79,13 @@ form.addEventListener('submit',async(evt)=>{
                 password: inputs[2].value,
             })
         });
-        let response = await request.text();
+        let response = await request.json();
         console.log(response);
+        if(response.status === 'ok'){
+            window.location.reload();
+        }else{
+            alert('E-mail e/ou senha incorreto(s)');
+        }
     }else{
         alert("Corriga os erros que estão aparecendo na tela bro!")
     }

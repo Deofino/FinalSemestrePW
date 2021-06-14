@@ -15,7 +15,25 @@ class AdminController extends Twig
         if($_SERVER['REQUEST_METHOD'] == "POST")
         {
             $data = json_decode(file_get_contents("php://input"));
-            var_dump($data);
+            if(trim($data->email) === trim('admin@admin.com')
+            && password_verify($data->password,password_hash('12345678', PASSWORD_DEFAULT)) == 1)
+            {
+            session_start();
+            $_SESSION['user'] = password_hash($data->email,PASSWORD_DEFAULT);
+            $_SESSION['data'] = $data;
+            return json_encode([
+                "status"=>'ok',
+                "status_code"=>'200',
+                "message"=>'user session created',
+            ]);  
+            }else
+            {
+                return json_encode([
+                    "status"=>'bad',
+                    "status_code"=>404,
+                    "message"=>"User not found."
+                ]);
+            }
         }
         else
         {
@@ -35,8 +53,8 @@ class AdminController extends Twig
     private function render()
     {
         session_start();
-        if(isset($_SESSION['user'])){
-            echo $this->twig->render('./private/dashboard.twig');
+        if(isset($_SESSION['user']) && isset($_SESSION['data'])){
+            echo $this->twig->render('./private/dashboard.twig',['user'=>$_SESSION['user'],'data'=>$_SESSION['data']]);
         }else{
             echo $this->twig->render('login.twig');
         }
