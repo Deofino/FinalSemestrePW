@@ -1,19 +1,157 @@
-{% extends "./template/html.twig" %}
+{% extends "./template/html.twig" %} {% block title %}Shoes | Inserir {%
+endblock %} {% block metas_data %}
+<meta
+  name="description"
+  content="Venha e entre como administrador na melhor loja de Tenis, a SHOES"
+/>
+{% endblock %} {% block styles %}
+<link rel="stylesheet" href="{{ file }}css/form.css" />
+{% endblock %} {% block body %}
+<main>
+  <div id="main_insert">
+    <div class="fd-col">
+      <section id="branch">
+        <div class="div_form">
+          <h2>Marca</h2>
+          <form action="" method="POST" class="form">
+            <div class="form-item col">
+              <label for="branch" class="lb">Marca: </label>
+              <input type="text" id="branch" name="branch" />
+            </div>
+            <div class="form-item">
+              <button type="submit" id="button_submit">Inserir</button>
+            </div>
+          </form>
+        </div>
+      </section>
 
-{% block metas_data %}
+      <section id="category">
+        <div class="div_form">
+          <h2>Categoria</h2>
+          <form action="" method="POST" class="form">
+            <div class="form-item col">
+              <label for="category" class="item-label">Categoria: </label>
+              <input type="text" id="category" name="category" />
+            </div>
+            <div class="form-item">
+              <button type="submit" id="button_submit">Inserir</button>
+            </div>
+          </form>
+        </div>
+      </section>
+    </div>
+    <div class="fd-col">
+      <section id="product">
+        <div class="div_form">
+          <h2>Produto</h2>
+          <form
+            action=""
+            method="POST"
+            enctype="multipart/form-data"
+            class="form"
+          >
+            <div class="form-item col">
+              <label for="productName" class="item-label">Produto: </label>
+              <input
+                type="text"
+                id="productName"
+                name="productName"
+                class="item-input"
+                maxlength="50"
+                minlength="10"
+                required
+              />
+            </div>
+            <div class="form-item col">
+              <label for="description" class="item-label">Descricao: </label>
+              <textarea
+                name="description"
+                id="description"
+                rows="3"
+                class="item-input"
+                maxlength="100"
+                minlength="10"
+                required
+              ></textarea>
+            </div>
+            <div class="form-item col">
+              <label for="product" class="item-label">Genero: </label>
+              <div class="btn nshadow al-center">
+                <input type="radio" value="male" id="radio" name="radio" />
+                <label for="radioM">Masculino</label>
+              </div>
+              <div class="btn nshadow al-center">
+                <input type="radio" value="female" id="radio" name="radio" />
+                <label for="radioF">Feminino</label>
+              </div>
+              <div class="btn nshadow al-center">
+                <input type="radio" value="female" id="radio" name="radio" />
+                <label for="radioU">Unisex</label>
+              </div>
+            </div>
+            <div class="form-item col">
+              <label for="price" class="item-label">Valor: </label>
+              <input
+                type="text"
+                id="price"
+                name="price"
+                value="R$: 00,00"
+                class="item-input"
+                minlength="3"
+                max="10"
+                required
+              />
+              {# Botar so pra digita numero e mascara #}
+            </div>
+            <div class="form-item col">
+              <label for="selectCategory" class="item-label">Categoria: </label>
+              <select name="selectCategory" required id="selectCategory">
+                <option value="0">Selecione</option>
+                {# foreach categorias #}
+              </select>
+            </div>
+            <div class="form-item col">
+              <label for="selectBranch" class="item-label">Marca: </label>
+              <select name="selectBranch" id="selectBranch">
+                <option value="0">Selecione</option>
+                {# foreach branches #}
+              </select>
+            </div>
+            <div class="form-item col">
+              <label for="colors" class="item-label">Cores: </label>
+              <div class="form-item btn">
+                <input
+                  type="text"
+                  id="colors"
+                  name="colors"
+                  maxlength="10"
+                  min="3"
+                />
+                {# Botar so pra digita numero e mascara #}
+                <button type="button" class="button" id="add_color">
+                  <i class="fas fa-plus"></i>
+                </button>
+              </div>
+              <div class="form-item row" id="tags">
+                {# Mostrar as cores como TAGS AJAX #}
+              </div>
+            </div>
+            <div class="form-item col">
+              <label for="image" class="item-label">Imagem: </label>
+              <input type="file" id="image" class="nshadow" name="image" />
+              <div class="imagem">{# Preview Imagem #}</div>
+            </div>
+            <div class="form-item">
+              <button type="submit" id="button_submit">Inserir</button>
+            </div>
+          </form>
+        </div>
+      </section>
+    </div>
+  </div>
+</main>
 
-{% endblock %}
-
-{% block title %}Shoes | Inserir {% endblock %}
-
-{% block styles %}
-    
-{% endblock %}
-
-{% block body %}
-    insert product
-{% endblock %}
-
-{% block scripts %}
-    
+{% endblock %} {% block scripts %}
+<script src="{{ file }}js/modules.js" type="module"></script>
+<script type="module" src="{{ file }}js/insert.js"></script>
 {% endblock %}

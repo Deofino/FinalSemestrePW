@@ -12,7 +12,7 @@ use Twig\Sandbox\SecurityNotAllowedFunctionError;
 use Twig\Source;
 use Twig\Template;
 
-/* login.twig */
+/* ./login.twig */
 class __TwigTemplate_fc5822d8174c8cc2d06305a26422fa0de02b50ad9e94cf5aee99a9c1f3f50c0b extends Template
 {
     private $source;
@@ -42,7 +42,7 @@ class __TwigTemplate_fc5822d8174c8cc2d06305a26422fa0de02b50ad9e94cf5aee99a9c1f3f
     protected function doDisplay(array $context, array $blocks = [])
     {
         $macros = $this->macros;
-        $this->parent = $this->loadTemplate("./template/html.twig", "login.twig", 1);
+        $this->parent = $this->loadTemplate("./template/html.twig", "./login.twig", 1);
         $this->parent->display($context, array_merge($this->blocks, $blocks));
     }
 
@@ -79,7 +79,7 @@ class __TwigTemplate_fc5822d8174c8cc2d06305a26422fa0de02b50ad9e94cf5aee99a9c1f3f
         $macros = $this->macros;
         // line 11
         echo "    <main id=\"main_container_login\">
-        <div id=\"div_form\">
+        <div class=\"div_form\">
             <h2>Entrar como administrador</h2>
             <form action=\"/admin/login\" method=\"post\" class=\"form\">
                 <div class=\"form-item col\">
@@ -138,7 +138,7 @@ class __TwigTemplate_fc5822d8174c8cc2d06305a26422fa0de02b50ad9e94cf5aee99a9c1f3f
 
     public function getTemplateName()
     {
-        return "login.twig";
+        return "./login.twig";
     }
 
     public function isTraitable()
@@ -153,6 +153,6 @@ class __TwigTemplate_fc5822d8174c8cc2d06305a26422fa0de02b50ad9e94cf5aee99a9c1f3f
 
     public function getSourceContext()
     {
-        return new Source("", "login.twig", "C:\\xampp\\htdocs\\Escola\\2b\\FinalSemestrePW\\app\\view\\login.twig");
+        return new Source("", "./login.twig", "C:\\xampp\\htdocs\\Escola\\2b\\FinalSemestrePW\\app\\view\\login.twig");
     }
 }

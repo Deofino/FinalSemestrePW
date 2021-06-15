@@ -1,30 +1,46 @@
-input, button{
+input, button, select, option,textarea{
     outline: none;
     border: none;
+    width: 100%;
 	font-family: 'Montserrat', Verdana, Arial, sans-serif;
+}
+*{
+    box-sizing: border-box;
+}
+select{
+    padding-right: 1rem;
 }
 main{
     padding: 2rem 0;
     display: flex;
     width: 100%;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
     background-image: linear-gradient(to right,var(--background_color_dark),var(--black));
 }
-main #div_form > h2{
+#main_insert{
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: row;
+}
+.div_form  h2{
     color: var(--white);
     margin-bottom: .5rem;
     font-size: max(1.8rem, 1.2vw);
 }
-main #div_form{
+.div_form{
     padding: .5rem;
     width: 100%;
-    max-width: 720px;
+    height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-main > #div_form > form{
+ .div_form > form{
     padding: 1rem;
     width: 100%;
     display: flex;
@@ -34,34 +50,61 @@ main > #div_form > form{
     box-shadow: 0 2px 2px var(--background_color);
     background-color: var(--background_color);
 }
-main > #div_form > form > div{
+ .div_form > form > div{
     width: 100%;
     position: relative;
     padding: .5rem;
     display: flex;
     align-items: center;
 }
-main > #div_form > form > div.col{
+ .div_form > form > div.col{
     width: 100%;
     flex-direction: column;
 }
-main > #div_form > form > div.row{
+ .div_form > form > div.row{
     position: relative;
     display: flex;
     width: 100%;
     flex-direction: row;
 }
-#div_form > form > div.col input{
+.div_form > form > div.col input, .div_form > form > div.col select, .div_form > form > div.col textarea {
     width: 100%;
     border-radius: 4px;
+    resize: none;
     box-shadow: 0 1px 4px var(--shadow);
     padding: .5rem;
     font-size: .9rem;
 }
-#div_form > form > div.col label{
+.div_form > form > div.col label{
     width: 100%;
     font-weight: 500;
     margin-bottom: .3rem;
+}
+.div_form > form div .btn{
+    display: flex;
+    box-shadow: 0 1px 4px var(--shadow);
+    flex-direction: row;
+    width: 100%;
+    border-radius: 4px;
+}
+.div_form > form div #colors{
+    flex-shrink: 1;
+    box-shadow: none;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+}
+.div_form > form div button{
+    flex-shrink: 3;
+    margin: 0;
+    transition: .6s ease;
+    opacity: .9;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+    color: white;
+    cursor: pointer;
+    background-image: linear-gradient(to right,var(--accent_color), var(--accent_color_dark)) ;
 }
 .div_message{
     opacity: 0;
@@ -73,7 +116,6 @@ main > #div_form > form > div.row{
     box-shadow: 2px 2px 4px var(--shadow);
     border-radius: 4px;
 }
-
 .div_message > p{
     font-weight: 600;
     font-size: .8rem;
@@ -103,13 +145,13 @@ main > #div_form > form > div.row{
 .div_message.error > p{
     color: var(--error);
 }
-#div_form > form div.col > div.row{
+.div_form > form div.col > div.row{
     position: relative;
 }
-#div_form > form div.row{
+.div_form > form div.row{
     width: 100%;
 }
-#div_form > form div.row #check{
+.div_form > form div.row #check{
     content: '';
     width: 18px;
     position: absolute;
@@ -123,16 +165,16 @@ main > #div_form > form > div.row{
     height: 18px;
     border: 1px solid var(--shadow);
 }
-#div_form > form div.row #check.active{
+.div_form > form div.row #check.active{
     border: 1px solid var(--black);
     background-color: var(--accent_color);
 }
-#div_form > form div.col > div.row label{
+.div_form > form div.col > div.row label{
     order: 2;
     margin-left: 2rem;
     font-size: .9rem;
 }
-#div_form > form > .form-item #button_submit{
+.div_form > form > .form-item #button_submit{
     border-radius: 4px;
     box-shadow: 0 3px 10px var(--accent_color_dark);
     width: 100%;
@@ -148,34 +190,44 @@ main > #div_form > form > div.row{
     cursor: pointer;
     background-image: linear-gradient(to right,var(--accent_color), var(--accent_color_dark)) ;
 }
-#div_form > form > .form-item #button_submit:hover{
+.div_form > form > .form-item #button_submit:hover{
     opacity: 1;
 }
 
 @media screen and (max-width: 600px){
-    main #div_form > h2{
+    #main_insert div{
+        width: 100%;
+
+    }
+    .div_form{
+        width: 100% !important;
+        min-width: auto;
+        margin: 0 auto;
+        max-width: 350px;
+    }
+    .div_form > h2{
         font-size: 1.2rem;
     }
-    #div_form > form > div.col input{
+    .div_form > form > div.col input{
         padding: .3rem;
         font-size: .8rem;
     }
-    #div_form > form > div.col label{
+    .div_form > form > div.col label{
         font-size: .9rem;
         margin-bottom: .3rem;
     }
-    #div_form > form > div.row label{
+    .div_form > form > div.row label{
         order: 2;
         margin-left: 1rem;
         font-size: .7rem;
     }
 
-    main > #div_form > form{
+    .div_form > form{
         padding: .5rem;
-        min-height: 50vh;
+        min-height: 40vh;
     }
 
-    #div_form > form > .form-item #button_submit{
+    .div_form > form > .form-item #button_submit{
         width: 100%;
         max-width: 100%;
         position: relative;
@@ -183,13 +235,45 @@ main > #div_form > form > div.row{
         font-size: .9rem;
     }
 
-    #div_form > form > div.row #check{
+    .div_form > form > div.row #check{
         width: 16px;
         height: 16px;
     }
-    #div_form > form div.col > div.row label{
+    .div_form > form div.col > div.row label{
         order: 2;
         margin-left: 1.5rem;
         font-size: .7rem !important;
     }
+}
+.form-item .btn input[type='radio']{
+    width: 1rem !important;
+    flex-shrink: 1;
+    margin-right: 10px;
+    box-shadow: none !important;
+}
+.nshadow{
+    box-shadow: none !important;
+}
+.shadow{
+    box-shadow: 0 1px 4px var(--shadow);
+}
+.al-center{
+    align-items: baseline;
+    /* background-color: red; */
+}
+.fd-col{
+    flex-direction: column;
+    align-items: center;
+    min-height: 90vh;
+    justify-content: space-around !important;
+    display: flex;
+}
+.fd-row{
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+    display: flex;
+}
+section{
+    width: 100%;
 }
