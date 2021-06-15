@@ -1,5 +1,5 @@
-'use strict';
 //Checkbox
+const MAIN_URL=document.querySelector('img').src.split('img/')[0];
 const checkbox = document.querySelector('.row #check');
 checkbox.addEventListener('click',(evt)=>{
     evt.target.classList.toggle('active');
@@ -67,7 +67,7 @@ form.addEventListener('submit',async(evt)=>{
         password: inputs[2].value,
         terms: inputs[3],
     })){
-       let request = await fetch('./admin/login',
+       let request = await fetch(MAIN_URL+'admin/login',
        {
             cache: 'default',
             headers: {"Content-Type":'application/json'},

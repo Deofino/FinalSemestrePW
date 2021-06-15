@@ -8,7 +8,8 @@ class AdminController extends Twig
 {
     public function index()
     {
-        $this->render();
+        $this->ward();
+        header("Location: ".URL_MAIN."public/admin/dashboard");
     }
     public function login()
     {
@@ -18,60 +19,45 @@ class AdminController extends Twig
             if(trim($data->email) === trim('admin@admin.com')
             && password_verify($data->password,password_hash('12345678', PASSWORD_DEFAULT)) == 1)
             {
-            $_SESSION['user'] = password_hash($data->email,PASSWORD_DEFAULT);
-            $_SESSION['data'] = $data;
-            return json_encode([
-                "status"=>'ok',
-                "status_code"=>'200',
-                "message"=>'user session created',
-            ]);  
+                $name = explode(' ', $data->name);
+                $_SESSION['user'] = password_hash($data->email,PASSWORD_DEFAULT);
+                $_SESSION['data'] = $name[0];
+                return Twig::loadJson('ok',200,"User session created.");
             }else
             {
-                return json_encode([
-                    "status"=>'bad',
-                    "status_code"=>404,
-                    "message"=>"User not found."
-                ]);
+                return Twig::loadJson('bad',404,"User not found.");
             }
         }
         else
         {
-            return json_encode([
-                "status"=>'bad',
-                "status_code"=>400,
-                "message"=>"Get function in 'admin/login' not found."
-            ]);
+            if(isset($_SESSION['user']) || isset($_SESSION['data'])){
+                header("Location: ".URL_MAIN."public/admin/dashboard");
+            }else{
+                echo $this->twig->render('./login.twig',['file'=>URL_MAIN.'public/']);
+            }
         }
         // 
     }
     public function dashboard()
     {
-        $this->render();
+        $this->ward();
+        echo $this->twig->render('./private/dashboard.twig',['file'=>URL_MAIN.'public/']);
     }
 
     public function insert()
     {
-        if(isset($_SESSION['user']) && isset($_SESSION['data'])){
-            echo $this->twig->render('./private/insert.twig',['file'=>URL_MAIN.'public/']);
-        }else{
-            echo $this->twig->render('login.twig',['file'=>URL_MAIN.'public/']);
-        }
+        $this->ward();
+        echo $this->twig->render('./private/insert.twig',['file'=>URL_MAIN.'public/']);
     }
     public function delete()
     {
-        if(isset($_SESSION['user']) && isset($_SESSION['data'])){
-            echo $this->twig->render('./private/delete.twig',['file'=>URL_MAIN.'public/']);
-        }else{
-            echo $this->twig->render('login.twig',['file'=>URL_MAIN.'public/']);
-        }
+        $this->ward();
+        echo $this->twig->render('./private/delete.twig',['file'=>URL_MAIN.'public/']);
     }
     public function update()
     {
-        if(isset($_SESSION['user']) && isset($_SESSION['data'])){
-            echo $this->twig->render('./private/update.twig',['file'=>URL_MAIN.'public/']);
-        }else{
-            echo $this->twig->render('login.twig',['file'=>URL_MAIN.'public/']);
-        }
+        $this->ward();
+        echo $this->twig->render('./private/update.twig',['file'=>URL_MAIN.'public/']);
     }
 
     public function logout(){
@@ -80,19 +66,14 @@ class AdminController extends Twig
             unset($_SESSION['data']);
             session_destroy();
         }
-        echo("
-            <script>
-                window.location.href = '".URL_MAIN."public/admin';
-            </script>
-        ");
+        $this->ward();
     }
 
-    private function render()
+    private function ward()
     {
-        if(isset($_SESSION['user']) && isset($_SESSION['data'])){
-            echo $this->twig->render('./private/dashboard.twig',['file'=>URL_MAIN.'public/']);
-        }else{
-            echo $this->twig->render('login.twig',['file'=>URL_MAIN.'public/']);
+        if(!isset($_SESSION['user']) || !isset($_SESSION['data'])){
+            header("Location: ".URL_MAIN."public/admin/login");
         }
-    } 
+    }
+
 }

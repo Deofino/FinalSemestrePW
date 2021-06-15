@@ -1,13 +1,10 @@
 {% extends "./template/html.twig" %}
-
 {% block title %}Shoes | Entrar {% endblock %}
-
 {% block metas_data %}
-
+  <meta name="description" content="Venha e entre como administrador na melhor loja de Tenis, a SHOES">
 {% endblock %}
-
 {% block styles %}
-    <link rel="stylesheet" href="css/form.css">
+    <link rel="stylesheet" href="{{file}}css/form.css">
 {% endblock %}
 
 {% block body %}
@@ -17,21 +14,21 @@
             <form action="/admin/login" method="post" class="form">
                 <div class="form-item col">
                     <label for="name" class="item-label">Nome:</label>
-                    <input type="text" class="item-input" name="name" id="name" maxlength="100">
+                    <input type="text" class="item-input" name="name" id="name" maxlength="100" required>
                     <div class="div_message">
                         <p class="message"></p>
                     </div>
                 </div>
                 <div class="form-item col">
                     <label for="email" class="item-label">E-mail:</label>
-                    <input type="email" class="item-input" name="email" id="email" maxlength="100">
+                    <input type="email" class="item-input" name="email" id="email"  maxlength="100" required>
                     <div class="div_message" >
                         <p class="message"></p>
                     </div>
                 </div>
                 <div class="form-item col">
                     <label for="password" class="item-label">Senha:</label>
-                    <input type="password" class="item-input" name="password" id="password" maxlength="50">
+                    <input type="password" class="item-input" name="password" id="password" minlength="8" maxlength="50"  required>
                     <div class="div_message">
                         <p class="message"></p>
                     </div>
@@ -58,5 +55,5 @@
 {% endblock %}
 
 {% block scripts %}
-    <script src="js/login.js"></script>
+    <script src="{{file}}js/login.js"></script>
 {% endblock %}

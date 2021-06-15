@@ -2,10 +2,10 @@
 
 {% block title %}Shoes | Inicio {% endblock %}
 {% block metas_data %}
-
+  <meta name="description" content="A melhor loja de todas para se encontrar tenis e sapatos lindissimos para programadores ainda mais lindissimos, com muito orgulho apresento a vocês... SHOES!">
 {% endblock %}
 {% block styles %}
-    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="{{file}}css/index.css">
 {% endblock %}
 {% block body %}
 
@@ -21,7 +21,7 @@
     <div class="grid">
         <div class="grid-item">
           <div class="card">
-            <img class="card-img" src="img/c.jpg" alt="Rome" />
+            <img class="card-img" src="{{file}}img/c.jpg" alt="Rome" />
             <div class="card-content">
               <h1 class="card-header">Adidas seilaoque</h1>
             
@@ -38,7 +38,7 @@
           <div class="card">
             <img
               class="card-img"
-              src="img/c.jpg"
+              src="{{file}}img/c.jpg"
               alt="Grand Canyon"
             />
             <div class="card-content">
@@ -54,7 +54,7 @@
         </div>
         <div class="grid-item">
           <div class="card">
-            <img class="card-img" src="img/c.jpg" alt="Maldives" />
+            <img class="card-img" src="{{file}}img/c.jpg" alt="Maldives" />
             <div class="card-content">
               <h1 class="card-header">Maldives</h1>
               <p class="card-text">
