@@ -107,7 +107,10 @@ class __TwigTemplate_310584fc6c46a012b562dbd18c0d163a7678358cdee1d70cefa6bcda9bf
       <section id=\"category\">
         <div class=\"div_form\">
           <h2>Categoria</h2>
-          <form action=\"\" method=\"POST\" class=\"form\">
+          <form action=\"";
+        // line 34
+        echo twig_escape_filter($this->env, ($context["file"] ?? null), "html", null, true);
+        echo "category/create\" method=\"POST\" class=\"form\">
             <div class=\"form-item col\">
               <label for=\"categoryName\" class=\"item-label\">Categoria: </label>
               <input type=\"text\" id=\"categoryName\" name=\"categoryName\" required maxlength=\"50\" min=\"3\"/>
@@ -116,7 +119,7 @@ class __TwigTemplate_310584fc6c46a012b562dbd18c0d163a7678358cdee1d70cefa6bcda9bf
               </div>
             </div>
             <div class=\"form-item\">
-              <button type=\"button\" id=\"button_submit\">Inserir</button>
+              <button type=\"submit\" id=\"button_submit\">Inserir</button>
             </div>
           </form>
         </div>
@@ -291,7 +294,7 @@ class __TwigTemplate_310584fc6c46a012b562dbd18c0d163a7678358cdee1d70cefa6bcda9bf
 
     public function getDebugInfo()
     {
-        return array (  276 => 186,  272 => 185,  253 => 170,  243 => 162,  236 => 156,  219 => 140,  208 => 130,  198 => 121,  91 => 16,  83 => 10,  79 => 9,  72 => 8,  68 => 7,  60 => 3,  56 => 2,  39 => 1,);
+        return array (  279 => 186,  275 => 185,  256 => 170,  246 => 162,  239 => 156,  222 => 140,  211 => 130,  201 => 121,  112 => 34,  91 => 16,  83 => 10,  79 => 9,  72 => 8,  68 => 7,  60 => 3,  56 => 2,  39 => 1,);
     }
 
     public function getSourceContext()

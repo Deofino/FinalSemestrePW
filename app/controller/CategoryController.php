@@ -3,10 +3,10 @@
 namespace App\Controller;
 
 use App\Controller\Twig;
-use App\Model\Brand;
+use App\Model\Category;
 use App\Controller\AdminController;
 
-class BrandController
+class CategoryController
 {
     private $admin;
     public function __construct()
@@ -20,8 +20,8 @@ class BrandController
         if ($_SERVER['REQUEST_METHOD'] === "POST") {
             try {
                 $data = json_decode(file_get_contents('php://input'));
-                $brand = new Brand($data->brandName);
-                return $brand->create();
+                $category = new Category($data->categoryName);
+                return $category->create();
             } catch (\Throwable $th) {
                 return Twig::loadJson('bad', 404, $th);
             }

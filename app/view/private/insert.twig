@@ -31,7 +31,7 @@ endblock %} {% block metas_data %}
       <section id="category">
         <div class="div_form">
           <h2>Categoria</h2>
-          <form action="" method="POST" class="form">
+          <form action="{{file}}category/create" method="POST" class="form">
             <div class="form-item col">
               <label for="categoryName" class="item-label">Categoria: </label>
               <input type="text" id="categoryName" name="categoryName" required maxlength="50" min="3"/>
@@ -40,7 +40,7 @@ endblock %} {% block metas_data %}
               </div>
             </div>
             <div class="form-item">
-              <button type="button" id="button_submit">Inserir</button>
+              <button type="submit" id="button_submit">Inserir</button>
             </div>
           </form>
         </div>
