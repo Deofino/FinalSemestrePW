@@ -5,7 +5,7 @@
     // define("URL_MAIN", 'url main remote');
     
     // Nome do banco de dados
-    define("DB_NAME", 'name');
+    define("DB_NAME", 'shoes');
     // define("DB_NAME", 'remote name');
     
     // Usuario no Mysql

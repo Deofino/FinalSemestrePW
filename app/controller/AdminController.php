@@ -69,7 +69,7 @@ class AdminController extends Twig
         $this->ward();
     }
 
-    private function ward()
+    public function ward()
     {
         if(!isset($_SESSION['user']) || !isset($_SESSION['data'])){
             header("Location: ".URL_MAIN."public/admin/login");

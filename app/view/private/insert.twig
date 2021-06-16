@@ -10,13 +10,16 @@ endblock %} {% block metas_data %}
 <main>
   <div id="main_insert">
     <div class="fd-col">
-      <section id="branch">
+      <section id="brand">
         <div class="div_form">
           <h2>Marca</h2>
-          <form action="" method="POST" class="form">
+          <form action="{{file}}brand/create" method="POST" class="form">
             <div class="form-item col">
-              <label for="branch" class="lb">Marca: </label>
-              <input type="text" id="branch" name="branch" />
+              <label for="brandName" class="lb">Marca: </label>
+              <input type="text" id="brandName" name="brandName" required maxlength="50" min="3" />
+              <div class="div_message">
+                <p class="message"></p>
+              </div>
             </div>
             <div class="form-item">
               <button type="submit" id="button_submit">Inserir</button>
@@ -30,11 +33,14 @@ endblock %} {% block metas_data %}
           <h2>Categoria</h2>
           <form action="" method="POST" class="form">
             <div class="form-item col">
-              <label for="category" class="item-label">Categoria: </label>
-              <input type="text" id="category" name="category" />
+              <label for="categoryName" class="item-label">Categoria: </label>
+              <input type="text" id="categoryName" name="categoryName" required maxlength="50" min="3"/>
+              <div class="div_message">
+                <p class="message"></p>
+              </div>
             </div>
             <div class="form-item">
-              <button type="submit" id="button_submit">Inserir</button>
+              <button type="button" id="button_submit">Inserir</button>
             </div>
           </form>
         </div>
@@ -61,7 +67,11 @@ endblock %} {% block metas_data %}
                 minlength="10"
                 required
               />
+              <div class="div_message">
+                <p class="message"></p>
+              </div>
             </div>
+
             <div class="form-item col">
               <label for="description" class="item-label">Descricao: </label>
               <textarea
@@ -73,6 +83,9 @@ endblock %} {% block metas_data %}
                 minlength="10"
                 required
               ></textarea>
+              <div class="div_message">
+                <p class="message"></p>
+              </div>
             </div>
             <div class="form-item col">
               <label for="product" class="item-label">Genero: </label>
@@ -88,6 +101,9 @@ endblock %} {% block metas_data %}
                 <input type="radio" value="female" id="radio" name="radio" />
                 <label for="radioU">Unisex</label>
               </div>
+              <div class="div_message">
+                <p class="message"></p>
+              </div>
             </div>
             <div class="form-item col">
               <label for="price" class="item-label">Valor: </label>
@@ -102,6 +118,9 @@ endblock %} {% block metas_data %}
                 required
               />
               {# Botar so pra digita numero e mascara #}
+              <div class="div_message">
+                <p class="message"></p>
+              </div>
             </div>
             <div class="form-item col">
               <label for="selectCategory" class="item-label">Categoria: </label>
@@ -109,13 +128,19 @@ endblock %} {% block metas_data %}
                 <option value="0">Selecione</option>
                 {# foreach categorias #}
               </select>
+              <div class="div_message">
+                <p class="message"></p>
+              </div>
             </div>
             <div class="form-item col">
-              <label for="selectBranch" class="item-label">Marca: </label>
-              <select name="selectBranch" id="selectBranch">
+              <label for="selectBrand" class="item-label">Marca: </label>
+              <select name="selectBrand" id="selectBrand">
                 <option value="0">Selecione</option>
-                {# foreach branches #}
+                {# foreach brandes #}
               </select>
+              <div class="div_message">
+                <p class="message"></p>
+              </div>
             </div>
             <div class="form-item col">
               <label for="colors" class="item-label">Cores: </label>
@@ -135,14 +160,20 @@ endblock %} {% block metas_data %}
               <div class="form-item row" id="tags">
                 {# Mostrar as cores como TAGS AJAX #}
               </div>
+              <div class="div_message">
+                <p class="message"></p>
+              </div>
             </div>
             <div class="form-item col">
               <label for="image" class="item-label">Imagem: </label>
               <input type="file" id="image" class="nshadow" name="image" />
               <div class="imagem">{# Preview Imagem #}</div>
+              <div class="div_message">
+                <p class="message"></p>
+              </div>
             </div>
             <div class="form-item">
-              <button type="submit" id="button_submit">Inserir</button>
+              <button type="button" id="button_submit">Inserir</button>
             </div>
           </form>
         </div>
@@ -152,6 +183,5 @@ endblock %} {% block metas_data %}
 </main>
 
 {% endblock %} {% block scripts %}
-<script src="{{ file }}js/modules.js" type="module"></script>
 <script type="module" src="{{ file }}js/insert.js"></script>
 {% endblock %}

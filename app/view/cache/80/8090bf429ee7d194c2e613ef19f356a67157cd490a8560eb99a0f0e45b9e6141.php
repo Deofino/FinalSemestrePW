@@ -83,13 +83,19 @@ class __TwigTemplate_310584fc6c46a012b562dbd18c0d163a7678358cdee1d70cefa6bcda9bf
         echo "<main>
   <div id=\"main_insert\">
     <div class=\"fd-col\">
-      <section id=\"branch\">
+      <section id=\"brand\">
         <div class=\"div_form\">
           <h2>Marca</h2>
-          <form action=\"\" method=\"POST\" class=\"form\">
+          <form action=\"";
+        // line 16
+        echo twig_escape_filter($this->env, ($context["file"] ?? null), "html", null, true);
+        echo "brand/create\" method=\"POST\" class=\"form\">
             <div class=\"form-item col\">
-              <label for=\"branch\" class=\"lb\">Marca: </label>
-              <input type=\"text\" id=\"branch\" name=\"branch\" />
+              <label for=\"brandName\" class=\"lb\">Marca: </label>
+              <input type=\"text\" id=\"brandName\" name=\"brandName\" required maxlength=\"50\" min=\"3\" />
+              <div class=\"div_message\">
+                <p class=\"message\"></p>
+              </div>
             </div>
             <div class=\"form-item\">
               <button type=\"submit\" id=\"button_submit\">Inserir</button>
@@ -103,11 +109,14 @@ class __TwigTemplate_310584fc6c46a012b562dbd18c0d163a7678358cdee1d70cefa6bcda9bf
           <h2>Categoria</h2>
           <form action=\"\" method=\"POST\" class=\"form\">
             <div class=\"form-item col\">
-              <label for=\"category\" class=\"item-label\">Categoria: </label>
-              <input type=\"text\" id=\"category\" name=\"category\" />
+              <label for=\"categoryName\" class=\"item-label\">Categoria: </label>
+              <input type=\"text\" id=\"categoryName\" name=\"categoryName\" required maxlength=\"50\" min=\"3\"/>
+              <div class=\"div_message\">
+                <p class=\"message\"></p>
+              </div>
             </div>
             <div class=\"form-item\">
-              <button type=\"submit\" id=\"button_submit\">Inserir</button>
+              <button type=\"button\" id=\"button_submit\">Inserir</button>
             </div>
           </form>
         </div>
@@ -134,7 +143,11 @@ class __TwigTemplate_310584fc6c46a012b562dbd18c0d163a7678358cdee1d70cefa6bcda9bf
                 minlength=\"10\"
                 required
               />
+              <div class=\"div_message\">
+                <p class=\"message\"></p>
+              </div>
             </div>
+
             <div class=\"form-item col\">
               <label for=\"description\" class=\"item-label\">Descricao: </label>
               <textarea
@@ -146,6 +159,9 @@ class __TwigTemplate_310584fc6c46a012b562dbd18c0d163a7678358cdee1d70cefa6bcda9bf
                 minlength=\"10\"
                 required
               ></textarea>
+              <div class=\"div_message\">
+                <p class=\"message\"></p>
+              </div>
             </div>
             <div class=\"form-item col\">
               <label for=\"product\" class=\"item-label\">Genero: </label>
@@ -161,6 +177,9 @@ class __TwigTemplate_310584fc6c46a012b562dbd18c0d163a7678358cdee1d70cefa6bcda9bf
                 <input type=\"radio\" value=\"female\" id=\"radio\" name=\"radio\" />
                 <label for=\"radioU\">Unisex</label>
               </div>
+              <div class=\"div_message\">
+                <p class=\"message\"></p>
+              </div>
             </div>
             <div class=\"form-item col\">
               <label for=\"price\" class=\"item-label\">Valor: </label>
@@ -175,23 +194,32 @@ class __TwigTemplate_310584fc6c46a012b562dbd18c0d163a7678358cdee1d70cefa6bcda9bf
                 required
               />
               ";
-        // line 105
-        echo "            </div>
+        // line 121
+        echo "              <div class=\"div_message\">
+                <p class=\"message\"></p>
+              </div>
+            </div>
             <div class=\"form-item col\">
               <label for=\"selectCategory\" class=\"item-label\">Categoria: </label>
               <select name=\"selectCategory\" required id=\"selectCategory\">
                 <option value=\"0\">Selecione</option>
                 ";
-        // line 111
+        // line 130
         echo "              </select>
+              <div class=\"div_message\">
+                <p class=\"message\"></p>
+              </div>
             </div>
             <div class=\"form-item col\">
-              <label for=\"selectBranch\" class=\"item-label\">Marca: </label>
-              <select name=\"selectBranch\" id=\"selectBranch\">
+              <label for=\"selectBrand\" class=\"item-label\">Marca: </label>
+              <select name=\"selectBrand\" id=\"selectBrand\">
                 <option value=\"0\">Selecione</option>
                 ";
-        // line 118
+        // line 140
         echo "              </select>
+              <div class=\"div_message\">
+                <p class=\"message\"></p>
+              </div>
             </div>
             <div class=\"form-item col\">
               <label for=\"colors\" class=\"item-label\">Cores: </label>
@@ -204,25 +232,31 @@ class __TwigTemplate_310584fc6c46a012b562dbd18c0d163a7678358cdee1d70cefa6bcda9bf
                   min=\"3\"
                 />
                 ";
-        // line 131
+        // line 156
         echo "                <button type=\"button\" class=\"button\" id=\"add_color\">
                   <i class=\"fas fa-plus\"></i>
                 </button>
               </div>
               <div class=\"form-item row\" id=\"tags\">
                 ";
-        // line 137
+        // line 162
         echo "              </div>
+              <div class=\"div_message\">
+                <p class=\"message\"></p>
+              </div>
             </div>
             <div class=\"form-item col\">
               <label for=\"image\" class=\"item-label\">Imagem: </label>
               <input type=\"file\" id=\"image\" class=\"nshadow\" name=\"image\" />
               <div class=\"imagem\">";
-        // line 142
+        // line 170
         echo "</div>
+              <div class=\"div_message\">
+                <p class=\"message\"></p>
+              </div>
             </div>
             <div class=\"form-item\">
-              <button type=\"submit\" id=\"button_submit\">Inserir</button>
+              <button type=\"button\" id=\"button_submit\">Inserir</button>
             </div>
           </form>
         </div>
@@ -234,16 +268,12 @@ class __TwigTemplate_310584fc6c46a012b562dbd18c0d163a7678358cdee1d70cefa6bcda9bf
 ";
     }
 
-    // line 154
+    // line 185
     public function block_scripts($context, array $blocks = [])
     {
         $macros = $this->macros;
-        // line 155
-        echo "<script src=\"";
-        echo twig_escape_filter($this->env, ($context["file"] ?? null), "html", null, true);
-        echo "js/modules.js\" type=\"module\"></script>
-<script type=\"module\" src=\"";
-        // line 156
+        // line 186
+        echo "<script type=\"module\" src=\"";
         echo twig_escape_filter($this->env, ($context["file"] ?? null), "html", null, true);
         echo "js/insert.js\"></script>
 ";
@@ -261,7 +291,7 @@ class __TwigTemplate_310584fc6c46a012b562dbd18c0d163a7678358cdee1d70cefa6bcda9bf
 
     public function getDebugInfo()
     {
-        return array (  247 => 156,  242 => 155,  238 => 154,  222 => 142,  215 => 137,  208 => 131,  194 => 118,  186 => 111,  179 => 105,  83 => 10,  79 => 9,  72 => 8,  68 => 7,  60 => 3,  56 => 2,  39 => 1,);
+        return array (  276 => 186,  272 => 185,  253 => 170,  243 => 162,  236 => 156,  219 => 140,  208 => 130,  198 => 121,  91 => 16,  83 => 10,  79 => 9,  72 => 8,  68 => 7,  60 => 3,  56 => 2,  39 => 1,);
     }
 
     public function getSourceContext()
