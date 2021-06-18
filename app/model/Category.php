@@ -25,4 +25,16 @@ class Category
             return Twig::loadJson("bad", 400, "Category error to insert: $th");
         }
     }
+    public function read()
+    {
+        try {
+            $stmt = Connection::getConnection()->prepare('SELECT * FROM tbcategory');
+            if($stmt->execute()){
+                return $stmt->fetchAll();
+            }
+            return Twig::loadJson("bad", 400, "Category error to read");
+        } catch (\Throwable $th) {
+            return Twig::loadJson("bad", 400, "Category error to read: $th");
+        }
+    }
 }

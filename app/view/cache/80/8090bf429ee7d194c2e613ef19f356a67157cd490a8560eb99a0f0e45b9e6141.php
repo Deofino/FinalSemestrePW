@@ -204,8 +204,23 @@ class __TwigTemplate_310584fc6c46a012b562dbd18c0d163a7678358cdee1d70cefa6bcda9bf
               <label for=\"selectCategory\" class=\"item-label\">Categoria: </label>
               <select name=\"selectCategory\" required id=\"selectCategory\">
                 <option value=\"0\">Selecione</option>
+                 ";
+        // line 128
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable(($context["categories"] ?? null));
+        foreach ($context['_seq'] as $context["_key"] => $context["category"]) {
+            // line 129
+            echo "                  <option value=\"";
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["category"], "_id", [], "any", false, false, false, 129), "html", null, true);
+            echo "\">";
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["category"], "nameCategory", [], "any", false, false, false, 129), "html", null, true);
+            echo "</option>
                 ";
-        // line 129
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['category'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 131
         echo "              </select>
               <div class=\"div_message\">
                 <p class=\"message\"></p>
@@ -216,7 +231,22 @@ class __TwigTemplate_310584fc6c46a012b562dbd18c0d163a7678358cdee1d70cefa6bcda9bf
               <select name=\"selectBrand\" id=\"selectBrand\">
                 <option value=\"0\">Selecione</option>
                 ";
-        // line 139
+        // line 140
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable(($context["brands"] ?? null));
+        foreach ($context['_seq'] as $context["_key"] => $context["brand"]) {
+            // line 141
+            echo "                  <option value=\"";
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["brand"], "_id", [], "any", false, false, false, 141), "html", null, true);
+            echo "\">";
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["brand"], "nameBrand", [], "any", false, false, false, 141), "html", null, true);
+            echo "</option>
+                ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['brand'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 143
         echo "              </select>
               <div class=\"div_message\">
                 <p class=\"message\"></p>
@@ -251,7 +281,7 @@ class __TwigTemplate_310584fc6c46a012b562dbd18c0d163a7678358cdee1d70cefa6bcda9bf
               </div>
               <div class=\"form-item row\" id=\"tags\">
                 ";
-        // line 173
+        // line 177
         echo "               <div id=\"chips\">
                  
                </div>
@@ -268,7 +298,7 @@ class __TwigTemplate_310584fc6c46a012b562dbd18c0d163a7678358cdee1d70cefa6bcda9bf
               </label>
               <input type=\"file\" id=\"image\" hidden class=\"nshadow\" name=\"image\" />
               <div class=\"imagem\">";
-        // line 188
+        // line 192
         echo "</div>
               <div class=\"div_message\">
                 <p class=\"message\"></p>
@@ -287,14 +317,14 @@ class __TwigTemplate_310584fc6c46a012b562dbd18c0d163a7678358cdee1d70cefa6bcda9bf
 ";
     }
 
-    // line 204
+    // line 208
     public function block_scripts($context, array $blocks = [])
     {
         $macros = $this->macros;
-        // line 205
+        // line 209
         echo "<script src=\"https://unpkg.com/imask\"></script>
 <script type=\"module\" src=\"";
-        // line 206
+        // line 210
         echo twig_escape_filter($this->env, ($context["file"] ?? null), "html", null, true);
         echo "js/insert.js\"></script>
 ";
@@ -312,7 +342,7 @@ class __TwigTemplate_310584fc6c46a012b562dbd18c0d163a7678358cdee1d70cefa6bcda9bf
 
     public function getDebugInfo()
     {
-        return array (  298 => 206,  295 => 205,  291 => 204,  272 => 188,  255 => 173,  220 => 139,  209 => 129,  112 => 34,  91 => 16,  83 => 10,  79 => 9,  72 => 8,  68 => 7,  60 => 3,  56 => 2,  39 => 1,);
+        return array (  328 => 210,  325 => 209,  321 => 208,  302 => 192,  285 => 177,  250 => 143,  239 => 141,  235 => 140,  224 => 131,  213 => 129,  209 => 128,  112 => 34,  91 => 16,  83 => 10,  79 => 9,  72 => 8,  68 => 7,  60 => 3,  56 => 2,  39 => 1,);
     }
 
     public function getSourceContext()

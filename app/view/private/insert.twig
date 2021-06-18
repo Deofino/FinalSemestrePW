@@ -125,7 +125,9 @@ endblock %} {% block metas_data %}
               <label for="selectCategory" class="item-label">Categoria: </label>
               <select name="selectCategory" required id="selectCategory">
                 <option value="0">Selecione</option>
-                {# foreach categorias #}
+                 {% for category in categories %}
+                  <option value="{{category._id}}">{{category.nameCategory}}</option>
+                {% endfor %}
               </select>
               <div class="div_message">
                 <p class="message"></p>
@@ -135,7 +137,9 @@ endblock %} {% block metas_data %}
               <label for="selectBrand" class="item-label">Marca: </label>
               <select name="selectBrand" id="selectBrand">
                 <option value="0">Selecione</option>
-                {# foreach brandes #}
+                {% for brand in brands %}
+                  <option value="{{brand._id}}">{{brand.nameBrand}}</option>
+                {% endfor %}
               </select>
               <div class="div_message">
                 <p class="message"></p>

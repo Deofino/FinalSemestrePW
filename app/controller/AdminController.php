@@ -1,7 +1,8 @@
 <?php
 
 namespace App\Controller;
-
+use App\Controller\BrandController;
+use App\Controller\CategoryController;
 use App\Controller\Twig;
 
 class AdminController extends Twig
@@ -47,7 +48,9 @@ class AdminController extends Twig
     public function insert()
     {
         $this->ward();
-        echo $this->twig->render('./private/insert.twig',['file'=>URL_MAIN.'public/']);
+        $brand = new BrandController;
+        $category = new CategoryController;
+        echo $this->twig->render('./private/insert.twig',['file'=>URL_MAIN.'public/','brands'=>$brand->read(), 'categories'=>$category->read()]);
     }
     public function delete()
     {
