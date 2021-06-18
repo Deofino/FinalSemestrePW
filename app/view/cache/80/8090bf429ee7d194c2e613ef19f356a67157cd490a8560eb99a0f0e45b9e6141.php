@@ -265,6 +265,7 @@ class __TwigTemplate_310584fc6c46a012b562dbd18c0d163a7678358cdee1d70cefa6bcda9bf
                 />
                 <datalist id=\"colorsList\">
                   <option value=\"Vermelho\">
+                  <option value=\"Roxo\">
                   <option value=\"Rosa\">
                   <option value=\"Azul\">
                   <option value=\"Verde\">
@@ -280,14 +281,8 @@ class __TwigTemplate_310584fc6c46a012b562dbd18c0d163a7678358cdee1d70cefa6bcda9bf
                 </button>
               </div>
               <div class=\"form-item row\" id=\"tags\">
-                ";
-        // line 177
-        echo "               <div id=\"chips\">
-                 
+               <div id=\"chips\">
                </div>
-              </div>
-              <div class=\"div_message\">
-                <p class=\"message\"></p>
               </div>
             </div>
             <div class=\"form-item col\">
@@ -296,10 +291,8 @@ class __TwigTemplate_310584fc6c46a012b562dbd18c0d163a7678358cdee1d70cefa6bcda9bf
                 <i class=\"fas fa-upload\"></i>
                 Nenhum arquivo selecionado 
               </label>
-              <input type=\"file\" id=\"image\" hidden class=\"nshadow\" name=\"image\" />
-              <div class=\"imagem\">";
-        // line 192
-        echo "</div>
+              <input type=\"file\" id=\"image\" accept=\"image/*\" hidden class=\"nshadow\" name=\"image\" />
+              <div class=\"imagePreview d-none shadow\"></div>
               <div class=\"div_message\">
                 <p class=\"message\"></p>
               </div>
@@ -317,14 +310,14 @@ class __TwigTemplate_310584fc6c46a012b562dbd18c0d163a7678358cdee1d70cefa6bcda9bf
 ";
     }
 
-    // line 208
+    // line 204
     public function block_scripts($context, array $blocks = [])
     {
         $macros = $this->macros;
-        // line 209
+        // line 205
         echo "<script src=\"https://unpkg.com/imask\"></script>
 <script type=\"module\" src=\"";
-        // line 210
+        // line 206
         echo twig_escape_filter($this->env, ($context["file"] ?? null), "html", null, true);
         echo "js/insert.js\"></script>
 ";
@@ -342,7 +335,7 @@ class __TwigTemplate_310584fc6c46a012b562dbd18c0d163a7678358cdee1d70cefa6bcda9bf
 
     public function getDebugInfo()
     {
-        return array (  328 => 210,  325 => 209,  321 => 208,  302 => 192,  285 => 177,  250 => 143,  239 => 141,  235 => 140,  224 => 131,  213 => 129,  209 => 128,  112 => 34,  91 => 16,  83 => 10,  79 => 9,  72 => 8,  68 => 7,  60 => 3,  56 => 2,  39 => 1,);
+        return array (  321 => 206,  318 => 205,  314 => 204,  250 => 143,  239 => 141,  235 => 140,  224 => 131,  213 => 129,  209 => 128,  112 => 34,  91 => 16,  83 => 10,  79 => 9,  72 => 8,  68 => 7,  60 => 3,  56 => 2,  39 => 1,);
     }
 
     public function getSourceContext()

@@ -91,10 +91,42 @@ document.querySelector('#category form')
     });
 
 // End Category
+// Mask
 let price = document.querySelector('#price'); 
-var mask = IMask(price,
-    {
-        mask:  'R$ 0000[0]',
+let mask = IMask(price,{mask:  'R$ 0000[0]'});
+
+// Colors
+let btn_add_color = document.querySelector('#add_color');
+let color = document.querySelector('#colors');
+let colors = [];
+btn_add_color.addEventListener('click', e=>{
+    e.preventDefault();
+    if(verifyData(color.value)){
+        if(!colors.includes(color.value)){
+            colors.push(color.value);
+            let chips = document.querySelector('#chips');
+            chips.innerHTML += `<div class='chip'><span>${color.value}</span><button type='button'><i class='fas fa-times btn_delete_color'></i></button></div>`;
+        }
     }
-);
-    // Product
+})
+
+//Image Preview
+const preview = document.querySelector('#product .imagePreview');
+const labelImg = document.querySelector('#product .file_image');
+preview.classList.add('d-none')
+const imgInput = document.querySelector('#image');
+imgInput.addEventListener('change', e=>{
+    e.preventDefault();
+    if(e.target.files[0]){
+        labelImg.innerHTML = '<i class="fas fa-upload"></i> Arquivo selecionado'
+        let img = window.URL.createObjectURL(e.target.files[0]);
+        preview.classList.remove('d-none');
+        preview.innerHTML = `<img src='${img}'>`;
+    }else{
+        labelImg.innerHTML = '<i class="fas fa-upload"></i> Nenhum arquivo selecionado'
+        preview.classList.add('d-none')
+        preview.removeChild();
+    }
+})
+
+// Product

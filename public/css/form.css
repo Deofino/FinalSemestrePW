@@ -251,6 +251,16 @@ main{
         margin-left: 1.5rem;
         font-size: .7rem !important;
     }
+    #chips{
+        display: flex;
+        max-width: 100% !important;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    .chip{
+        flex-grow: 0;
+        flex-basis: 100px;
+    }
 }
 .form-item .btn input[type='radio']{
     width: 1rem !important;
@@ -297,11 +307,15 @@ section{
     resize: none;
     box-shadow: 0 1px 4px var(--shadow);
     padding: .7rem;
+    max-width: 250px;
+    flex-wrap: nowrap;
     font-size: .7rem;
+    overflow: hidden;
 }
 #chips{
     display: flex;
-    justify-content: space-evenly;
+    max-width: 200px;
+    justify-content: center;
     flex-wrap: wrap;
 }
 .chip{
@@ -318,4 +332,20 @@ section{
     font-size: .7rem;
     font-weight: 300;
     color: var(--white);
+}
+.chip button{
+    box-shadow: none !important;
+    background: none !important;
+}
+.imagePreview{
+    width: 200px;
+    height: 150px;
+}
+.imagePreview img{
+    width: 100%;
+    image-rendering: auto;
+    height: 100%;
+}
+.d-none{
+    display: none;
 }
