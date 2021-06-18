@@ -91,3 +91,10 @@ document.querySelector('#category form')
     });
 
 // End Category
+let price = document.querySelector('#price'); 
+var mask = IMask(price,
+    {
+        mask:  'R$ 0000[0]',
+    }
+);
+    // Product

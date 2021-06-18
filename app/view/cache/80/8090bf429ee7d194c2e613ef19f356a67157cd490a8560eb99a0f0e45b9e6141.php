@@ -187,18 +187,16 @@ class __TwigTemplate_310584fc6c46a012b562dbd18c0d163a7678358cdee1d70cefa6bcda9bf
             <div class=\"form-item col\">
               <label for=\"price\" class=\"item-label\">Valor: </label>
               <input
-                type=\"text\"
                 id=\"price\"
+                type=\"text\"
+                inputmode=\"numeric\"
                 name=\"price\"
-                value=\"R\$: 00,00\"
                 class=\"item-input\"
                 minlength=\"3\"
-                max=\"10\"
+                placeholder=\"R\$ 0,00\"
                 required
               />
-              ";
-        // line 121
-        echo "              <div class=\"div_message\">
+              <div class=\"div_message\">
                 <p class=\"message\"></p>
               </div>
             </div>
@@ -207,7 +205,7 @@ class __TwigTemplate_310584fc6c46a012b562dbd18c0d163a7678358cdee1d70cefa6bcda9bf
               <select name=\"selectCategory\" required id=\"selectCategory\">
                 <option value=\"0\">Selecione</option>
                 ";
-        // line 130
+        // line 129
         echo "              </select>
               <div class=\"div_message\">
                 <p class=\"message\"></p>
@@ -218,7 +216,7 @@ class __TwigTemplate_310584fc6c46a012b562dbd18c0d163a7678358cdee1d70cefa6bcda9bf
               <select name=\"selectBrand\" id=\"selectBrand\">
                 <option value=\"0\">Selecione</option>
                 ";
-        // line 140
+        // line 139
         echo "              </select>
               <div class=\"div_message\">
                 <p class=\"message\"></p>
@@ -228,31 +226,49 @@ class __TwigTemplate_310584fc6c46a012b562dbd18c0d163a7678358cdee1d70cefa6bcda9bf
               <label for=\"colors\" class=\"item-label\">Cores: </label>
               <div class=\"form-item btn\">
                 <input
+                list=\"colorsList\"
                   type=\"text\"
                   id=\"colors\"
                   name=\"colors\"
-                  maxlength=\"10\"
+                  max=\"10\"
                   min=\"3\"
                 />
-                ";
-        // line 156
-        echo "                <button type=\"button\" class=\"button\" id=\"add_color\">
+                <datalist id=\"colorsList\">
+                  <option value=\"Vermelho\">
+                  <option value=\"Rosa\">
+                  <option value=\"Azul\">
+                  <option value=\"Verde\">
+                  <option value=\"Preto\">
+                  <option value=\"Cinza\">
+                  <option value=\"Branco\">
+                  <option value=\"Colorido\">
+                  <option value=\"Laranja\">
+                  <option value=\"Marrom\">
+                </datalist>
+                <button type=\"button\" class=\"button shadow\" id=\"add_color\">
                   <i class=\"fas fa-plus\"></i>
                 </button>
               </div>
               <div class=\"form-item row\" id=\"tags\">
                 ";
-        // line 162
-        echo "              </div>
+        // line 173
+        echo "               <div id=\"chips\">
+                 
+               </div>
+              </div>
               <div class=\"div_message\">
                 <p class=\"message\"></p>
               </div>
             </div>
             <div class=\"form-item col\">
               <label for=\"image\" class=\"item-label\">Imagem: </label>
-              <input type=\"file\" id=\"image\" class=\"nshadow\" name=\"image\" />
+              <label for=\"image\" class=\"lb-sm file_image\">
+                <i class=\"fas fa-upload\"></i>
+                Nenhum arquivo selecionado 
+              </label>
+              <input type=\"file\" id=\"image\" hidden class=\"nshadow\" name=\"image\" />
               <div class=\"imagem\">";
-        // line 170
+        // line 188
         echo "</div>
               <div class=\"div_message\">
                 <p class=\"message\"></p>
@@ -271,12 +287,14 @@ class __TwigTemplate_310584fc6c46a012b562dbd18c0d163a7678358cdee1d70cefa6bcda9bf
 ";
     }
 
-    // line 185
+    // line 204
     public function block_scripts($context, array $blocks = [])
     {
         $macros = $this->macros;
-        // line 186
-        echo "<script type=\"module\" src=\"";
+        // line 205
+        echo "<script src=\"https://unpkg.com/imask\"></script>
+<script type=\"module\" src=\"";
+        // line 206
         echo twig_escape_filter($this->env, ($context["file"] ?? null), "html", null, true);
         echo "js/insert.js\"></script>
 ";
@@ -294,7 +312,7 @@ class __TwigTemplate_310584fc6c46a012b562dbd18c0d163a7678358cdee1d70cefa6bcda9bf
 
     public function getDebugInfo()
     {
-        return array (  279 => 186,  275 => 185,  256 => 170,  246 => 162,  239 => 156,  222 => 140,  211 => 130,  201 => 121,  112 => 34,  91 => 16,  83 => 10,  79 => 9,  72 => 8,  68 => 7,  60 => 3,  56 => 2,  39 => 1,);
+        return array (  298 => 206,  295 => 205,  291 => 204,  272 => 188,  255 => 173,  220 => 139,  209 => 129,  112 => 34,  91 => 16,  83 => 10,  79 => 9,  72 => 8,  68 => 7,  60 => 3,  56 => 2,  39 => 1,);
     }
 
     public function getSourceContext()

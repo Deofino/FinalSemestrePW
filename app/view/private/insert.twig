@@ -108,16 +108,15 @@ endblock %} {% block metas_data %}
             <div class="form-item col">
               <label for="price" class="item-label">Valor: </label>
               <input
-                type="text"
                 id="price"
+                type="text"
+                inputmode="numeric"
                 name="price"
-                value="R$: 00,00"
                 class="item-input"
                 minlength="3"
-                max="10"
+                placeholder="R$ 0,00"
                 required
               />
-              {# Botar so pra digita numero e mascara #}
               <div class="div_message">
                 <p class="message"></p>
               </div>
@@ -146,19 +145,34 @@ endblock %} {% block metas_data %}
               <label for="colors" class="item-label">Cores: </label>
               <div class="form-item btn">
                 <input
+                list="colorsList"
                   type="text"
                   id="colors"
                   name="colors"
-                  maxlength="10"
+                  max="10"
                   min="3"
                 />
-                {# Botar so pra digita numero e mascara #}
-                <button type="button" class="button" id="add_color">
+                <datalist id="colorsList">
+                  <option value="Vermelho">
+                  <option value="Rosa">
+                  <option value="Azul">
+                  <option value="Verde">
+                  <option value="Preto">
+                  <option value="Cinza">
+                  <option value="Branco">
+                  <option value="Colorido">
+                  <option value="Laranja">
+                  <option value="Marrom">
+                </datalist>
+                <button type="button" class="button shadow" id="add_color">
                   <i class="fas fa-plus"></i>
                 </button>
               </div>
               <div class="form-item row" id="tags">
                 {# Mostrar as cores como TAGS AJAX #}
+               <div id="chips">
+                 
+               </div>
               </div>
               <div class="div_message">
                 <p class="message"></p>
@@ -166,7 +180,11 @@ endblock %} {% block metas_data %}
             </div>
             <div class="form-item col">
               <label for="image" class="item-label">Imagem: </label>
-              <input type="file" id="image" class="nshadow" name="image" />
+              <label for="image" class="lb-sm file_image">
+                <i class="fas fa-upload"></i>
+                Nenhum arquivo selecionado 
+              </label>
+              <input type="file" id="image" hidden class="nshadow" name="image" />
               <div class="imagem">{# Preview Imagem #}</div>
               <div class="div_message">
                 <p class="message"></p>
@@ -182,6 +200,8 @@ endblock %} {% block metas_data %}
   </div>
 </main>
 
-{% endblock %} {% block scripts %}
+{% endblock %}
+{% block scripts %}
+<script src="https://unpkg.com/imask"></script>
 <script type="module" src="{{ file }}js/insert.js"></script>
 {% endblock %}
