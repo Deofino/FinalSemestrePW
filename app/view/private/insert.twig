@@ -65,7 +65,6 @@ endblock %} {% block metas_data %}
                 class="item-input"
                 maxlength="50"
                 minlength="10"
-                required
               />
               <div class="div_message">
                 <p class="message"></p>
@@ -81,25 +80,24 @@ endblock %} {% block metas_data %}
                 class="item-input"
                 maxlength="100"
                 minlength="10"
-                required
               ></textarea>
               <div class="div_message">
                 <p class="message"></p>
               </div>
             </div>
             <div class="form-item col">
-              <label for="product" class="item-label">Genero: </label>
+              <label for="gender" class="item-label">Genero: </label>
               <div class="btn nshadow al-center">
-                <input type="radio" value="male" id="radio" name="radio" />
+                <input type="radio" value="Male" class="radio" name="radio" />
                 <label for="radioM">Masculino</label>
               </div>
               <div class="btn nshadow al-center">
-                <input type="radio" value="female" id="radio" name="radio" />
+                <input type="radio" value="Female" class="radio" name="radio" />
                 <label for="radioF">Feminino</label>
               </div>
               <div class="btn nshadow al-center">
-                <input type="radio" value="female" id="radio" name="radio" />
-                <label for="radioU">Unisex</label>
+                <input type="radio" value="Unissex" class="radio" name="radio" />
+                <label for="radioU">Unissex</label>
               </div>
               <div class="div_message">
                 <p class="message"></p>
@@ -115,7 +113,6 @@ endblock %} {% block metas_data %}
                 class="item-input"
                 minlength="3"
                 placeholder="R$ 0,00"
-                required
               />
               <div class="div_message">
                 <p class="message"></p>
@@ -191,7 +188,7 @@ endblock %} {% block metas_data %}
               </div>
             </div>
             <div class="form-item">
-              <button type="button" id="button_submit">Inserir</button>
+              <button type="submit" id="button_submit">Inserir</button>
             </div>
           </form>
         </div>

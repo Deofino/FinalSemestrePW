@@ -3,15 +3,33 @@
 namespace App\Controller;
 
 use App\Controller\Twig;
+use App\Controller\AdminController;
 
-class ProductController extends Twig
+class CategoryController
 {
-    public function index()
+    private $admin;
+    public function __construct()
     {
-        echo $this->twig->render('products.twig',['file'=>URL_MAIN.'public/']);
+        $this->admin = new AdminController();
     }
-    public function notFound()
+
+    public function create()
     {
-        echo $this->twig->render('notFound.twig',['file'=>URL_MAIN.'public/']);
+        $this->admin->ward();
+        if ($_SERVER['REQUEST_METHOD'] === "POST") {
+            $data = json_decode(file_get_contents("php://input"));
+            if(isset($data)){
+                var_dump(json_encode($data));
+            }
+        }
+        return Twig::loadJson('bad', 404, 'METHOD GET NOT FOUND');
+    }
+    public function read()
+    {
+        $this->admin->ward();
+        if ($_SERVER['REQUEST_METHOD'] === "GET") 
+        {
+            
+        } 
     }
 }
