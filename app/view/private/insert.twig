@@ -51,7 +51,7 @@ endblock %} {% block metas_data %}
         <div class="div_form">
           <h2>Produto</h2>
           <form
-            action=""
+            action="{{ file }}product/create"
             method="POST"
             enctype="multipart/form-data"
             class="form"
@@ -88,15 +88,15 @@ endblock %} {% block metas_data %}
             <div class="form-item col">
               <label for="gender" class="item-label">Genero: </label>
               <div class="btn nshadow al-center">
-                <input type="radio" value="Male" class="radio" name="radio" />
+                <input type="radio" value="Masculino" class="radio" name="radio" id="radioM"/>
                 <label for="radioM">Masculino</label>
               </div>
               <div class="btn nshadow al-center">
-                <input type="radio" value="Female" class="radio" name="radio" />
+                <input type="radio" value="Feminino" class="radio" name="radio" id="radioF"/>
                 <label for="radioF">Feminino</label>
               </div>
               <div class="btn nshadow al-center">
-                <input type="radio" value="Unissex" class="radio" name="radio" />
+                <input type="radio" value="Unissex" class="radio" name="radio" id="radioU" />
                 <label for="radioU">Unissex</label>
               </div>
               <div class="div_message">

@@ -132,21 +132,25 @@ btn_add_color.addEventListener('click', e=>{
 //Image Preview
 const preview = document.querySelector('#product .imagePreview');
 const labelImg = document.querySelector('#product .file_image');
+preview.classList.add('d-none');
 let img = null;
-preview.classList.add('d-none')
 const imgInput = document.querySelector('#image');
 imgInput.addEventListener('change', e=>{
     e.preventDefault();
     if(e.target.files[0]){
-        labelImg.innerHTML = '<i class="fas fa-upload"></i> Arquivo selecionado'
-        img = window.URL.createObjectURL(e.target.files[0]);
-        preview.classList.remove('d-none');
-        preview.innerHTML = `<img src='${img}'>`;
+        let reader = new FileReader();
+        reader.onloadend = e =>{
+            img = e.target.result;
+            labelImg.innerHTML = '<i class="fas fa-upload"></i> Arquivo selecionado'
+            preview.classList.remove('d-none');
+            preview.innerHTML = `<img src='${e.target.result}'>`;
+        }
+        reader.readAsDataURL(e.target.files[0]);
     }else{
+        img = null;
         labelImg.innerHTML = '<i class="fas fa-upload"></i> Nenhum arquivo selecionado'
         preview.classList.add('d-none');
-        img = null;
-        preview.removeChild();
+        preview.firstChild.remove();
     }
 })
 
@@ -158,7 +162,7 @@ imgInput.addEventListener('change', e=>{
     const selectBrand = document.querySelector('#product #selectBrand');
     const selectCategory = document.querySelector('#product #selectCategory');
     const form = document.querySelector('#product form');
-    form.addEventListener('submit', evt=>{
+    form.addEventListener('submit', async(evt)=>{
         evt.preventDefault();
         const gender = document.querySelector("#product input[name='radio']:checked");
         [productName, description, price]
@@ -192,31 +196,23 @@ imgInput.addEventListener('change', e=>{
                 price.value,
                 gender,
             ]).includes('error')){
-                let requestData = JSON.stringify({
-                    name: productName.value,
-                    description: description.value,
-                    price: price.value.split(' ')[1],
-                    gender: gender.value,
-                    image: img,
-                    colors: JSON.stringify(colors),
-                    id_brand: selectBrand.options[selectBrand.options.selectedIndex].value,
-                    id_category: selectCategory.options[selectCategory.options.selectedIndex].value,
-                    
-                });
-                console.log(JSON.parse(requestData));
-
+                let formData = new FormData(form);
+                formData.append('image', imgInput.files[0]);
+                formData.append('colorsArray', JSON.stringify(colors));
+                let req = await fetch(`${URL}product/create`,
+                {body: formData, method: 'POST',cache: 'default', mode :"cors"})
+                let res = await req.json();
+                console.log(res);
+                if(res.status == 'ok'){
+                    alert('Tenis inserido com sucesso!!');
+                    setTimeout(() => {
+                        window.location.reload();
+                    }, 1500);
+                }
             }else{
                 alert('Ainda ha erros...');
             };
     })
 // End verify all fields
-// Post request event
 
-
-
-
-
-// End post request event
-
-
-// Product
+// End Product

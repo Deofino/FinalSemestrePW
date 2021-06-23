@@ -130,7 +130,10 @@ class __TwigTemplate_310584fc6c46a012b562dbd18c0d163a7678358cdee1d70cefa6bcda9bf
         <div class=\"div_form\">
           <h2>Produto</h2>
           <form
-            action=\"\"
+            action=\"";
+        // line 54
+        echo twig_escape_filter($this->env, ($context["file"] ?? null), "html", null, true);
+        echo "product/create\"
             method=\"POST\"
             enctype=\"multipart/form-data\"
             class=\"form\"
@@ -167,15 +170,15 @@ class __TwigTemplate_310584fc6c46a012b562dbd18c0d163a7678358cdee1d70cefa6bcda9bf
             <div class=\"form-item col\">
               <label for=\"gender\" class=\"item-label\">Genero: </label>
               <div class=\"btn nshadow al-center\">
-                <input type=\"radio\" value=\"Male\" class=\"radio\" name=\"radio\" />
+                <input type=\"radio\" value=\"Masculino\" class=\"radio\" name=\"radio\" id=\"radioM\"/>
                 <label for=\"radioM\">Masculino</label>
               </div>
               <div class=\"btn nshadow al-center\">
-                <input type=\"radio\" value=\"Female\" class=\"radio\" name=\"radio\" />
+                <input type=\"radio\" value=\"Feminino\" class=\"radio\" name=\"radio\" id=\"radioF\"/>
                 <label for=\"radioF\">Feminino</label>
               </div>
               <div class=\"btn nshadow al-center\">
-                <input type=\"radio\" value=\"Unissex\" class=\"radio\" name=\"radio\" />
+                <input type=\"radio\" value=\"Unissex\" class=\"radio\" name=\"radio\" id=\"radioU\" />
                 <label for=\"radioU\">Unissex</label>
               </div>
               <div class=\"div_message\">
@@ -332,7 +335,7 @@ class __TwigTemplate_310584fc6c46a012b562dbd18c0d163a7678358cdee1d70cefa6bcda9bf
 
     public function getDebugInfo()
     {
-        return array (  318 => 203,  315 => 202,  311 => 201,  247 => 140,  236 => 138,  232 => 137,  221 => 128,  210 => 126,  206 => 125,  112 => 34,  91 => 16,  83 => 10,  79 => 9,  72 => 8,  68 => 7,  60 => 3,  56 => 2,  39 => 1,);
+        return array (  321 => 203,  318 => 202,  314 => 201,  250 => 140,  239 => 138,  235 => 137,  224 => 128,  213 => 126,  209 => 125,  135 => 54,  112 => 34,  91 => 16,  83 => 10,  79 => 9,  72 => 8,  68 => 7,  60 => 3,  56 => 2,  39 => 1,);
     }
 
     public function getSourceContext()
