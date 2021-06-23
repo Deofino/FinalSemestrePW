@@ -7,22 +7,26 @@
 {% block title %}Pagina nao encontrada{% endblock %}
 
 {% block styles %}
-    
+    <link rel="stylesheet" href="{{file}}css/notfound.css">
 {% endblock %}
 
 {% block body %}
-    
-    
-    
-    
-    
-    
-    Pagina nao encontrada
-
-
-
-
-
+   
+    <div id="content">
+      <div class="svg">
+        <img src="{{file}}img/vectors/notfound.svg" alt="Not Found">
+      </div>
+      <div class="title">
+        <h1>Oops! Página não encontrada!</h1>
+      </div>
+      <div class="text">
+        <p class="um">Esta página que esta tentando acessar foi removida ou alterada.</p>
+        <p>Volte para o nosso menu principal.</p>
+      </div>
+      <div>
+        <a href="{{file}}../public" class="button">Início</a>
+      </div>
+    </div>
 
 {% endblock %}
 
