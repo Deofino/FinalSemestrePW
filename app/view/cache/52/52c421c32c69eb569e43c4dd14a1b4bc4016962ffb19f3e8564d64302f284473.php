@@ -140,7 +140,8 @@ class __TwigTemplate_b0e0c2a2ce0253164ed4f7687c3abe25aea026be8fa7cec3716faef624d
     }
     initialize();
 </script>
-<!-- <script src=\"https://unpkg.com/sweetalert/dist/sweetalert.min.js\"></script>
+<!--SWEET ALERT AQUI 
+   <script src=\"https://unpkg.com/sweetalert/dist/sweetalert.min.js\"></script>
 </head>
 <body>
     <button onclick=\"mostrar()\">Mostrar</button>
