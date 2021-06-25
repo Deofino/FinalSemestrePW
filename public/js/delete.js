@@ -10,7 +10,9 @@ buttonsDeletes.forEach(a=>{
         let res = await req.json();
         if(res.status == 'ok'){
             showAlert('Ebaa', 'Produto deletado com sucesso!', 'success');
-            window.location.reload();
+            setTimeout(() => {
+                window.location.reload();
+            }, 3000);
         }else{
             showAlert('Ops... Erro: '+res.statusCode, 'Message: '+ res.message, 'success');
         }
@@ -23,5 +25,6 @@ function showAlert(title,message,icon){
         title: title,
         text: message,
         icon: icon,
+      
     });
 }

@@ -205,6 +205,7 @@ imgInput.addEventListener('change', e=>{
                 price.value,
                 gender,
             ]).includes('error')){
+                evt.target.pointerEvents = 'all';
                 let formData = new FormData(form);
                 formData.append('image', imgInput.files[0]);
                 formData.append('colorsArray', JSON.stringify(colors));
@@ -214,9 +215,10 @@ imgInput.addEventListener('change', e=>{
                 console.log(res);
                 if(res.status == 'ok'){
                     showAlert('Ebaaaa ', 'Produto inserido com sucesso!', 'success');
+                    evt.target.pointerEvents = 'none';
                     setTimeout(() => {
                         window.location.reload();
-                    }, 1500);
+                    }, 3000);
                 }
             }else{
                 showAlert('Ops... ', 'Ainda contem erros...', 'error');
