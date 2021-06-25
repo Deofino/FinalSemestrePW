@@ -78,5 +78,10 @@ class AdminController extends Twig
             header("Location: ".URL_MAIN."public/admin/login");
         }
     }
-
+    public static function wardStatic()
+    {
+        if(!isset($_SESSION['user']) || !isset($_SESSION['data'])){
+            header("Location: ".URL_MAIN."public/admin/login");
+        }
+    }
 }

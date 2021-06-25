@@ -12,8 +12,8 @@ use Twig\Sandbox\SecurityNotAllowedFunctionError;
 use Twig\Source;
 use Twig\Template;
 
-/* notFound.twig */
-class __TwigTemplate_a72abba32e9525e52a27794559d1378c04a923128132d9ee7dbba2e6a373fa31 extends Template
+/* product.twig */
+class __TwigTemplate_a3ba0ecc365633952abb4ed62ffc9e0d730a9521bec0fcd367a8f27bfe263f4c extends Template
 {
     private $source;
     private $macros = [];
@@ -42,7 +42,7 @@ class __TwigTemplate_a72abba32e9525e52a27794559d1378c04a923128132d9ee7dbba2e6a37
     protected function doDisplay(array $context, array $blocks = [])
     {
         $macros = $this->macros;
-        $this->parent = $this->loadTemplate("./template/html.twig", "notFound.twig", 1);
+        $this->parent = $this->loadTemplate("./template/html.twig", "product.twig", 1);
         $this->parent->display($context, array_merge($this->blocks, $blocks));
     }
 
@@ -59,7 +59,7 @@ class __TwigTemplate_a72abba32e9525e52a27794559d1378c04a923128132d9ee7dbba2e6a37
     public function block_title($context, array $blocks = [])
     {
         $macros = $this->macros;
-        echo "Pagina nao encontrada";
+        echo "Shoes | Produtos";
     }
 
     // line 9
@@ -67,9 +67,7 @@ class __TwigTemplate_a72abba32e9525e52a27794559d1378c04a923128132d9ee7dbba2e6a37
     {
         $macros = $this->macros;
         // line 10
-        echo "    <link rel=\"stylesheet\" href=\"";
-        echo twig_escape_filter($this->env, ($context["file"] ?? null), "html", null, true);
-        echo "css/notfound.css\">
+        echo "    
 ";
     }
 
@@ -78,44 +76,23 @@ class __TwigTemplate_a72abba32e9525e52a27794559d1378c04a923128132d9ee7dbba2e6a37
     {
         $macros = $this->macros;
         // line 14
-        echo "   
-    <div id=\"content1\" style=\"margin: 4rem 0\">
-      <div class=\"svg\">
-        <img src=\"";
-        // line 17
-        echo twig_escape_filter($this->env, ($context["file"] ?? null), "html", null, true);
-        echo "img/vectors/notfound.svg\" alt=\"Not Found\">
-      </div>
-      <div class=\"title\">
-        <h1>Oops! Página não encontrada!</h1>
-      </div>
-      <div class=\"text\">
-        <p class=\"um\">Esta página que esta tentando acessar foi removida ou alterada.</p>
-        <p>Volte para o nosso menu principal.</p>
-      </div>
-      <div>
-        <a href=\"";
-        // line 27
-        echo twig_escape_filter($this->env, ($context["file"] ?? null), "html", null, true);
-        echo "../public\" class=\"button\">Início</a>
-      </div>
-    </div>
-
+        echo "
+   produtosdsadasds
 ";
     }
 
-    // line 33
+    // line 18
     public function block_scripts($context, array $blocks = [])
     {
         $macros = $this->macros;
-        // line 34
+        // line 19
         echo "    
 ";
     }
 
     public function getTemplateName()
     {
-        return "notFound.twig";
+        return "product.twig";
     }
 
     public function isTraitable()
@@ -125,11 +102,11 @@ class __TwigTemplate_a72abba32e9525e52a27794559d1378c04a923128132d9ee7dbba2e6a37
 
     public function getDebugInfo()
     {
-        return array (  112 => 34,  108 => 33,  99 => 27,  86 => 17,  81 => 14,  77 => 13,  70 => 10,  66 => 9,  59 => 7,  54 => 4,  50 => 3,  39 => 1,);
+        return array (  89 => 19,  85 => 18,  79 => 14,  75 => 13,  70 => 10,  66 => 9,  59 => 7,  54 => 4,  50 => 3,  39 => 1,);
     }
 
     public function getSourceContext()
     {
-        return new Source("", "notFound.twig", "C:\\xampp\\htdocs\\Escola\\2b\\FinalSemestrePW\\app\\view\\notFound.twig");
+        return new Source("", "product.twig", "C:\\xampp\\htdocs\\Escola\\2b\\FinalSemestrePW\\app\\view\\product.twig");
     }
 }

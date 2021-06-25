@@ -1,86 +1,89 @@
-{% extends "./template/html.twig" %}
+{% extends "./template/html.twig" %} {% block title %}Shoes | Inicio {% endblock
+%} {% block metas_data %}
+<meta
+  name="description"
+  content="A melhor loja de todas para se encontrar tenis e sapatos lindissimos para programadores ainda mais lindissimos, com muito orgulho apresento a vocês... SHOES!"
+/>
+{% endblock %} {% block styles %}
+<link rel="stylesheet" href="{{ file }}css/index.css" />
+{% endblock %} {% block body %}
 
-{% block title %}Shoes | Inicio {% endblock %}
-{% block metas_data %}
-  <meta name="description" content="A melhor loja de todas para se encontrar tenis e sapatos lindissimos para programadores ainda mais lindissimos, com muito orgulho apresento a vocês... SHOES!">
-{% endblock %}
-{% block styles %}
-    <link rel="stylesheet" href="{{file}}css/index.css">
-{% endblock %}
-{% block body %}
+<section>
+  <h1>Tênis incríveis</h1>
+</section>
+<section>
+  <h1 class="tilt1">SHOES</h1>
+  <p>
+    Este é nosso projeto realizado para menção do primeiro semestre da matéria
+    de Projeto WEB III, desenvolvido com as features solicitadas pelo lecionador
+    de conteúdo Allan. Desejamos satisfazer e conseguirmos conquistar um belo de
+    um MB pra nossa conta... A aplicação será em volta de uma apresentação de
+    Sapatos e Tênis, semelhante a um E-Commerce, podendo mostrar assim produtos
+    de uma loja de sapatos física que até o momento não tem certeza se quer
+    investir nisso para poder criar um E-commerce completo, sendo assim, um site
+    mais voltado para o marketing da loja.
+  </p>
+</section>
 
-     <section>
-        <h1>Tênis incríveis</h1>
-    </section>
-    <section>
-        <h1 class="tilt1">SHOES</h1>
-        <p>Este é nosso projeto realizado para menção do primeiro semestre da matéria de Projeto WEB III, desenvolvido com as features solicitadas pelo lecionador de conteúdo Allan. Desejamos satisfazer e conseguirmos conquistar um belo de um MB pra nossa conta... A aplicação será em volta de uma apresentação de Sapatos e Tênis, semelhante a um E-Commerce, podendo mostrar assim produtos de uma loja de sapatos física que até o momento não tem certeza se quer investir nisso para poder criar um E-commerce completo, sendo assim, um site mais voltado para o marketing da loja.</p>
-    </section>
+<!-- CARDS AQUI  -->
+<main id="l_cards">
 
-    <!-- CARDS AQUI  -->
-    <div class="cards_content">
-      <div class="grid">
-          <div class="grid-item">
-            <div class="card">
-              <img class="card-img" src="{{file}}img/c.jpg" alt="Rome" />
-              <div class="card-content">
-                <h1 class="card-header">Adidas seilaoque</h1>
-              
-                <p class="card-text">
-                <strong> Casual </strong>
-                </p>
-                  <p class="card-text">Cor: Branco</p>
-                  <p class="card-text">R$:200,00</p>
-                <button class="card-btn">Visit <span>&rarr;</span></button>
-              </div>
-            </div>
-          </div>
-          <div class="grid-item">
-            <div class="card">
-              <img
-                class="card-img"
-                src="{{file}}img/c.jpg"
-                alt="Grand Canyon"
-              />
-              <div class="card-content">
-                <h1 class="card-header">Grand Canyon</h1>
-                <p class="card-text">
-                  One of the world's natural wonders, the iconic Grand Canyon draws
-                  oohs and aahs from visitors perched at the edge of its
-                  <strong>towering cliffs</strong>.
-                </p>
-                <button class="card-btn">Visit <span>&rarr;</span></button>
-              </div>
-            </div>
-          </div>
-          <div class="grid-item">
-            <div class="card">
-              <img class="card-img" src="{{file}}img/c.jpg" alt="Maldives" />
-              <div class="card-content">
-                <h1 class="card-header">Maldives</h1>
-                <p class="card-text">
-                  The Maldives are known for their
-                  <strong>natural environment</strong> including the blue ocean,
-                  white beaches, and clean air, attracting tourists.
-                </p>
-                <button class="card-btn">Visit <span>&rarr;</span></button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    <!-- FIM CARDS -->
-    
-    <section></section>
-    <section>
-        <h1 class="tilt2">Estilo versátil pronto para as ruas</h1>
-        <p>Temos tênis de inumeras marcas visadas atualmente e uma garantia de que nossos produtos são originais e de ótima qualidade, se gostou de algum venha conhecer nossa loja.</p>
-       <a href="products"><i class="fas fa-long-arrow-alt-right"></i></a>
-    </section>
 
-    
-    
-{% endblock %}
-{% block scripts %}
-    
-{% endblock %}
+  <div class="card">
+    <div class="card_header">
+      <img src="{{ file }}img/c.jpg" width="200" height="200" alt="Fofo">
+    </div>
+    <div class="card_body">
+      <h2>Adidas bonito</h2>
+      <!-- <p>Descricao bonita bem cheia Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis odio exercitationem velit perferendis. Placeat possimus illo eius sequi laboriosam nobis vel in quis! Fugit, corrupti temporibus aliquid dolorum quam doloremque.</p> -->
+      <p>Casual</p>
+      <!-- <p>Cor : Branco</p> -->
+      <p>R$ 200,00</p>
+      <button class="details">Detalhes</button>
+    </div>
+  </div>
+
+   <div class="card">
+    <div class="card_header">
+      <img src="{{ file }}img/c.jpg" width="200" height="200" alt="Fofo">
+    </div>
+    <div class="card_body">
+      <h2>Adidas bonito</h2>
+      <!-- <p>Descricao bonita bem cheia Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis odio exercitationem velit perferendis. Placeat possimus illo eius sequi laboriosam nobis vel in quis! Fugit, corrupti temporibus aliquid dolorum quam doloremque.</p> -->
+      <p>Casual</p>
+      <!-- <p>Cor : Branco</p> -->
+      <p>R$ 200,00</p>
+      <button class="details">Detalhes</button>
+    </div>
+  </div>
+
+   <div class="card">
+    <div class="card_header">
+      <img src="{{ file }}img/c.jpg" width="200" height="200" alt="Fofo">
+    </div>
+    <div class="card_body">
+      <h2>Adidas bonito</h2>
+      <!-- <p>Descricao bonita bem cheia Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis odio exercitationem velit perferendis. Placeat possimus illo eius sequi laboriosam nobis vel in quis! Fugit, corrupti temporibus aliquid dolorum quam doloremque.</p> -->
+      <p>Casual</p>
+      <!-- <p>Cor : Branco</p> -->
+      <p>R$ 200,00</p>
+      <button class="details">Detalhes</button>
+    </div>
+  </div>
+
+
+</main>
+<!-- FIM CARDS -->
+
+<section></section>
+<section>
+  <h1 class="tilt2">Estilo versátil pronto para as ruas</h1>
+  <p>
+    Temos tênis de inumeras marcas visadas atualmente e uma garantia de que
+    nossos produtos são originais e de ótima qualidade, se gostou de algum venha
+    conhecer nossa loja.
+  </p>
+  <a href="products"><i class="fas fa-long-arrow-alt-right"></i></a>
+</section>
+
+{% endblock %} {% block scripts %} {% endblock %}

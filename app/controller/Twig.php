@@ -5,12 +5,12 @@ namespace App\Controller;
 abstract class Twig
 {
     protected $loader;
-    protected $twig;
+    public $twig;
 
     public function __construct()
     {
 
-        $this->loader = new \Twig\Loader\FilesystemLoader(['../app/view/','../app/view/template','css']);
+        $this->loader = new \Twig\Loader\FilesystemLoader(['../app/view','../app/view/template']);
         $this->twig = new \Twig\Environment($this->loader, [
             'cache' => '../app/view/cache',
             'auto_reload'=>true

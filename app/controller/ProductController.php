@@ -7,17 +7,15 @@ use App\Controller\AdminController;
 use App\Model\Product;
 use DateTime;
 
-class ProductController
+class ProductController extends Twig
 {
-    private $admin;
-    public function __construct()
+    public function index()
     {
-        $this->admin = new AdminController();
+        echo $this->twig->render('product.twig',['file'=>URL_MAIN.'public/']);
     }
-
     public function create()
     {
-        $this->admin->ward();
+        AdminController::wardStatic();
         try {
             if ($_SERVER['REQUEST_METHOD'] === "POST")
             {
@@ -54,7 +52,7 @@ class ProductController
     }
     public function read()
     {
-        $this->admin->ward();
+        AdminController::wardStatic();
         if ($_SERVER['REQUEST_METHOD'] === "GET") 
         {
             try {
