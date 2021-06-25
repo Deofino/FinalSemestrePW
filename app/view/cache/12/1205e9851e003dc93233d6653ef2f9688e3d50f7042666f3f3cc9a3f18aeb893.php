@@ -50,42 +50,72 @@ class __TwigTemplate_5b330015c2ae750e8acdae10a998c0c2a90a9bcbaa3f4162e881c8f85c1
     public function block_metas_data($context, array $blocks = [])
     {
         $macros = $this->macros;
-        // line 4
-        echo "
-";
     }
 
-    // line 7
+    // line 5
     public function block_title($context, array $blocks = [])
     {
         $macros = $this->macros;
-        echo "Shoes | Contato";
+        echo "Shoes | Contato
+";
     }
 
-    // line 9
+    // line 8
     public function block_styles($context, array $blocks = [])
     {
         $macros = $this->macros;
-        // line 10
-        echo "    
+        // line 9
+        echo "\t<link rel=\"stylesheet\" href=\"";
+        echo twig_escape_filter($this->env, ($context["file"] ?? null), "html", null, true);
+        echo "css/contact.css\">
 ";
     }
 
-    // line 13
+    // line 12
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
-        // line 14
-        echo "   contato
+        // line 13
+        echo "\t<div class=\"attraction\">
+\t\t<h1 class=\"title\">Entre em contato conosco</h1>
+\t\t<img class=\"svgcontact\" src=\"";
+        // line 15
+        echo twig_escape_filter($this->env, ($context["file"] ?? null), "html", null, true);
+        echo "img/vectors/contact.svg\">
+\t\t<p class=\"text\">Envie-nos um email que responderemos o mais rápido possível!</p>
+\t\t<i class=\"fas fa-angle-double-down\"></i>
+\t</div>
+\t<div id=\"grid\">
+\t\t<div class=\"left\">
+\t\t\t<form method=\"post\" action=\"../app/controller/enviar-email.php\">
+\t\t\t\t<input type=\"text\" name=\"txNome\" required=\"require\" pattern=\"[A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ ]+\$\" placeholder=\"Nome\"/>
+
+\t\t\t\t<input type=\"email\" name=\"txEmail\" required=\"require\" placeholder=\"Email\"/>
+
+\t\t\t\t<input type=\"text\" name=\"txAssunto\" required=\"require\" placeholder=\"Assunto\"/>
+
+\t\t\t\t<textarea type=\"text\" name=\"txMsg\" required=\"require\" pattern=\"[A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ ]+\$\" placeholder=\"Mensagem\"></textarea>
+
+\t\t\t\t<input type=\"submit\" value=\"Enviar\"/>
+\t\t\t</form>
+\t\t</div>
+        
+\t\t<div class=\"right\" id=\"mapa\"></div>
+\t</div>
 ";
     }
 
-    // line 17
+    // line 38
     public function block_scripts($context, array $blocks = [])
     {
         $macros = $this->macros;
-        // line 18
-        echo "    
+        // line 39
+        echo "\t<script src=\"https://unpkg.com/sweetalert/dist/sweetalert.min.js\"></script>
+\t<script src=\"http://maps.googleapis.com/maps/api/js?key=AIzaSyCAckKLHl-T6HPk2pTVfxrjHXf4yLojpfw&amp;\"></script>
+\t<script src=\"";
+        // line 41
+        echo twig_escape_filter($this->env, ($context["file"] ?? null), "html", null, true);
+        echo "js/contact.js\"></script>
 ";
     }
 
@@ -101,7 +131,7 @@ class __TwigTemplate_5b330015c2ae750e8acdae10a998c0c2a90a9bcbaa3f4162e881c8f85c1
 
     public function getDebugInfo()
     {
-        return array (  88 => 18,  84 => 17,  79 => 14,  75 => 13,  70 => 10,  66 => 9,  59 => 7,  54 => 4,  50 => 3,  39 => 1,);
+        return array (  117 => 41,  113 => 39,  109 => 38,  83 => 15,  79 => 13,  75 => 12,  68 => 9,  64 => 8,  56 => 5,  50 => 3,  39 => 1,);
     }
 
     public function getSourceContext()
