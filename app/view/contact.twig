@@ -7,13 +7,73 @@
 {% block title %}Shoes | Contato{% endblock %}
 
 {% block styles %}
-    
+    <link rel="stylesheet" href="{{file}}css/contact.css">
 {% endblock %}
 
 {% block body %}
-   contato
+         <div class="attraction">
+            <h1 class="title">Entre em contato conosco</h1>
+            <img class="svgcontact"src="{{file}}img/vectors/contact.svg">
+            <p class="text">Envie-nos um email que responderemos o mais rápido possível!</p>
+            <i class="fas fa-angle-double-down"></i>
+         </div>
+         <div id="grid">
+               <div class="left">        
+               <form method="post" action="../app/controller/enviar-email.php">
+                        <input type="text" name="txNome" required="require" pattern="[A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ ]+$" placeholder="Nome"/>
+                  
+                        <input type="email" name="txEmail"  required="require"  placeholder="Email"/>
+                  
+                        <input type="text" name="txAssunto" required="require" placeholder="Assunto"/>
+                     
+                        <textarea type="text" name="txMsg" required="require" pattern="[A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ ]+$" placeholder="Mensagem"></textarea>
+                     
+                        <input type="submit" value="Enviar"/>
+               </form>
+            </div>
+         <div class="right"id="mapa"></div>
+      </div>
 {% endblock %}
 
 {% block scripts %}
+<script src="{{file}}js/contact.js"></script>
+<script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyCAckKLHl-T6HPk2pTVfxrjHXf4yLojpfw&amp;sensor=false"></script>
+<script>
+    let map;
+
+    function initialize(){
+        var coordenadas = {lat: -23.552925305071476, lng: -46.39960872738754};
+       
+        let mapa = new google.maps.Map(document.getElementById('mapa'),{
+            zoom: 10,
+            center: coordenadas,
+            mapTypeId: 'roadmap'
+        });
+
+        let marker = new google.maps.Marker({
+            position: coordenadas,
+            title: "Shoes :-D",
+            map: mapa,
+            icon: '{{file}}img/icon32px.png'
+        });
+        
+    }
+    initialize();
+</script>
+<!--SWEET ALERT AQUI 
+   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+</head>
+<body>
+    <button onclick="mostrar()">Mostrar</button>
+    <script type="text/javascript">
+
+        function mostrar(){
+            swal({
+                title: 'Obrigada!',
+                text: 'Email enviado com sucesso',
+                icon: 'success'
+            });
+        }
     
+    </script> -->
 {% endblock %}
