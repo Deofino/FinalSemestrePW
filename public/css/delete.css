@@ -14,12 +14,15 @@
 }
 #delete img{
     width: 120px;
-    cursor: pointer;
     image-rendering: auto;
     border: 1px solid var(--background_color_dark);
     box-shadow: 2px 4px 10px var(--shadow);
     height: 100px;
     border-radius: 4px 16px 4px 16px;
+}
+#delete img:hover{
+    transition: .6s cubic-bezier(.3, .9, .3, 2);
+    transform: scale(2);
 }
 th,td{
     font-weight: 500;
@@ -47,6 +50,7 @@ th,td{
     border: 2px solid var(--accent_color_dark);
     width: 100%;
 }
+
 #delete section table thead th{
     background-color: var(--accent_color_dark);
     font-weight: bold;

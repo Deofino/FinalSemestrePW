@@ -65,4 +65,16 @@ class Product
             return Twig::loadJson("bad", 400, "Shoe error to read: $th");
         }
     }
+    public function delete($id)
+    {
+        try {
+            $stmt = Connection::getConnection()->prepare('DELETE FROM tbshoe WHERE _id = ?');
+            if($stmt->execute([$id])){
+                return Twig::loadJson("ok", 200, "Shoe deleted with success");
+            }
+            return Twig::loadJson("bad", 400, "Shoe error to delete");
+        } catch (\Throwable $th) {
+            return Twig::loadJson("bad", 400, "Shoe error to delete: $th");
+        }
+    }
 }

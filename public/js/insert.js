@@ -9,6 +9,15 @@ function verifyData(data) {
         return true;
     } else return false;
 }
+
+function showAlert(title,message,icon){
+    swal({
+        title: title,
+        text: message,
+        icon: icon,
+    });
+}
+
 function verifyAll(data=[]){
     return data.map(el=>{
         if(el==null || el.length == 0 || el == '' || el == undefined){
@@ -58,7 +67,7 @@ document.querySelector('#brand form')
                 })
             let res = await req.json();
             if (res.status === 'ok') {
-                window.alert(`Marca: ${brand.value} inserido com sucesso!`);
+                showAlert('Ebaaa ', `Marca: ${brand.value} inserido com sucesso!`, 'success');
                 clearData([brand]);
                 divMessageBrand.setAttribute('class', 'div_message');
             }
@@ -91,7 +100,7 @@ document.querySelector('#category form')
                 })
             let res = await req.json();
             if (res.status === 'ok') {
-                window.alert(`Categoria: ${category.value} inserido com sucesso!`);
+                showAlert('Ebaaa ', `Categoria: ${category.value} inserido com sucesso!`, 'success');
                 clearData([category]);
                 divMessageCategory.setAttribute('class', 'div_message');
             }
@@ -175,7 +184,7 @@ imgInput.addEventListener('change', e=>{
             loadMessage(gender.parentElement.parentElement.querySelector('.div_message'),gender.parentElement.parentElement.querySelector('.div_message p'),'Preenchido', 'success');
         } else loadMessage(document.querySelector("#product label[for='gender']").parentElement.querySelector('.div_message'),document.querySelector("#product label[for='gender']").parentElement.querySelector('.div_message p'),'Selecione um');
         if(colors.length == 0 || colors == []){
-            alert('Adicione ao menos uma cor')
+            showAlert('Ops...', 'Selecione ao menos uma cor!', 'warning')
         }
         if(img != null){
             loadMessage(labelImg.parentElement.querySelector('.div_message'),labelImg.parentElement.querySelector('.div_message p'),'Imagem selecionado', 'success');
@@ -204,13 +213,13 @@ imgInput.addEventListener('change', e=>{
                 let res = await req.json();
                 console.log(res);
                 if(res.status == 'ok'){
-                    alert('Tenis inserido com sucesso!!');
+                    showAlert('Ebaaaa ', 'Produto inserido com sucesso!', 'success');
                     setTimeout(() => {
                         window.location.reload();
                     }, 1500);
                 }
             }else{
-                alert('Ainda ha erros...');
+                showAlert('Ops... ', 'Ainda contem erros...', 'error');
             };
     })
 // End verify all fields
