@@ -1,0 +1,66 @@
+#delete{
+    padding: 5rem .4rem;
+    background:linear-gradient(120deg, var(--black), var(--background_color_dark));
+}
+#delete section {
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    justify-content: center;
+    border-radius: 4px;
+    margin: 1rem auto;
+    padding: 1rem;
+    background-color: var(--background_color);
+}
+#delete img{
+    width: 120px;
+    cursor: pointer;
+    image-rendering: auto;
+    border: 1px solid var(--background_color_dark);
+    box-shadow: 2px 4px 10px var(--shadow);
+    height: 100px;
+    border-radius: 4px 16px 4px 16px;
+}
+th,td{
+    font-weight: 500;
+    color: var(--black);
+}
+#delete td a{
+    padding: .4rem 1rem;
+    border-radius: 8px;
+    font-weight: bold;
+    text-decoration: none;
+    letter-spacing: .5px;
+    color: var(--white);
+    background: #ca2020;
+}
+#delete h1{
+    font-size: clamp(1.6rem,1.6em + 1vw,3rem);
+    color: var(--white);
+    text-align: center;
+    margin: 1rem 0;
+}
+#delete section table{
+    box-shadow: 2px 2px 10px var(--shadow);
+    overflow: auto;
+    min-width: 300px !important;
+    border: 2px solid var(--accent_color_dark);
+    width: 100%;
+}
+#delete section table thead th{
+    background-color: var(--accent_color_dark);
+    font-weight: bold;
+    padding: .5rem .2rem;
+}
+#delete section table tbody tr{
+    background-color: var(--accent_color_light);
+}
+#delete section table tbody tr:nth-child(even){
+    background-color: var(--accent_color_light_even);
+}
+#delete section table tbody tr td{
+    padding: .5rem;
+    text-align: center;
+    vertical-align: middle;
+    border: 2px solid var(--accent_color_dark);
+}

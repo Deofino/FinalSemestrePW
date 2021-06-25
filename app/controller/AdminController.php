@@ -2,8 +2,10 @@
 
 namespace App\Controller;
 use App\Controller\BrandController;
+use App\Controller\ProductController;
 use App\Controller\CategoryController;
 use App\Controller\Twig;
+use App\Model\Product;
 
 class AdminController extends Twig
 {
@@ -55,7 +57,8 @@ class AdminController extends Twig
     public function delete()
     {
         $this->ward();
-        echo $this->twig->render('./private/delete.twig',['file'=>URL_MAIN.'public/']);
+        $products = new Product();
+        echo $this->twig->render('./private/delete.twig',['file'=>URL_MAIN.'public/','products'=>$products->read()]);
     }
     public function update()
     {

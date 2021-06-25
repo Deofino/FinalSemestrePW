@@ -7,13 +7,44 @@
 {% block title %}Shoes | Excluir {% endblock %}
 
 {% block styles %}
-    
+    <link rel="stylesheet" href="{{file}}css/delete.css">
 {% endblock %}
 
 {% block body %}
-    edit product
+
+    <main id="delete">
+
+        <h1>Deletar produto</h1>
+       
+       <section class="l_table">
+           <table>
+               <thead>
+                   <tr>
+                       <th>ID</th>
+                       <th>Produto</th>
+                       <th>Imagem</th>
+                       <th>Deletar</th>
+                   </tr>
+               </thead>
+               <tbody>
+                   {% for product in products %}
+                    <tr>
+                        <td>{{product._id}}</td>
+                        <td>{{product.nameShoe}}</td>
+                        <td><img src="{{file}}{{product.dirImageShoe}}" alt="{{product.nameShoe}}"></td>
+                        <td><a href="{{file}}product/delete/{{product._id}}">Excluir</a></td>
+                    </tr>
+                    {% else %}
+                    <h1>Sem produtos</h1>
+                   {% endfor %}
+               </tbody>
+           </table>
+       </section>
+    </main>
+
 {% endblock %}
 
 {% block scripts %}
-    
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+   <script src="{{file}}js/delete.js"></script>
 {% endblock %}
