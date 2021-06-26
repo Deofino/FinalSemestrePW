@@ -42,7 +42,7 @@ class Product
         try {
             $stmt = Connection::getConnection()
             ->prepare('INSERT INTO tbshoe(nameShoe, descriptionShoe, genderShoe, priceShoe,
-            colorsShoe, dirImageShoe, idCategory, idBrand) values(?,?,?,?,?,?,?,?)');
+            colorsShoe, dirImageShoe, idCategory, idBrand) VALUES(?,?,?,?,?,?,?,?)');
             if ($stmt->execute([$this->name,$this->description,$this->gender,$this->price,
                                         $this->colors,$this->image,$this->id_category,$this->id_brand])) 
                 {
@@ -53,12 +53,19 @@ class Product
             return Twig::loadJson("bad", 400, "Shoe error to insert: $th");
         }
     }
-    public function read()
+    public function read($id=null)
     {
         try {
-            $stmt = Connection::getConnection()->prepare('SELECT * FROM tbshoe');
-            if($stmt->execute()){
-                return $stmt->fetchAll();
+            if($id==null){
+                $stmt = Connection::getConnection()->prepare('SELECT * FROM tbshoe');
+                if($stmt->execute()){
+                    return $stmt->fetchAll();
+                }
+            }else{
+                $stmt = Connection::getConnection()->prepare('SELECT * FROM tbshoe WHERE _id = ?');
+                if($stmt->execute([$id])){
+                    return $stmt->fetchAll();
+                }
             }
             return Twig::loadJson("bad", 400, "Shoe error to read");
         } catch (\Throwable $th) {

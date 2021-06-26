@@ -25,12 +25,19 @@ class Brand
             return Twig::loadJson("bad", 400, "Brand error to insert: $th");
         }
     }
-    public function read()
+    public function read($id=null)
     {
         try {
-            $stmt = Connection::getConnection()->prepare('SELECT * FROM tbbrand');
-            if($stmt->execute()){
-                return $stmt->fetchAll();
+            if($id==null){
+                $stmt = Connection::getConnection()->prepare('SELECT * FROM tbbrand');
+                if($stmt->execute()){
+                    return $stmt->fetchAll();
+                }
+            }else{
+                $stmt = Connection::getConnection()->prepare('SELECT * FROM tbbrand WHERE _id = ?');
+                if($stmt->execute([$id])){
+                    return $stmt->fetchAll();
+                }
             }
             return Twig::loadJson("bad", 400, "Brand error to read");
         } catch (\Throwable $th) {

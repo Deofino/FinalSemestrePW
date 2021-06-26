@@ -49,13 +49,13 @@ class ProductController extends Twig
 
         return Twig::loadJson('bad', 404, 'METHOD GET NOT FOUND');
     }
-    public function read($categoria = null)
+    public function read($id=null)
     {
         AdminController::wardStatic();
         if ($_SERVER['REQUEST_METHOD'] === "GET") {
             try {
                 $product = new Product();
-                return $product->read();
+                return isset($id[0])?json_encode($product->read($id[0])):json_encode($product->read());
             } catch (\Throwable $th) {
                 return Twig::loadJson('bad', 404, $th);
             }

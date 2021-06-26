@@ -63,7 +63,10 @@ class AdminController extends Twig
     public function update()
     {
         $this->ward();
-        echo $this->twig->render('./private/update.twig',['file'=>URL_MAIN.'public/']);
+        $products = new Product();
+        $brand = new BrandController;
+        $category = new CategoryController;
+        echo $this->twig->render('./private/update.twig',['file'=>URL_MAIN.'public/','products'=>$products->read(),"brands"=>$brand->read(),"categories"=>$category->read()]);
     }
 
     public function logout(){
