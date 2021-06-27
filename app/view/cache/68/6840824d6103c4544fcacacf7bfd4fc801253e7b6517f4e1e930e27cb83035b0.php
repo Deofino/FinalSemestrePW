@@ -165,7 +165,10 @@ class __TwigTemplate_82f16233403e1f0a25dfb3a8607e77a0d2523b0dbfca433972f9ec32463
     nossos produtos são originais e de ótima qualidade, se gostou de algum venha
     conhecer nossa loja.
   </p>
-  <a href=\"products\"><i class=\"fas fa-long-arrow-alt-right\"></i></a>
+  <a href=\"";
+        // line 86
+        echo twig_escape_filter($this->env, ($context["file"] ?? null), "html", null, true);
+        echo "product\"><i class=\"fas fa-long-arrow-alt-right\"></i></a>
 </section>
 
 ";
@@ -190,7 +193,7 @@ class __TwigTemplate_82f16233403e1f0a25dfb3a8607e77a0d2523b0dbfca433972f9ec32463
 
     public function getDebugInfo()
     {
-        return array (  175 => 89,  143 => 62,  126 => 48,  109 => 34,  83 => 10,  79 => 9,  72 => 8,  68 => 7,  60 => 3,  56 => 2,  39 => 1,);
+        return array (  178 => 89,  170 => 86,  143 => 62,  126 => 48,  109 => 34,  83 => 10,  79 => 9,  72 => 8,  68 => 7,  60 => 3,  56 => 2,  39 => 1,);
     }
 
     public function getSourceContext()
