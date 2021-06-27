@@ -19,12 +19,14 @@ class ContactController extends Twig
 
     public function sendEmail()
     {
-        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+       
+        if ($_SERVER['REQUEST_METHOD'] == 'POST')
+        {
             //Variaveis
-            $nome = $_POST['txNome'];
-            $email = $_POST['txEmail'];
-            $assunto = $_POST['txAssunto'];
-            $msg = $_POST['txMsg'];
+            $nome = $_POST['name'];
+            $email = $_POST['email'];
+            $assunto = $_POST['subject'];
+            $msg = $_POST['message'];
             //Criptografia
             $assuntoCodificado = sprintf('=?%s?%s?%s?=', 'UTF-8', 'Q', quoted_printable_encode($assunto));
             //objeto email

@@ -25,17 +25,11 @@ let map;
 
 
 const form = document.querySelector('#grid form');
-form.addEventListener('submit', async ev=>{
+form.addEventListener('submit', async (ev)=>{
     ev.preventDefault();
-    let inputs = form.querySelectorAll("input");
-    for (let i = 0; i < inputs.length-1; i++) {
-        inputs[i].value = "";
-    }
-    form.querySelector("textarea").value = '';
-    form.pointerEvents = 'none';
-
     let i=0;
-    let interval = setInterval(() => {
+        let inputs = form.querySelectorAll("input");
+        let interval = setInterval(() => {
         if(i==4)i=0;
         let dots =+ i;
         if(dots ==0){
@@ -52,26 +46,25 @@ form.addEventListener('submit', async ev=>{
         }
         i++;
     }, 500);
-
     let formData = new FormData(form);
     let req = await fetch(`${URL}public/contact/sendEmail`,
     {
         body: formData,
-        mode: "cors",
-        cache: 'default',
         method: 'POST',
     });
     let res = await req.json();
-    
+    console.log(res);
     if(res.status == 'ok'){
-        // showAlert('Ebaaa', res.message,'success');
+        showAlert('Ebaaa', res.message,'success');
+        for (let i = 0; i < inputs.length-1; i++) {
+            inputs[i].value = "";
+        }
+        form.querySelector("textarea").value = '';
     }else{
         showAlert('Ops...', res.message,'error');
     }
-    console.log(res);
     clearInterval(interval);
     inputs[inputs.length-1].value = 'Enviar';
-    form.pointerEvents = 'all';
 
 })
 

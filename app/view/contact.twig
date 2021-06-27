@@ -18,14 +18,14 @@
 	</div>
 	<div id="grid">
 		<div class="left">
-			<form method="post" action="../app/controller/enviar-email.php">
-				<input type="text" name="txNome" required="require" pattern="[A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ ]+$" placeholder="Nome"/>
+			<form method="post" action="{{file}}/contact/sendEmail">
+				<input type="text" name="name" id="name" required placeholder="Nome"/>
 
-				<input type="email" name="txEmail" required="require" placeholder="Email"/>
+				<input type="email" name="email" id="email" placeholder="Email"/>
 
-				<input type="text" name="txAssunto" required="require" placeholder="Assunto"/>
+				<input type="text" name="subject" id="subject" placeholder="Assunto"/>
 
-				<textarea type="text" name="txMsg" required="require" pattern="[A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ ]+$" placeholder="Mensagem"></textarea>
+				<textarea type="text" name="message" id="message" placeholder="Mensagem"></textarea>
 
 				<input type="submit" value="Enviar"/>
 			</form>

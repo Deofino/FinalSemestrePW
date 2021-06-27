@@ -87,14 +87,17 @@ class __TwigTemplate_5b330015c2ae750e8acdae10a998c0c2a90a9bcbaa3f4162e881c8f85c1
 \t</div>
 \t<div id=\"grid\">
 \t\t<div class=\"left\">
-\t\t\t<form method=\"post\" action=\"../app/controller/enviar-email.php\">
-\t\t\t\t<input type=\"text\" name=\"txNome\" required=\"require\" pattern=\"[A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ ]+\$\" placeholder=\"Nome\"/>
+\t\t\t<form method=\"post\" action=\"";
+        // line 21
+        echo twig_escape_filter($this->env, ($context["file"] ?? null), "html", null, true);
+        echo "/contact/sendEmail\">
+\t\t\t\t<input type=\"text\" name=\"name\" id=\"name\" required placeholder=\"Nome\"/>
 
-\t\t\t\t<input type=\"email\" name=\"txEmail\" required=\"require\" placeholder=\"Email\"/>
+\t\t\t\t<input type=\"email\" name=\"email\" id=\"email\" placeholder=\"Email\"/>
 
-\t\t\t\t<input type=\"text\" name=\"txAssunto\" required=\"require\" placeholder=\"Assunto\"/>
+\t\t\t\t<input type=\"text\" name=\"subject\" id=\"subject\" placeholder=\"Assunto\"/>
 
-\t\t\t\t<textarea type=\"text\" name=\"txMsg\" required=\"require\" pattern=\"[A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ ]+\$\" placeholder=\"Mensagem\"></textarea>
+\t\t\t\t<textarea type=\"text\" name=\"message\" id=\"message\" placeholder=\"Mensagem\"></textarea>
 
 \t\t\t\t<input type=\"submit\" value=\"Enviar\"/>
 \t\t\t</form>
@@ -130,7 +133,7 @@ class __TwigTemplate_5b330015c2ae750e8acdae10a998c0c2a90a9bcbaa3f4162e881c8f85c1
 
     public function getDebugInfo()
     {
-        return array (  116 => 40,  113 => 39,  109 => 38,  83 => 15,  79 => 13,  75 => 12,  68 => 9,  64 => 8,  56 => 5,  50 => 3,  39 => 1,);
+        return array (  119 => 40,  116 => 39,  112 => 38,  92 => 21,  83 => 15,  79 => 13,  75 => 12,  68 => 9,  64 => 8,  56 => 5,  50 => 3,  39 => 1,);
     }
 
     public function getSourceContext()

@@ -5,16 +5,12 @@ section:nth-of-type(1){
     text-align: center;
     padding: 2.5rem 4%;
     color: rgb(20,20,20);
-    
-
     background-position: center;
     background-size: cover;
     image-rendering: pixelated;
     background-repeat: no-repeat;
     background-attachment: fixed;
-
     background-image: url("./../img/home/tenis.jpg");
-    font-size: 60px;
 }
 section:nth-of-type(1) h1{
     color: var(--blue);
@@ -26,24 +22,34 @@ section:nth-of-type(1) h1{
     border-color: var(--light_blue);
     padding: 1rem;
     border-bottom-left-radius: 20px;
-    margin-left: 20vh;
+    margin-left: 5rem;
 } 
+
 .tilt1{
     margin: auto;
     text-align: center;
     padding: 1rem;
     border-bottom: 4px solid var(--white);
-    width: 90px;
+    font-size: calc(1rem + 1vw);
     border-color: var(--blue);
     border-radius: 3px;
 }
 section:nth-of-type(2){
     width: 100%;
+    max-width: 960px;
+    margin: 0 auto;
     text-align: center;
-    padding: 5rem 25%;
+    padding: 3rem 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 section:nth-of-type(2) p{
     margin-top: 2rem;
+    width: 100%;
+    line-height: 1.6;
+    background-color: #fff;
+    font-size: max(.9rem,calc(.4rem + 1vw));
     margin-bottom: 2rem;
 }
 /* FIM PARALLAX 1 */
@@ -75,7 +81,7 @@ section:nth-of-type(2) p{
 #l_cards .card .card_header{
     width: 100%;
     cursor: pointer;
-    filter: grayscale(1);
+    filter: grayscale(.8);
     transition: .4s ease;
     overflow: hidden;
     box-shadow: 0 2px 4px var(--shadow);
@@ -136,7 +142,7 @@ section:nth-of-type(2) p{
         max-width: 500px;
     }
     #l_cards .card .card_header{
-        height: 350px;
+        max-height: 200px;
     }
     #l_cards .card .card_body{
         padding: 2rem 1rem;
@@ -167,28 +173,45 @@ section:nth-of-type(3){
     background-attachment: fixed;
 
     background-image: url("./../img/home/colorido.jpg");
-    font-size: 60px;
 }
 .tilt2{
     margin: auto;
     text-align: center;
     padding: 1rem;
+    background-color: #fff;
     border-bottom: 4px solid var(--white);
     width: 350px;
+    font-size: max(1.3rem,calc(1rem + 1vw));
     border-color: var(--blue);
     border-radius: 3px;
 }
 section:nth-of-type(4){
     width: 100%;
     text-align: center;
-    padding: 5rem 25%;
+    padding: 3rem 1rem;
+    max-width: 960px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
 }
 section:nth-of-type(4) p{
+    font-size: max(.9rem,calc(.4rem + 1vw));
     margin-top: 2rem;
     margin-bottom: 2rem;
 }
 .fa-long-arrow-alt-right{
     color: var(--blue);
+    font-size: 3rem;
+}
+.fa-long-arrow-alt-right:hover{
+    animation: rotate 1s cubic-bezier(0.3, 0.7, 0.3, 1.4);
+}
+@keyframes rotate {
+    to{
+        transform: rotate(-360deg);
+    }
 }
 @media(max-width: 600px) {
     section:nth-of-type(1) h1{
