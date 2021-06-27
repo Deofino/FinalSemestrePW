@@ -11,7 +11,7 @@
 
 {% block body %}
 
-	<main id="update">
+	<main id="delete">
         {% if products %}
                 <h1>Deletar produto</h1>
                 <section class="l_table">
@@ -21,7 +21,7 @@
                                 <th>ID</th>
                                 <th>Produto</th>
                                 <th>Imagem</th>
-                                <th>Atualizar</th>
+                                <th>Deletar</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -31,7 +31,7 @@
                                     <td>{{product.nameShoe}}</td>
                                     <td><img src="{{file}}{{product.dirImageShoe}}" alt="{{product.nameShoe}}"></td>
                                     <td>
-                                        <a href="{{file}}product/delete/{{product._id}}">Atualizar</a>
+                                        <a href="{{file}}product/delete/{{product._id}}">Exlcuir</a>
                                     </td>
                                 </tr>
                             {% endfor %}

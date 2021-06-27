@@ -122,7 +122,7 @@ class __TwigTemplate_b03ad336ae1c231c403425491d5a3234ae40649c322b1cb1a7301e8afa7
                 echo twig_escape_filter($this->env, ($context["file"] ?? null), "html", null, true);
                 echo "product/delete/";
                 echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["product"], "_id", [], "any", false, false, false, 34), "html", null, true);
-                echo "\">Excluir</a>
+                echo "\">Exlcuir</a>
                                     </td>
                                 </tr>
                             ";
@@ -149,9 +149,7 @@ class __TwigTemplate_b03ad336ae1c231c403425491d5a3234ae40649c322b1cb1a7301e8afa7
     {
         $macros = $this->macros;
         // line 46
-        echo "<script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js\" integrity=\"sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM\" crossorigin=\"anonymous\"></script>
-<script src=\"";
-        // line 47
+        echo "<script src=\"";
         echo twig_escape_filter($this->env, ($context["file"] ?? null), "html", null, true);
         echo "js/delete.js\"></script>";
     }
@@ -168,7 +166,7 @@ class __TwigTemplate_b03ad336ae1c231c403425491d5a3234ae40649c322b1cb1a7301e8afa7
 
     public function getDebugInfo()
     {
-        return array (  155 => 47,  152 => 46,  145 => 45,  141 => 43,  134 => 38,  122 => 34,  114 => 32,  110 => 31,  106 => 30,  103 => 29,  99 => 28,  85 => 16,  83 => 15,  79 => 13,  75 => 12,  68 => 9,  64 => 8,  56 => 5,  50 => 3,  39 => 1,);
+        return array (  152 => 46,  145 => 45,  141 => 43,  134 => 38,  122 => 34,  114 => 32,  110 => 31,  106 => 30,  103 => 29,  99 => 28,  85 => 16,  83 => 15,  79 => 13,  75 => 12,  68 => 9,  64 => 8,  56 => 5,  50 => 3,  39 => 1,);
     }
 
     public function getSourceContext()

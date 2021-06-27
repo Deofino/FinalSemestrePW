@@ -52,7 +52,7 @@ class AdminController extends Twig
         $this->ward();
         $brand = new BrandController;
         $category = new CategoryController;
-        echo $this->twig->render('./private/insert.twig',['file'=>URL_MAIN.'public/','brands'=>$brand->read(), 'categories'=>$category->read()]);
+        echo $this->twig->render('./private/insert.twig',['file'=>URL_MAIN.'public/','brands'=>json_decode($brand->read()), 'categories'=>json_decode($category->read())]);
     }
     public function delete()
     {

@@ -13,7 +13,7 @@
 
 	<main id="update">
 
-		<div id="l_form" class="visible">
+		{# <div id="l_form" class="visible">
 			<button id="close">
 				<i class="fas fa-times"></i>
 			</button>
@@ -93,7 +93,7 @@
 					<button type="submit">Atualizar</button>
 				</div>
 			</form>
-		</div>
+		</div> #}
 		{% if products %}
 			<h1>Atualizar produto</h1>
 			<section class="l_table">
@@ -113,7 +113,7 @@
 								<td>{{product.nameShoe}}</td>
 								<td><img src="{{file}}{{product.dirImageShoe}}" alt="{{product.nameShoe}}"></td>
 								<td>
-									<a href="#">Modificar</a>
+									<a href="{{file}}product/read/{{product._id}}">Modificar</a>
 								</td>
 							</tr>
 						{% endfor %}

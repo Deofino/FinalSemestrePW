@@ -22,7 +22,7 @@ class ProductController extends Twig
 
                     $name = $_POST['productName'];
                     $description = $_POST['description'];
-                    $price = $_POST['price'];
+                    $price = explode('R$ ', $_POST['price'])[1];
                     $id_category = $_POST['selectCategory'];
                     $id_brand = $_POST['selectBrand'];
                     $colors =  $_POST['colorsArray'];
@@ -55,7 +55,7 @@ class ProductController extends Twig
         if ($_SERVER['REQUEST_METHOD'] === "GET") {
             try {
                 $product = new Product();
-                return isset($id[0])?json_encode($product->read($id[0])):json_encode($product->read());
+                return isset($id[0])?json_encode($product->read($id[0])[0]):json_encode($product->read());
             } catch (\Throwable $th) {
                 return Twig::loadJson('bad', 404, $th);
             }
