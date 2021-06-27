@@ -1,6 +1,6 @@
 #update{
     padding: 5rem .4rem;
-    background:linear-gradient(120deg, var(--black), var(--background_color_dark));
+    background: #ccceff;
 }
 #update section {
     width: 100%;
@@ -11,11 +11,12 @@
     margin: 1rem auto;
     padding: 1rem;
     background-color: var(--background_color);
+    box-shadow: 2px 4px 10px var(--shadow)
 }
 #update img{
     width: 120px;
     image-rendering: auto;
-    border: 1px solid var(--background_color_dark);
+    border: 1px solid var(--purple);
     box-shadow: 2px 4px 10px var(--shadow);
     height: 100px;
     border-radius: 4px 16px 4px 16px;
@@ -41,7 +42,7 @@ th,td{
 }
 #update h1{
     font-size: clamp(1.6rem,1.6em + 1vw,3rem);
-    color: var(--white);
+    color: var(--black);
     text-align: center;
     margin: 1rem 0;
 }
@@ -49,7 +50,6 @@ th,td{
     box-shadow: 2px 2px 10px var(--shadow);
     overflow: auto;
     min-width: 300px !important;
-    border: 2px solid var(--alternative_color_dark);
     width: 100%;
 }
 
@@ -69,7 +69,6 @@ th,td{
     padding: .5rem;
     text-align: center;
     vertical-align: middle;
-    border: 2px solid var(--alternative_color_dark);
 }
 
 
@@ -105,7 +104,7 @@ form{
 #close{
     border: none;
     outline: none;
-    background-color: var(--accent_color_dark);
+    background-color: var(--purple);
     position: fixed;
     color: var(--white);
     top: 1.4rem;
@@ -182,7 +181,7 @@ form div{
     border-radius: 4px;
 }
 .form .row .container-button button{
-    background-color: var(--accent_color_dark);
+    background-color: var(--purple);
     width: 100px;
     cursor: pointer;
     border-left: 1px solid var(--black);
@@ -220,7 +219,7 @@ form div{
     font-weight: bold;
 	font-family: 'Montserrat', Verdana, Arial, sans-serif;
     box-shadow: 0 2px 4px var(--shadow);
-    background-image: linear-gradient(120deg, var(--accent_color_dark), var(--accent_color));
+    background-image: linear-gradient(120deg, var(--purple), var(--light_purple));
     background-position: 200% 200%;
 }
 .chip{
@@ -234,7 +233,7 @@ form div{
     margin:  4px;
     justify-content: space-around;
     align-items: center;
-    background: var(--accent_color_dark);
+    background: var(--purple);
 }
 .chip button{
     cursor: pointer;
