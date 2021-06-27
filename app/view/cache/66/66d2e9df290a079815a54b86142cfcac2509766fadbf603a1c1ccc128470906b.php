@@ -127,14 +127,15 @@ class __TwigTemplate_076f7cd267e849a5149d219d88b01f1fdb21088c8f23c71ff70bfce0bc6
         $this->loadTemplate("footer.twig", "./template/html.twig", 56)->display($context);
         // line 57
         echo "
+\t<script src=\"https://unpkg.com/sweetalert/dist/sweetalert.min.js\"></script>
     <script src=\"";
-        // line 58
+        // line 59
         echo twig_escape_filter($this->env, ($context["file"] ?? null), "html", null, true);
         echo "js/menu.js\"></script>
     ";
-        // line 59
-        $this->displayBlock('scripts', $context, $blocks);
         // line 60
+        $this->displayBlock('scripts', $context, $blocks);
+        // line 61
         echo "</body>
 </html>
 ";
@@ -174,7 +175,7 @@ class __TwigTemplate_076f7cd267e849a5149d219d88b01f1fdb21088c8f23c71ff70bfce0bc6
     ";
     }
 
-    // line 59
+    // line 60
     public function block_scripts($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -192,7 +193,7 @@ class __TwigTemplate_076f7cd267e849a5149d219d88b01f1fdb21088c8f23c71ff70bfce0bc6
 
     public function getDebugInfo()
     {
-        return array (  178 => 59,  173 => 53,  169 => 52,  164 => 46,  160 => 45,  153 => 38,  148 => 36,  144 => 35,  138 => 60,  136 => 59,  132 => 58,  129 => 57,  127 => 56,  124 => 55,  121 => 52,  119 => 51,  114 => 48,  112 => 45,  107 => 43,  103 => 42,  99 => 41,  92 => 38,  90 => 35,  86 => 34,  76 => 27,  69 => 23,  60 => 17,  42 => 1,);
+        return array (  179 => 60,  174 => 53,  170 => 52,  165 => 46,  161 => 45,  154 => 38,  149 => 36,  145 => 35,  139 => 61,  137 => 60,  133 => 59,  129 => 57,  127 => 56,  124 => 55,  121 => 52,  119 => 51,  114 => 48,  112 => 45,  107 => 43,  103 => 42,  99 => 41,  92 => 38,  90 => 35,  86 => 34,  76 => 27,  69 => 23,  60 => 17,  42 => 1,);
     }
 
     public function getSourceContext()

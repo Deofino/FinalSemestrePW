@@ -50,59 +50,58 @@ class __TwigTemplate_b0e0c2a2ce0253164ed4f7687c3abe25aea026be8fa7cec3716faef624d
     public function block_metas_data($context, array $blocks = [])
     {
         $macros = $this->macros;
-        // line 4
-        echo "
-";
     }
 
-    // line 7
+    // line 5
     public function block_title($context, array $blocks = [])
     {
         $macros = $this->macros;
-        echo "Shoes | Contato";
+        echo "Shoes | Contato
+";
     }
 
-    // line 9
+    // line 8
     public function block_styles($context, array $blocks = [])
     {
         $macros = $this->macros;
-        // line 10
-        echo "    <link rel=\"stylesheet\" href=\"";
+        // line 9
+        echo "\t<link rel=\"stylesheet\" href=\"";
         echo twig_escape_filter($this->env, ($context["file"] ?? null), "html", null, true);
         echo "css/contact.css\">
 ";
     }
 
-    // line 13
+    // line 12
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
-        // line 14
-        echo "         <div class=\"attraction\">
-            <h1 class=\"title\">Entre em contato conosco</h1>
-            <img class=\"svgcontact\"src=\"";
-        // line 16
+        // line 13
+        echo "\t<div class=\"attraction\">
+\t\t<h1 class=\"title\">Entre em contato conosco</h1>
+\t\t<img class=\"svgcontact\" src=\"";
+        // line 15
         echo twig_escape_filter($this->env, ($context["file"] ?? null), "html", null, true);
         echo "img/vectors/contact.svg\">
-            <p class=\"text\">Envie-nos um email que responderemos o mais rápido possível!</p>
-            <i class=\"fas fa-angle-double-down\"></i>
-         </div>
-         <div id=\"grid\">
-               <div class=\"left\">        
-               <form method=\"post\" action=\"../app/controller/enviar-email.php\">
-                        <input type=\"text\" name=\"txNome\" required=\"require\" pattern=\"[A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ ]+\$\" placeholder=\"Nome\"/>
-                  
-                        <input type=\"email\" name=\"txEmail\"  required=\"require\"  placeholder=\"Email\"/>
-                  
-                        <input type=\"text\" name=\"txAssunto\" required=\"require\" placeholder=\"Assunto\"/>
-                     
-                        <textarea type=\"text\" name=\"txMsg\" required=\"require\" pattern=\"[A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ ]+\$\" placeholder=\"Mensagem\"></textarea>
-                     
-                        <input type=\"submit\" value=\"Enviar\"/>
-               </form>
-            </div>
-         <div class=\"right\"id=\"mapa\"></div>
-      </div>
+\t\t<p class=\"text\">Envie-nos um email que responderemos o mais rápido possível!</p>
+\t\t<i class=\"fas fa-angle-double-down\"></i>
+\t</div>
+\t<div id=\"grid\">
+\t\t<div class=\"left\">
+\t\t\t<form method=\"post\" action=\"../app/controller/enviar-email.php\">
+\t\t\t\t<input type=\"text\" name=\"txNome\" required=\"require\" pattern=\"[A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ ]+\$\" placeholder=\"Nome\"/>
+
+\t\t\t\t<input type=\"email\" name=\"txEmail\" required=\"require\" placeholder=\"Email\"/>
+
+\t\t\t\t<input type=\"text\" name=\"txAssunto\" required=\"require\" placeholder=\"Assunto\"/>
+
+\t\t\t\t<textarea type=\"text\" name=\"txMsg\" required=\"require\" pattern=\"[A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ ]+\$\" placeholder=\"Mensagem\"></textarea>
+
+\t\t\t\t<input type=\"submit\" value=\"Enviar\"/>
+\t\t\t</form>
+\t\t</div>
+        
+\t\t<div class=\"right\" id=\"mapa\"></div>
+\t</div>
 ";
     }
 
@@ -111,51 +110,11 @@ class __TwigTemplate_b0e0c2a2ce0253164ed4f7687c3abe25aea026be8fa7cec3716faef624d
     {
         $macros = $this->macros;
         // line 39
-        echo "<script src=\"";
+        echo "\t<script src=\"http://maps.googleapis.com/maps/api/js?key=AIzaSyCAckKLHl-T6HPk2pTVfxrjHXf4yLojpfw&amp;\"></script>
+\t<script src=\"";
+        // line 40
         echo twig_escape_filter($this->env, ($context["file"] ?? null), "html", null, true);
         echo "js/contact.js\"></script>
-<script src=\"http://maps.googleapis.com/maps/api/js?key=AIzaSyCAckKLHl-T6HPk2pTVfxrjHXf4yLojpfw&amp;sensor=false\"></script>
-<script>
-    let map;
-
-    function initialize(){
-        var coordenadas = {lat: -23.552925305071476, lng: -46.39960872738754};
-       
-        let mapa = new google.maps.Map(document.getElementById('mapa'),{
-            zoom: 10,
-            center: coordenadas,
-            mapTypeId: 'roadmap'
-        });
-
-        let marker = new google.maps.Marker({
-            position: coordenadas,
-            title: \"Shoes :-D\",
-            map: mapa,
-            icon: '";
-        // line 57
-        echo twig_escape_filter($this->env, ($context["file"] ?? null), "html", null, true);
-        echo "img/icon32px.png'
-        });
-        
-    }
-    initialize();
-</script>
-<!--SWEET ALERT AQUI 
-   <script src=\"https://unpkg.com/sweetalert/dist/sweetalert.min.js\"></script>
-</head>
-<body>
-    <button onclick=\"mostrar()\">Mostrar</button>
-    <script type=\"text/javascript\">
-
-        function mostrar(){
-            swal({
-                title: 'Obrigada!',
-                text: 'Email enviado com sucesso',
-                icon: 'success'
-            });
-        }
-    
-    </script> -->
 ";
     }
 
@@ -171,7 +130,7 @@ class __TwigTemplate_b0e0c2a2ce0253164ed4f7687c3abe25aea026be8fa7cec3716faef624d
 
     public function getDebugInfo()
     {
-        return array (  136 => 57,  114 => 39,  110 => 38,  85 => 16,  81 => 14,  77 => 13,  70 => 10,  66 => 9,  59 => 7,  54 => 4,  50 => 3,  39 => 1,);
+        return array (  116 => 40,  113 => 39,  109 => 38,  83 => 15,  79 => 13,  75 => 12,  68 => 9,  64 => 8,  56 => 5,  50 => 3,  39 => 1,);
     }
 
     public function getSourceContext()
