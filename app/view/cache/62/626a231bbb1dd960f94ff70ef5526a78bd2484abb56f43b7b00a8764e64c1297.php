@@ -122,7 +122,7 @@ class __TwigTemplate_b03ad336ae1c231c403425491d5a3234ae40649c322b1cb1a7301e8afa7
                 echo twig_escape_filter($this->env, ($context["file"] ?? null), "html", null, true);
                 echo "product/delete/";
                 echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["product"], "_id", [], "any", false, false, false, 34), "html", null, true);
-                echo "\">Exlcuir</a>
+                echo "\">Excluir</a>
                                     </td>
                                 </tr>
                             ";

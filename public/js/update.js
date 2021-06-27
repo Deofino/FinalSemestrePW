@@ -16,9 +16,13 @@ inputs.forEach(a => {
         let resCategories = await reqCategories.json();
         let resBrand = await reqBrand.json();
 
+        
         // CREATE FORM
-        createModal(main,resData);
-
+        createModal(document.querySelector('#c_form'),resData);
+        setTimeout(() => {
+            document.querySelector('#l_form').classList.toggle('visible');
+        }, 100);
+        close()
         /* INSERT DATAS */
         insertDatas(resData, resBrand, resCategories);
 
@@ -174,13 +178,14 @@ function insertDatas(resData, resBrand, resCategories) {
     
     insertSelects(resData)
 }
+
 function createModal(main,resData) {
     main.innerHTML =
         `
-<div id="l_form" class="visible">
-<button id="close">
-   <i class="fas fa-times"></i>
-</button>
+        <div id="l_form">
+        <button id="close">
+            <i class="fas fa-times"></i>
+        </button>
 <form action="${URL}product/update/${resData._id}" method="post" class="form">
    <div class="form-item col">
        <input type="text" name="name" value="${resData.nameShoe}" placeholder="Produto" id="name" class="item-input" required maxlength="100" minlength="5">
@@ -257,4 +262,15 @@ function createModal(main,resData) {
    </div>
 </form>
 </div>`
+}
+
+function close(){
+    let btn = document.querySelector('#close');
+    console.log(btn);
+    btn.addEventListener('click', e=>{
+        document.querySelector('#l_form').classList.remove('visible');
+        setTimeout(()=>{
+            document.querySelector('#l_form').remove();
+        },1000)
+    })
 }
