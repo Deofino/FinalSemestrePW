@@ -84,4 +84,22 @@ class Product
             return Twig::loadJson("bad", 400, "Shoe error to delete: $th");
         }
     }
+
+    public function update($id=null, $data=null)
+    {
+        try {
+            return json_encode([$data, $id]);
+            $stmt = Connection::getConnection()
+            ->prepare("UPDATE tbshoe SET nameShoe=?,descriptionShoe=?,genderShoe=?,priceShoe=?,
+            colorsShoe=?,dirImageShoe=?,idCategory=?,idBrand=?' WHERE ?");
+            if ($stmt->execute([$data->name,$data->description,$data->gender,$data->price,
+                                        $data->colors,$data->image,$data->id_category,$data->id_brand, $id])) 
+                {
+                return Twig::loadJson("ok", 200, "Shoe updated with success");
+            }
+            return Twig::loadJson("bad", 400, "Shoe error to update");
+        } catch (\Throwable $th) {
+            return Twig::loadJson("bad", 400, "Shoe error to update: $th");
+        }
+    }
 }

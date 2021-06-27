@@ -61,7 +61,7 @@ class ProductController extends Twig
             }
         }
     }
-    public function delete($id)
+    public function delete($id=null)
     {
         AdminController::wardStatic();
         try {
@@ -73,6 +73,54 @@ class ProductController extends Twig
                 return Twig::loadJson('bad', 404, 'Product not found');
             } else {
                 return Twig::loadJson('bad', 404, 'Delete in method DELETE');
+            }
+        } catch (\Throwable $th) {
+            return Twig::loadJson('bad', 404, $th);
+        }
+    }
+    public function update($id=null)
+    {
+        AdminController::wardStatic();
+        try {
+            if ($_SERVER['REQUEST_METHOD'] === "POST") {
+                if (isset($id) && isset($_POST)) {
+                    $name = $_POST['name'];
+                    $description = $_POST['description'];
+                    $price = $_POST['price'];
+                    $id_category = $_POST['category'];
+                    $id_brand = $_POST['brand'];
+                    $colors =  $_POST['colorsArray'];
+                    $gender = $_POST['radio'];
+                    $image = $_FILES['image']['size']==0?null:$_FILES['image'];
+                    
+                    $product = new Product();
+                    if($image!=null){
+                        $date = new DateTime();
+                        $image = md5($date->format('ymdhis') . $image['name']) . "." . pathinfo($image['name'], PATHINFO_EXTENSION);
+                        $dir = 'img/products/';
+
+                        !file_exists($dir) ? mkdir($dir) : '';
+                        $oldImage = $product->read($id[0]);
+                        return $oldImage;
+                        // move_uploaded_file($image['tmp_name'], $dir . $image);
+                    }
+
+                    // $product->update($id[0],
+                    //     (object)[
+                    //         $name,
+                    //         $description,
+                    //         $price,
+                    //         $id_category,
+                    //         $id_brand,
+                    //         $colors,
+                    //         $gender,
+                    //         $image,
+                    //     ]);
+                    return json_encode($colors);
+                }
+                return Twig::loadJson('bad', 404, 'Product not found');
+            } else {
+                return Twig::loadJson('bad', 404, 'Delete in method POST');
             }
         } catch (\Throwable $th) {
             return Twig::loadJson('bad', 404, $th);
