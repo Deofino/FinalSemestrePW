@@ -8,6 +8,7 @@
 
 {% block styles %}
     <link rel="stylesheet" href="{{file}}css/dashboard.css">
+    	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 {% endblock %}
 
 {% block body %}
@@ -15,22 +16,30 @@
     <div id="dashboard">
         <div class="box_cima">
             <div class="content_1">
-                <h2>DADOS</h2>
+                <h2>MARCA + ACESSADA</h2>
+                    <img class="nike"src="{{file}}img/logo_NIKE.svg">
+                    <p>NIKE</p>            	
             </div>
             <div class="content_2">
-                <h2>DADOS</h2>
+                <h2>MÉDIA DE PREÇOS</h2>
+                <img class="money"src="{{file}}img/S.svg">
+                <p>R$:200,00</p> 
             </div>
             <div class="content_3">
-                <h2>DADOS</h2>
+                <h2>CATEGORIA + ACESSADA</h2>
+                <img class="catego"src="{{file}}img/list.svg">
+                <p>CASUAL</p>
             </div>
             <div class="content_4">
-                <h2>DADOS</h2>
+                <h2>GÊNERO + ACESSADO</h2>
+                <img class="unissex"src="{{file}}img/Unissex.svg">
+                    <p>UNISSEX</p>           
             </div>
         </div>
         <div class="box_baixo">
             <div class="content_5">
                 <section>
-                    <h2 class="graf">Gráfico</h2>
+                    <h2 class="graf">GRÁFICO</h2>
                     <div class="div-graf">
                         <!--Div that will hold the pie chart-->
                         <div id="chart_div"></div>
@@ -41,9 +50,70 @@
                   </section>
             </div>
             <div class="content_6">
-                <h2>FILTROS</h2>
+                <h2 class="title_filter">FILTROS</h2>
+
+                <div class="row">
+                  <h3>Marcas</h3>
+                    <div class="check1">
+                        <input type="checkbox" class="item-check" name="filter_nike" id="filter_nike">
+                        <label for="filter_nike" id="check" class="inative">Nike</label>
+                    </div>
+                    <div class="check1">
+                        <input type="checkbox" class="item-check" name="filter_adid" id="filter_adid">
+                        <label for="filter_adid" id="check" class="inative">Adidas</label>
+                    </div>
+                    <div class="check1"></div>
+                        <input type="checkbox" class="item-check" name="filter_puma" id="filter_puma">
+                        <label for="filter_puma" id="check" class="inative">Puma</label>
+                    </div>
+                    <div class="check1">
+                        <input type="checkbox" class="item-check" name="filter_newb" id="filter_newb">
+                        <label for="filter_newb" id="check" class="inative">New Balance</label>
+                    </div>
+
+
+                <div class="row">
+                    <h3>Categorias</h3>
+                      <div class="check1">
+                          <input type="checkbox" class="item-check" name="filter_corr" id="filter_corr">
+                          <label for="filter_corr" id="check" class="inative">Corrida</label>
+                      </div>
+                      <div class="check1">
+                          <input type="checkbox" class="item-check" name="filter_casu" id="filter_casu">
+                          <label for="filter_casu" id="check" class="inative">Casual</label>
+                      </div>
+                      <div class="check1"></div>
+                          <input type="checkbox" class="item-check" name="filter_basq" id="filter_basq">
+                          <label for="filter_basq" id="check" class="inative">Basquete</label>
+                      </div>
+                      <div class="check1">
+                          <input type="checkbox" class="item-check" name="filter_fut" id="filter_fut">
+                          <label for="filter_fut" id="check" class="inative">Futebol</label>
+                      </div>
+
+                      <div class="row">
+                        <h3>Gênero</h3>
+                          <div class="check1">
+                              <input type="checkbox" class="item-check" name="filter_fem" id="filter_fem">
+                              <label for="filter_fem" id="check" class="inative">Feminino</label>
+                          </div>
+                          <div class="check1">
+                              <input type="checkbox" class="item-check" name="filter_mas" id="filter_mas">
+                              <label for="filter_mas" id="check" class="inative">Masculino</label>
+                          </div>
+                          <div class="check1"></div>
+                              <input type="checkbox" class="item-check" name="filter_uni" id="filter_uni">
+                              <label for="filter_uni" id="check" class="inative">Unissex</label>
+                          </div>
+                          </div>
+    
+                      </div>
+
+                  </div>
            </div>
+           
         </div>
+        
     </div>
   
     
