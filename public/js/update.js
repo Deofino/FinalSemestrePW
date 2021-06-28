@@ -44,7 +44,13 @@ inputs.forEach(a => {
              verifySimpleField(document.querySelector('#description'))&&
              verifySimpleField(document.querySelector('#price')))
              {
-                console.log('santo pai de deus se isso functionar mds');
+                let datas = new FormData(form);
+                datas.append('colorsArray', JSON.stringify(colors));
+                datas.append('image', resData.dirImageShoe);
+                let req = await fetch(form.getAttribute('action'),
+                {method:"POST", body:datas,cache:"default", mode:'cors'});
+                let res = await req.text();
+                console.log(res);
              }
         })
 
@@ -72,7 +78,6 @@ function addImage() {
     })
 }
 function addColor(resData, colors) {
-    colors = JSON.parse(resData.colorsShoe);
     let containerColor = document.querySelector('.container-button').children;
     containerColor[1].addEventListener('click', e => {
         e.preventDefault();
@@ -87,6 +92,7 @@ function removeColor(colors){
     let chipsButton = document.querySelectorAll('.chip button');
     chipsButton.forEach(el=>{
         el.addEventListener('click',e=>{
+            e.preventDefault();
             colors.pop(el.parentElement.children[0].textContent);
             el.parentElement.remove();
         })
@@ -195,15 +201,15 @@ function createModal(main,resData) {
    </div>
    <div class="form-item radio">
        <label for="rmasc">
-           <input type="radio" id="rmasc" name="radio" class="item-input">
+           <input type="radio" id="rmasc" value='Masculino' name="radio" class="item-input">
            <span class="label">Masculino</span>
        </label>
        <label for="rfemi">
-           <input type="radio" id="rfemi" name="radio" class="item-input">
+           <input type="radio" id="rfemi" value='Feminino' name="radio" class="item-input">
            <span class="label">Feminino</span>
        </label>
        <label for="funi">
-           <input type="radio" id="runi" name="radio" class="item-input">
+           <input type="radio" id="runi" name="radio" value='Unissex' class="item-input">
            <span class="label">Unissex</span>
        </label>
    </div>
@@ -266,7 +272,6 @@ function createModal(main,resData) {
 
 function close(){
     let btn = document.querySelector('#close');
-    console.log(btn);
     btn.addEventListener('click', e=>{
         document.querySelector('#l_form').classList.remove('visible');
         setTimeout(()=>{
