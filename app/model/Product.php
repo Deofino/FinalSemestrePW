@@ -85,21 +85,31 @@ class Product
         }
     }
 
-    public function update($id=null, $data=null)
+    public function update($id, $data)
     {
         try {
-            return json_encode([$data, $id]);
+            $data = json_decode($data);
+            // return json_encode( $data);
             $stmt = Connection::getConnection()
             ->prepare("UPDATE tbshoe SET nameShoe=?,descriptionShoe=?,genderShoe=?,priceShoe=?,
-            colorsShoe=?,dirImageShoe=?,idCategory=?,idBrand=?' WHERE ?");
-            if ($stmt->execute([$data->name,$data->description,$data->gender,$data->price,
-                                        $data->colors,$data->image,$data->id_category,$data->id_brand, $id])) 
-                {
-                return Twig::loadJson("ok", 200, "Shoe updated with success");
+            colorsShoe=?,dirImageShoe=?,idCategory=?,idBrand=? WHERE _id = ?");
+
+            $stmt->bindValue(1,$data[0]); //Nome
+            $stmt->bindValue(2,$data[1]); //Descricao
+            $stmt->bindValue(3,$data[6]); //genero
+            $stmt->bindValue(4,$data[2]); //preco
+            $stmt->bindValue(5,$data[5]); // cores
+            $stmt->bindValue(6,$data[7]); //image
+            $stmt->bindValue(7,$data[3]); // categoria
+            $stmt->bindValue(8,$data[4]); // marca
+            $stmt->bindValue(9,$id); // $id
+
+            if ($stmt->execute()){
+                return json_encode(Twig::loadJson("ok", 200, "Shoe updated with success"));
             }
-            return Twig::loadJson("bad", 400, "Shoe error to update");
+            return json_encode(Twig::loadJson("bad", 400, "Shoe error to update"));
         } catch (\Throwable $th) {
-            return Twig::loadJson("bad", 400, "Shoe error to update: $th");
+            return json_encode(Twig::loadJson("bad", 400, "Shoe error to update: ".$th->getMessage()));
         }
     }
 }

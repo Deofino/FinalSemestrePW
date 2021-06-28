@@ -68,6 +68,11 @@ class ProductController extends Twig
             if ($_SERVER['REQUEST_METHOD'] === "DELETE") {
                 if (isset($id)) {
                     $product = new Product();
+                    $oldImage = $product->read($id[0])[0];
+                    $oldImage =  $oldImage['dirImageShoe'];
+                    if(file_exists($oldImage)){
+                        unlink($oldImage);
+                    }
                     return $product->delete($id[0]);
                 }
                 return Twig::loadJson('bad', 404, 'Product not found');
@@ -84,6 +89,8 @@ class ProductController extends Twig
         try {
             if ($_SERVER['REQUEST_METHOD'] === "POST") {
                 if (isset($id) && isset($_POST)) {
+                    $product = new Product();
+
                     $name = $_POST['name'];
                     $description = $_POST['description'];
                     $price = $_POST['price'];
@@ -93,30 +100,33 @@ class ProductController extends Twig
                     $gender = $_POST['radio'];
                     $image = $_FILES['image']['size']==0?null:$_FILES['image'];
                     
-                    $product = new Product();
+                    $oldImage = $product->read($id[0])[0];
+                    $oldImage =  $oldImage['dirImageShoe'];
+
                     if($image!=null){
                         $date = new DateTime();
-                        $image = md5($date->format('ymdhis') . $image['name']) . "." . pathinfo($image['name'], PATHINFO_EXTENSION);
                         $dir = 'img/products/';
+                        $image = $dir . md5($date->format('ymdhis') . $image['name']) . "." . pathinfo($image['name'], PATHINFO_EXTENSION);
 
                         !file_exists($dir) ? mkdir($dir) : '';
-                        $oldImage = $product->read($id[0]);
-                        return $oldImage;
-                        // move_uploaded_file($image['tmp_name'], $dir . $image);
-                    }
-
-                    // $product->update($id[0],
-                    //     (object)[
-                    //         $name,
-                    //         $description,
-                    //         $price,
-                    //         $id_category,
-                    //         $id_brand,
-                    //         $colors,
-                    //         $gender,
-                    //         $image,
-                    //     ]);
-                    return json_encode($colors);
+                        // $oldImage = $product->read($id[0])[0];
+                        // $oldImage =  $oldImage['dirImageShoe'];
+                        if(file_exists($oldImage)){
+                            unlink($oldImage);
+                        }
+                        // return var_dump($_FILES);
+                        move_uploaded_file($_FILES['image']['tmp_name'], $image);
+                    }else $image = $oldImage;
+                    $req = json_encode([
+                        $name,
+                        $description,
+                        $price,
+                        $id_category,
+                        $id_brand,
+                        $colors,
+                        $gender,
+                        $image,]);
+                    return $product->update($id[0],$req);
                 }
                 return Twig::loadJson('bad', 404, 'Product not found');
             } else {
