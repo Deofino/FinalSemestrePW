@@ -44,7 +44,16 @@ class AdminController extends Twig
     public function dashboard()
     {
         $this->ward();
-        echo $this->twig->render('./private/dashboard.twig',['file'=>URL_MAIN.'public/']);
+        $product = new Product();
+
+        $avgPrice = $product->personSelect("SELECT AVG(priceShoe) FROM tbshoe");
+        $countBrand = $product->personSelect("select count(idBrand),nameBrand from tbshoe inner join tbbrand on tbbrand._id = tbshoe.idBrand group by idBrand");
+        $countCate = $product->personSelect("select count(idCategory),nameCategory from tbshoe inner join tbcategory on tbshoe.idCategory = tbcategory._id group by idCategory ");
+        $genderA = $product->personSelect("SELECT count(genderShoe),genderShoe FROM `tbshoe` group by genderShoe");
+        
+        echo $this->twig->render('./private/dashboard.twig',
+        ['file'=>URL_MAIN.'public/', 'avgPrice'=>ceil($avgPrice[0]),
+        'countBrand'=>$countBrand[1],'countCategory'=>$countCate[1], 'genderA'=>$genderA[1]]);
     }
 
     public function insert()

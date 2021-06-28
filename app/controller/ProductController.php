@@ -13,6 +13,22 @@ class ProductController extends Twig
     {
         echo $this->twig->render('product.twig', ['file' => URL_MAIN . 'public/','products'=>json_decode($this->read())]);
     }
+
+    public function select(){
+        AdminController::wardStatic();
+        if ($_SERVER['REQUEST_METHOD'] === "POST") {
+            try {
+                $product = new Product();
+                $data = json_decode(file_get_contents("php://input"));
+                return $data->mult
+                ?json_encode($product->personSelects($data->query))
+                :json_encode($product->personSelect($data->query));
+            } catch (\Throwable $th) {
+                return Twig::loadJson('bad', 404, $th->getMessage());
+            }
+        }
+        return Twig::loadJson('bad', 404, 'METHOD ON POST');
+    }
     public function create()
     {
         AdminController::wardStatic();

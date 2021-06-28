@@ -112,4 +112,27 @@ class Product
             return json_encode(Twig::loadJson("bad", 400, "Shoe error to update: ".$th->getMessage()));
         }
     }
+
+    public function personSelect($query){
+        try {
+            $stmt = Connection::getConnection()->prepare($query);
+            if($stmt->execute()){
+                return $stmt->fetch();
+            }
+            return Twig::loadJson("bad", 400, "Shoe error to read");
+        } catch (\Throwable $th) {
+            return Twig::loadJson("bad", 400, "Shoe error to read: $th");
+        }
+    }
+    public function personSelects($query){
+        try {
+            $stmt = Connection::getConnection()->prepare($query);
+            if($stmt->execute()){
+                return $stmt->fetchAll();
+            }
+            return Twig::loadJson("bad", 400, "Shoe error to read");
+        } catch (\Throwable $th) {
+            return Twig::loadJson("bad", 400, "Shoe error to read: $th");
+        }
+    }
 }
