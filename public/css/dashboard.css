@@ -132,6 +132,7 @@ select::-ms-expand {
     background: var(--blue);
     overflow: hidden;
     border-radius: .25em;
+    margin: 0 auto;
  }
  .form-filters::after {
     content: '\25BC';
@@ -180,6 +181,14 @@ select::-ms-expand {
     .media{
         font-size: 17px;
     }
+    .form-filters {
+        width: 12em;
+        height: 2em;
+        margin-bottom: 8em;
+    }
+    .form-filters::after {
+      margin-top: -5px;
+     }
 }
 @media(max-width: 800px){
     .catego{
