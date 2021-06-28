@@ -21,16 +21,16 @@
 			<div class="filters">
             <label for="">Filtrar por:</label>
 				<select name="" id="" >
-               <option value="">Selecione</option>
-               <option value=""></option>
-               <option value=""></option>
-               <option value=""></option>
+               <option value="0">Selecione</option>
+               <option value="categoria">Categoria</option>
+               <option value="gênero">Gênero</option>
+               <option value="marca">Marca</option>
             </select>
-            <label for="">Ordernar por:</label>
+            <label for="">Ordernar em:</label>
 				<select name="" id="">
-               <option value="">Selecione</option>
-               <option value=""></option>
-               <option value=""></option>
+               <option value="0">Selecione</option>
+               <option value="crescente">Crescente</option>
+               <option value="decrescente">Decrescente</option>
 
             </select>
             <button>Filtrar</button>
@@ -45,10 +45,10 @@
 						<div class="card_body">
 							<h2>{{product.nameShoe}}</h2>
 							<!-- <p>Descricao bonita bem cheia Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis odio exercitationem velit perferendis. Placeat possimus illo eius sequi laboriosam nobis vel in quis! Fugit, corrupti temporibus aliquid dolorum quam doloremque.</p> -->
-							<p>{{product.descriptionShoe}}</p>
 							<!-- <p>Cor : Branco</p> -->
 							<p class="price">R$ {{ product.priceShoe }}</p>
-							<button class="details">Detalhes</button>
+							<a href="{{file}}../app/controller/pdfController.php" class="details" target="_blank">pdf</a>
+							<button  class="details">Detalhes</button>
 						</div>
 					</div>
 

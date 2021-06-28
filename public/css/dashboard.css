@@ -110,7 +110,7 @@ h2{
 }
 
 .title_filter{
-    margin: 1rem;
+    margin: 1rem 1rem 2rem 1rem;
 }
 p{
     margin-top: 1rem;
@@ -151,6 +151,7 @@ select::-ms-expand {
     background: transparent;
     overflow: hidden;
     border-radius: .25em;
+    margin: 0 auto;
  }
  .form-filters::after {
     content: '\25BC';
@@ -167,6 +168,7 @@ select::-ms-expand {
     background: var(--background_color);
     cursor:pointer;
     pointer-events:none;
+    color: var(--blue);
     transition:.25s all ease;
  }
  .form-filters:hover::after {

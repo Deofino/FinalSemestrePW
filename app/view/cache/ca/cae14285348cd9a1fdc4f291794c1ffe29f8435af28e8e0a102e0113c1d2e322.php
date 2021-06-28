@@ -130,10 +130,10 @@ class __TwigTemplate_ce8095bd9673f58e1e20503949319df2bd0662f6f21ebbe82f3019058c8
             </div>
             <div class=\"content_6\">
                 <h2 class=\"title_filter\">FILTROS</h2>
-
+                <div id=\"filter\">
                 <div class=\"form-filters\">
                     <select name=\"selectFilter\" required id=\"selectFilter\">
-                      <option selected disabled>Selecione</option>
+                      <option value=\"0\">Selecione</option>
                         <option value=\"categoria\">Categoria</option>
                         <option value=\"cor\">Cor</option>
                         <option value=\"marca\">Marca</option>
@@ -141,23 +141,24 @@ class __TwigTemplate_ce8095bd9673f58e1e20503949319df2bd0662f6f21ebbe82f3019058c8
                       
                     </select>
              </div>
+            </div>
         </div>
         
     </div>
   
     
     ";
-        // line 70
+        // line 71
         echo twig_escape_filter($this->env, ($context["dir"] ?? null), "html", null, true);
         echo "
 ";
     }
 
-    // line 73
+    // line 74
     public function block_scripts($context, array $blocks = [])
     {
         $macros = $this->macros;
-        // line 74
+        // line 75
         echo "<script type=\"text/javascript\" src=\"https://www.gstatic.com/charts/loader.js\"></script>
 <script type=\"text/javascript\">
 
@@ -185,7 +186,6 @@ class __TwigTemplate_ce8095bd9673f58e1e20503949319df2bd0662f6f21ebbe82f3019058c8
 
     // Set chart options
     var options = {'title':' ',
-                   'is3D':true,
                    'width':800,
                    'height':400,
                     colors: ['#0071B7', '#542886', '#00ACEE', '#933D97']
@@ -212,7 +212,7 @@ class __TwigTemplate_ce8095bd9673f58e1e20503949319df2bd0662f6f21ebbe82f3019058c8
 
     public function getDebugInfo()
     {
-        return array (  161 => 74,  157 => 73,  151 => 70,  113 => 35,  105 => 30,  97 => 25,  89 => 20,  82 => 15,  78 => 14,  70 => 10,  66 => 9,  59 => 7,  54 => 4,  50 => 3,  39 => 1,);
+        return array (  162 => 75,  158 => 74,  152 => 71,  113 => 35,  105 => 30,  97 => 25,  89 => 20,  82 => 15,  78 => 14,  70 => 10,  66 => 9,  59 => 7,  54 => 4,  50 => 3,  39 => 1,);
     }
 
     public function getSourceContext()
