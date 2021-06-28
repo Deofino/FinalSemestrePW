@@ -1,20 +1,66 @@
 {% extends "./template/html.twig" %}
 
-{% block metas_data %}
+{% block metas_data %}{% endblock %}
 
+{% block title %}Shoes | Produtos
 {% endblock %}
-
-{% block title %}Shoes | Produtos{% endblock %}
 
 {% block styles %}
-    
+   <link rel="stylesheet" href="{{file}}css/products.css">
 {% endblock %}
-
 {% block body %}
 
-   produtosdsadasds
+	<main id="produtos">
+
+		<div class="search">
+				<input type="search" class="input-search" placeholder="Pesquisar">
+				<i class="fas fa-search lupa"></i>
+		</div>
+
+		<section class="grid-main" id="l_cards">
+			<div class="filters">
+            <label for="">Filtrar por:</label>
+				<select name="" id="" >
+               <option value="">Selecione</option>
+               <option value=""></option>
+               <option value=""></option>
+               <option value=""></option>
+            </select>
+            <label for="">Ordernar por:</label>
+				<select name="" id="">
+               <option value="">Selecione</option>
+               <option value=""></option>
+               <option value=""></option>
+
+            </select>
+            <button>Filtrar</button>
+			</div>
+			<div class="products">
+
+				{% for product in products %}
+					<div class="card">
+						<div class="card_header">
+							<img src="{{ file }}{{product.dirImageShoe}}" width="200" height="200" alt="Fofo">
+						</div>
+						<div class="card_body">
+							<h2>{{product.nameShoe}}</h2>
+							<!-- <p>Descricao bonita bem cheia Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis odio exercitationem velit perferendis. Placeat possimus illo eius sequi laboriosam nobis vel in quis! Fugit, corrupti temporibus aliquid dolorum quam doloremque.</p> -->
+							<p>{{product.descriptionShoe}}</p>
+							<!-- <p>Cor : Branco</p> -->
+							<p class="price">R$ {{ product.priceShoe }}</p>
+							<button class="details">Detalhes</button>
+						</div>
+					</div>
+
+				{% endfor %}
+
+
+			</div>
+
+		</section>
+	</main>
+
+
 {% endblock %}
 
-{% block scripts %}
-    
-{% endblock %}
+{% block scripts %}{% endblock %}
