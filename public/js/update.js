@@ -49,9 +49,17 @@ inputs.forEach(a => {
                 datas.append('image', resData.dirImageShoe);
                 let req = await fetch(form.getAttribute('action'),
                 {method:"POST", body:datas,cache:"default", mode:'cors'});
-                let res = await req.text();
-                console.log(res);
-             }
+                let res = await req.json();
+                console.log(JSON.parse(res));
+                if(JSON.parse(res).status == 'ok'){
+                    showAlert('Ebaaa!!', "Produto atualizado com sucesso!!!", 'success');
+                }else showAlert('Ops...', "Ocorreu algum erro no sistema...", 'error');
+               
+                document.querySelector('#l_form').classList.remove('visible');
+                setTimeout(()=>{
+                    window.location.reload();
+                },2000)
+            }
         })
 
 
