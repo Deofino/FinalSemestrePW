@@ -132,7 +132,7 @@ class __TwigTemplate_a15d52a575fbf52d213d7c9cc72e8cfa9011e5622bcb546b63b23ef6250
 \t\t\t\t\t\t\t<a href=\"";
             // line 50
             echo twig_escape_filter($this->env, ($context["file"] ?? null), "html", null, true);
-            echo "../app/controller/pdfController.php\" class=\"details\" >pdf</a>
+            echo "../app/controller/pdfController.php\" class=\"details\" target=\"_blank\">pdf</a>
 \t\t\t\t\t\t\t<button  class=\"details\">Detalhes</button>
 \t\t\t\t\t\t</div>
 \t\t\t\t\t</div>
