@@ -1,9 +1,12 @@
+body{
+  background: #ccceff;
+}
 #produtos {
   max-width: 1200px;
   display: flex;
   justify-content: center;
   margin: 0 auto;
-  padding: 3rem 1rem;
+  padding: 2rem 0;
   align-items: center;
   width: 100%;
   flex-direction: column;
@@ -32,14 +35,10 @@
 #l_cards .card .card_header {
   width: 100%;
   cursor: pointer;
-  filter: grayscale(0.8);
   transition: 0.4s ease;
   overflow: hidden;
   box-shadow: 0 2px 4px var(--shadow);
   height: 150px;
-}
-#l_cards .card .card_header:hover {
-  filter: grayscale(0);
 }
 #l_cards .card img {
   width: 100%;
@@ -71,8 +70,8 @@
   color: var(--background_color_dark);
   font-size: clamp(.6rem, 0.4rem + 1vw, .8rem);
 }
+
 #l_cards .card .card_body p.price {
-    font-weight: bold;
     font-size: clamp(.8rem, 0.6rem + 1vw, .8rem);
 }
 #l_cards .card .card_body button {
@@ -88,6 +87,7 @@
   color: var(--white);
   cursor: pointer;
   border-radius: 6px;
+  font-weight: bolder;
   background: linear-gradient(
     120deg,
     var(--dark_blue),
@@ -119,12 +119,11 @@
 }
 
 .search {
-  background-color: orange;
-    width: 100%;
+  background-color:var(--light_blue);
+    width: 60%;
     max-width: 960px;
     overflow: hidden;
     border-radius: 8px; 
-    border: 1px solid black;
     box-shadow: 0 4px 4px var(--shadow);
     display: flex;
     margin: 1rem 0;
@@ -135,15 +134,18 @@
   /* max-width: 720px; */
   width: 100%;
   padding: .4rem;
+  padding: 0.7rem;
   outline: none;
   border: none;
+  font-size: clamp(1rem, 0.2rem + 0.5vw, 1rem);
+  font-weight: bolder;
 }
 .search .lupa{
-  background-color: orange;
+  background-color: var(--light_blue);
   width: 100px;
   cursor: pointer;
   text-align: center;
-
+  color: var(--white);
 }
 
 #l_cards.grid-main{
@@ -151,8 +153,9 @@
      justify-content: space-between;
     flex-direction: row;
     flex-wrap: nowrap;
-    background-color: orange;
-    }
+    background-color: #ccceff;
+    border-radius: 8px;
+}
 .filters{
     display: flex;
     flex-direction: column;
@@ -162,12 +165,17 @@
     width: 100%;
 }
 .filters select{
+    -moz-appearance:none;
+    -ms-appearance:none;
+    border:0;
     margin-bottom: 2rem;
     width: 100%;
     font-family: inherit;
-    padding: .4rem;
+    padding: .5rem;
     border-radius: 8px;
     box-shadow: 0 4px 4px var(--shadow);
+    outline: none;
+    cursor:pointer;
 }
 .filters label{
     font-size: 1.3rem;
@@ -176,7 +184,7 @@
     margin-bottom: .4rem;
 }
 .filters button{
-    color: white;
+    color: var(--white);
     padding: .6rem 0;
     width: 100%;
     font-family: inherit;
@@ -186,8 +194,8 @@
     letter-spacing: 1px;
     cursor: pointer;
     text-transform: uppercase;
-    font-size: clamp(.8rem, 0.6rem + 1vw, 1rem);
-    font-weight: 500;
+    font-size: clamp(.8rem, 0.4rem + 1vw, 1rem);
+    font-weight: bolder;
     background-image: linear-gradient(90deg,var(--purple), var(--blue), var(--purple));
     background-size: 130% 130%;
 }
@@ -195,5 +203,18 @@
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
-    background: rgba(0, 0, 0, 0.411);
+    border-radius: 8px;
+    box-shadow: 0 2px 4px var(--shadow);
+}
+.filters label{
+  font-size: 1rem;
+  font-weight: bolder;
+}
+@media (max-width: 600px){
+  #produtos {
+    margin: 1rem 1rem;
+  }
+  .filters select{
+    padding: 0.4rem 0;
+  }
 }
