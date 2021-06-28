@@ -133,7 +133,7 @@ class __TwigTemplate_ce8095bd9673f58e1e20503949319df2bd0662f6f21ebbe82f3019058c8
 
                 <div class=\"form-filters\">
                     <select name=\"selectFilter\" required id=\"selectFilter\">
-                      <option selected disabled>Selecione</option>
+                      <option value=\"0\">Selecione</option>
                         <option value=\"categoria\">Categoria</option>
                         <option value=\"cor\">Cor</option>
                         <option value=\"marca\">Marca</option>
@@ -185,7 +185,6 @@ class __TwigTemplate_ce8095bd9673f58e1e20503949319df2bd0662f6f21ebbe82f3019058c8
 
     // Set chart options
     var options = {'title':' ',
-                   'is3D':true,
                    'width':800,
                    'height':400,
                     colors: ['#0071B7', '#542886', '#00ACEE', '#933D97']

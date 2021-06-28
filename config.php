@@ -1,7 +1,7 @@
 <?php
 
     // Endereco principals
-    define("URL_MAIN", 'http://localhost/Escola/2b/FinalSemestrePW/');
+    define("URL_MAIN", 'http://localhost/3MtecA/08-06/FinalSemestrePW/');
     // define("URL_MAIN", 'url main remote');
     
     // Nome do banco de dados

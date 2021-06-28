@@ -93,7 +93,7 @@ h2{
     float: right;
 }
 .title_filter{
-    margin: 1rem;
+    margin: 1rem 1rem 2rem 1rem;
 }
 p{
     margin-top: 1rem;
@@ -107,7 +107,6 @@ select{
     -ms-appearance:none;
     appearance:none;
     outline:0;
-    box-shadow:none;
     border:0!important;
     background: var(--blue);
     background-image: none;
@@ -117,7 +116,7 @@ select{
     font-weight: bold;
     cursor:pointer;
     font-size: 1em;
-    box-shadow: 0 1px 4px var(--shadow);
+    border-radius: 10px;
 }
 select::-ms-expand {
     display: none;
@@ -125,6 +124,8 @@ select::-ms-expand {
  .form-filters {
     position: relative;
     display: flex;
+    justify-content: center;
+    align-items: center;
     width: 20em;
     height: 3em;
     line-height: 3;
@@ -141,6 +142,7 @@ select::-ms-expand {
     background: var(--white);
     cursor:pointer;
     pointer-events:none;
+    color: var(--blue);
     transition:.25s all ease;
  }
  .form-filters:hover::after {
