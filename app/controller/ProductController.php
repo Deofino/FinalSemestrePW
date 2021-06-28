@@ -11,7 +11,7 @@ class ProductController extends Twig
 {
     public function index()
     {
-        echo $this->twig->render('product.twig', ['file' => URL_MAIN . 'public/']);
+        echo $this->twig->render('product.twig', ['file' => URL_MAIN . 'public/','products'=>json_decode($this->read())]);
     }
     public function create()
     {
