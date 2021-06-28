@@ -129,7 +129,11 @@ class __TwigTemplate_a15d52a575fbf52d213d7c9cc72e8cfa9011e5622bcb546b63b23ef6250
             // line 49
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["product"], "priceShoe", [], "any", false, false, false, 49), "html", null, true);
             echo "</p>
-\t\t\t\t\t\t\t<button class=\"details\">Detalhes</button>
+\t\t\t\t\t\t\t<a href=\"";
+            // line 50
+            echo twig_escape_filter($this->env, ($context["file"] ?? null), "html", null, true);
+            echo "../app/controller/pdfController.php\" class=\"details\" >pdf</a>
+\t\t\t\t\t\t\t<button  class=\"details\">Detalhes</button>
 \t\t\t\t\t\t</div>
 \t\t\t\t\t</div>
 
@@ -138,7 +142,7 @@ class __TwigTemplate_a15d52a575fbf52d213d7c9cc72e8cfa9011e5622bcb546b63b23ef6250
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['product'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 55
+        // line 56
         echo "
 
 \t\t\t</div>
@@ -150,7 +154,7 @@ class __TwigTemplate_a15d52a575fbf52d213d7c9cc72e8cfa9011e5622bcb546b63b23ef6250
 ";
     }
 
-    // line 65
+    // line 66
     public function block_scripts($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -168,7 +172,7 @@ class __TwigTemplate_a15d52a575fbf52d213d7c9cc72e8cfa9011e5622bcb546b63b23ef6250
 
     public function getDebugInfo()
     {
-        return array (  154 => 65,  142 => 55,  130 => 49,  124 => 46,  117 => 43,  113 => 41,  109 => 40,  79 => 12,  75 => 11,  68 => 9,  64 => 8,  56 => 5,  50 => 3,  39 => 1,);
+        return array (  158 => 66,  146 => 56,  134 => 50,  130 => 49,  124 => 46,  117 => 43,  113 => 41,  109 => 40,  79 => 12,  75 => 11,  68 => 9,  64 => 8,  56 => 5,  50 => 3,  39 => 1,);
     }
 
     public function getSourceContext()
