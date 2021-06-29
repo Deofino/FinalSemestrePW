@@ -71,9 +71,13 @@ Procure seu projeto no seu servidor Apache e entre na pasta "public"
 
 ## Screenshots
 
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+
+![home](https://user-images.githubusercontent.com/56117556/123862459-bed73600-d8fe-11eb-820b-aaee0903473d.png)
+
+![dashboard](https://user-images.githubusercontent.com/56117556/123862648-fba32d00-d8fe-11eb-882d-a6f86258cb7e.png)
+
+![produtos](https://user-images.githubusercontent.com/56117556/123862723-1675a180-d8ff-11eb-991d-34f337d44812.png)
+
 
 
 
