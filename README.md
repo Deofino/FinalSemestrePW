@@ -100,8 +100,3 @@ Procure seu projeto no seu servidor Apache e entre na pasta "public"
 | :-------- | :------- | :-------------------------------- |
 | `id`      | `string` | **Required**. Id of item to fetch |
 
-#### add(num1, num2)
-
-Takes two numbers and returns the sum.
-
-  
