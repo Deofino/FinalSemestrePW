@@ -6,6 +6,7 @@ use App\Controller\ProductController;
 use App\Controller\CategoryController;
 use App\Controller\Twig;
 use App\Model\Product;
+use Exception;
 
 class AdminController extends Twig
 {
@@ -45,15 +46,17 @@ class AdminController extends Twig
     {
         $this->ward();
         $product = new Product();
-
-        $avgPrice = $product->personSelect("SELECT AVG(priceShoe) FROM tbshoe");
-        $countBrand = $product->personSelect("select count(idBrand),nameBrand from tbshoe inner join tbbrand on tbbrand._id = tbshoe.idBrand group by idBrand");
-        $countCate = $product->personSelect("select count(idCategory),nameCategory from tbshoe inner join tbcategory on tbshoe.idCategory = tbcategory._id group by idCategory ");
-        $genderA = $product->personSelect("SELECT count(genderShoe),genderShoe FROM `tbshoe` group by genderShoe");
-        
-        echo $this->twig->render('./private/dashboard.twig',
-        ['file'=>URL_MAIN.'public/', 'avgPrice'=>ceil($avgPrice[0]),
-        'countBrand'=>$countBrand[1],'countCategory'=>$countCate[1], 'genderA'=>$genderA[1]]);
+        try{
+            $avgPrice = $product->personSelect("SELECT AVG(priceShoe) FROM tbshoe");
+            $countBrand = $product->personSelect("select count(idBrand),nameBrand from tbshoe inner join tbbrand on tbbrand._id = tbshoe.idBrand group by idBrand");
+            $countCate = $product->personSelect("select count(idCategory) as ct, nameCategory from tbshoe inner join tbcategory on tbshoe.idCategory = tbcategory._id GROUP by idCategory order by ct desc");
+            $genderA = $product->personSelect("SELECT count(genderShoe),genderShoe FROM `tbshoe` group by genderShoe desc");
+            echo $this->twig->render('./private/dashboard.twig',
+            ['file'=>URL_MAIN.'public/', 'avgPrice'=>ceil($avgPrice[0]),
+            'countBrand'=>$countBrand[1],'countCategory'=>$countCate[1], 'genderA'=>$genderA[1]]);
+        }catch(Exception $e){
+            echo $e->getMessage();
+        }
     }
 
     public function insert()

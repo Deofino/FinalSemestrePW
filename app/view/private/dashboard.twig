@@ -1,5 +1,5 @@
-{% extends "./template/html.twig" %} {% block metas_data %} {% endblock %} {%
-block title %}Shoes | Painel Administrativo {% endblock %} {% block styles %}
+{% extends "template/html.twig" %} {% block metas_data %} {% endblock %} {%block
+title %}Shoes | Painel Administrativo {% endblock %} {% block styles %}
 <link rel="stylesheet" href="{{ file }}css/dashboard.css" />
 <link
   rel="stylesheet"
@@ -7,7 +7,7 @@ block title %}Shoes | Painel Administrativo {% endblock %} {% block styles %}
 />
 {% endblock %} {% block body %}
 
-<div id="dashboard">
+<main id="dashboard">
   <div class="box_cima">
     <div class="content_1">
       <h2>MARCA COM + PRODUTOS</h2>
@@ -57,72 +57,74 @@ block title %}Shoes | Painel Administrativo {% endblock %} {% block styles %}
       </div>
     </div>
   </div>
-  </div>
+</main>
 
-  {% endblock %} {% block scripts %}
-  <script type="text/javascript" src="{{ file }}js/dashboard.js"></script>
-  <script
-    type="text/javascript"
-    src="https://www.gstatic.com/charts/loader.js"
-  ></script>
-  <script type="text/javascript">
-    // Load the Visualization API and the corechart package.
-    google.charts.load("current", { packages: ["corechart"] });
+{% endblock %} {% block scripts %}
+<script type="text/javascript" src="{{ file }}js/dashboard.js"></script>
+<script
+  type="text/javascript"
+  src="https://www.gstatic.com/charts/loader.js"
+></script>
+<script type="text/javascript">
+  // Load the Visualization API and the corechart package.
+  google.charts.load("current", { packages: ["corechart"] });
 
-    google.charts.setOnLoadCallback(drawChart());
-    // Set a callback to run when the Google Visualization API is loaded.
-    document
-      .querySelector(".box_baixo select")
-      .addEventListener("change", (e) => {
-        let options = e.target.options;
-        // console.log(options);
-        if (options.selectedIndex == 2) {
-          google.charts.setOnLoadCallback(drawChart(1, "Marca"));
-        } else if (options.selectedIndex == 3) {
-          google.charts.setOnLoadCallback(drawChart(2, "Gênero"));
-        } else {
-          google.charts.setOnLoadCallback(drawChart());
-        }
-      });
-
-    // Callback that creates and populates a data table,
-    // instantiates the pie chart, passes in the data and
-    // draws it.
-    async function drawChart(type = 0, name = "Categoria") {
-      // Create the data table.
-      [brand, category, gender] = await requests();
-      var data = new google.visualization.DataTable();
-      let rows;
-      if (type == 0) {
-        rows = category.map((el) => {
-          return [el.nameCategory, +el.ct];
-        });
-      } else if (type == 1) {
-        rows = brand.map((el) => {
-          return [el.nameBrand, +el.ct];
-        });
-      } else if (type == 2) {
-        rows = gender.map((el) => {
-          return [el.genderShoe, +el.ct];
-        });
+  google.charts.setOnLoadCallback(drawChart());
+  // Set a callback to run when the Google Visualization API is loaded.
+  document
+    .querySelector(".box_baixo select")
+    .addEventListener("change", (e) => {
+      let options = e.target.options;
+      // console.log(options);
+      if (options.selectedIndex == 2) {
+        google.charts.setOnLoadCallback(drawChart(1, "Marca"));
+      } else if (options.selectedIndex == 3) {
+        google.charts.setOnLoadCallback(drawChart(2, "Gênero"));
+      } else {
+        google.charts.setOnLoadCallback(drawChart());
       }
-      data.addColumn("string", "Topping");
-      data.addColumn("number", "Slices");
-      data.addRows(rows);
+    });
 
-      var options = {
-        title: name,
-        width: "100%",
-        height: "100%",
-        colors: ["#0071B7", "#542886", "#00ACEE", "#933D97"],
-      };
+  // Callback that creates and populates a data table,
+  // instantiates the pie chart, passes in the data and
+  // draws it.
+  async function drawChart(type = 0, name = "Categoria") {
+    // Create the data table.
+    [brand, category, gender] = await requests();
+    var data = new google.visualization.DataTable();
+    let rows;
+    if (type == 0) {
+      rows = category.map((el) => {
+        return [el.nameCategory, +el.ct];
+      });
+    } else if (type == 1) {
+      rows = brand.map((el) => {
+        return [el.nameBrand, +el.ct];
+      });
+    } else if (type == 2) {
+      rows = gender.map((el) => {
+        return [el.genderShoe, +el.ct];
+      });
+    }
+    data.addColumn("string", "Topping");
+    data.addColumn("number", "Slices");
+    data.addRows(rows);
 
-      // Instantiate and draw our chart, passing in some options.
+    var options = {
+      title: name,
+      width: "100%",
+      height: "100%",
+      colors: ["#0071B7", "#542886", "#00ACEE", "#933D97"],
+    };
+
+    // Instantiate and draw our chart, passing in some options.
+    
+    setTimeout(()=>{
       var chart = new google.visualization.PieChart(
-        document.querySelector(".content_5")
+        document.querySelector("#chart_div")
       );
       chart.draw(data, options);
-    }
-  </script>
-  {% endblock %}
-</div>
+    },1000)
+  }
+</script>
+{% endblock %}

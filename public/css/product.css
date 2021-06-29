@@ -5,7 +5,7 @@ body {
   min-height: 100vh;
 }
 main{
-  padding: 2rem 1rem !important;
+  padding: 5rem 1rem !important;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -46,7 +46,7 @@ main{
   cursor: pointer;
   transition: 0.4s ease;
   overflow: hidden;
-  height: 150px;
+  height: 200px;
 }
 #l_cards .card img {
   width: 100%;
@@ -83,13 +83,15 @@ main{
   font-weight: bolder;
   font-size: clamp(0.8rem, 0.8rem + 1vw, .9rem);
 }
-#l_cards .card .card_body button {
+#l_cards .card .card_body .details {
   width: 80%;
   font-size: clamp(0.8rem, 0.6rem + 1vw, .9rem);
   outline: none;
   padding: 0.6rem 0.4rem;
   box-shadow: 2px 2px 4px var(--shadow);
   align-self: flex-end;
+  text-decoration: none;
+  text-align: center;
   opacity: 0.8;
   border: none;
   transition: ease 0.8s;
@@ -103,8 +105,9 @@ main{
     var(--light_purple)
   );
   background-size:  150% 150%;
+  letter-spacing: 1px;
 }
-#l_cards .card .card_body button:hover {
+#l_cards .card .card_body .details:hover {
   opacity: 1;
   box-shadow: 3px 3px 6px var(--shadow);
 }
@@ -233,12 +236,12 @@ main{
     padding: 0.4rem 0;
   }
   #l_cards .card {
-    max-width: 300px;
+    max-width: 250px;
     height: min-content;
     max-height: 400px;
   }
   #l_cards .card .card_header {
-    max-height: calc(400-60%);
+    max-height: calc(400-40%);
   }
   #l_cards .card .card_body {
     padding: 2rem 1rem;

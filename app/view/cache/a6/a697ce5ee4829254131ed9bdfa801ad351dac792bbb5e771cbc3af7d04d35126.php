@@ -81,8 +81,8 @@ class __TwigTemplate_a3ba0ecc365633952abb4ed62ffc9e0d730a9521bec0fcd367a8f27bfe2
 \t\t\t<form class=\"search\" action=\"";
         // line 14
         echo twig_escape_filter($this->env, ($context["file"] ?? null), "html", null, true);
-        echo "product/selectLike\" method=\"GET\" >
-\t\t\t\t<input type=\"search\" minlength=\"3\" maxlength=\"50\" id=\"string\" required class=\"input-search\" placeholder=\"Pesquisar\">
+        echo "product/buscar\" method=\"GET\" >
+\t\t\t\t<input type=\"search\" minlength=\"3\" maxlength=\"50\" id=\"string\" class=\"input-search\" placeholder=\"Pesquisar\">
 \t\t\t\t<button type=\"submit\">
 \t\t\t\t\t<i class=\"fas fa-search lupa\"></i>
 \t\t\t\t</button>
@@ -142,9 +142,12 @@ class __TwigTemplate_a3ba0ecc365633952abb4ed62ffc9e0d730a9521bec0fcd367a8f27bfe2
                 // line 52
                 echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["product"], "priceShoe", [], "any", false, false, false, 52), "html", null, true);
                 echo "</p>
-\t\t\t\t\t\t\t\t\t";
-                // line 54
-                echo "\t\t\t\t\t\t\t\t\t<button  class=\"details\">Detalhes</button>
+\t\t\t\t\t\t\t\t\t<a href=\"";
+                // line 53
+                echo twig_escape_filter($this->env, ($context["file"] ?? null), "html", null, true);
+                echo "product/details/";
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["product"], "_id", [], "any", false, false, false, 53), "html", null, true);
+                echo "\" class=\"details\" target=\"_blank\">Detalhes</a>
 \t\t\t\t\t\t\t\t</div>
 \t\t\t\t\t\t\t</div>
 \t\t\t\t\t\t";
@@ -152,44 +155,47 @@ class __TwigTemplate_a3ba0ecc365633952abb4ed62ffc9e0d730a9521bec0fcd367a8f27bfe2
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['_key'], $context['product'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 58
+            // line 57
             echo "\t\t\t\t\t\t
 \t\t\t\t";
         } else {
-            // line 60
+            // line 59
             echo "
 \t\t\t\t\t";
-            // line 61
+            // line 60
             $context['_parent'] = $context;
             $context['_seq'] = twig_ensure_traversable(($context["products"] ?? null));
             foreach ($context['_seq'] as $context["_key"] => $context["product"]) {
-                // line 62
+                // line 61
                 echo "\t\t\t\t\t\t<div class=\"card\">
 \t\t\t\t\t\t\t<div class=\"card_header\">
 \t\t\t\t\t\t\t\t<img src=\"";
-                // line 64
+                // line 63
                 echo twig_escape_filter($this->env, ($context["file"] ?? null), "html", null, true);
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["product"], "dirImageShoe", [], "any", false, false, false, 64), "html", null, true);
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["product"], "dirImageShoe", [], "any", false, false, false, 63), "html", null, true);
                 echo "\" width=\"200\" height=\"200\" alt=\"";
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["product"], "nameShoe", [], "any", false, false, false, 64), "html", null, true);
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["product"], "nameShoe", [], "any", false, false, false, 63), "html", null, true);
                 echo "\">
 \t\t\t\t\t\t\t</div>
 \t\t\t\t\t\t\t<div class=\"card_body\">
 \t\t\t\t\t\t\t\t<h2>";
-                // line 67
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["product"], "nameShoe", [], "any", false, false, false, 67), "html", null, true);
+                // line 66
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["product"], "nameShoe", [], "any", false, false, false, 66), "html", null, true);
                 echo "</h2>
 \t\t\t\t\t\t\t\t<p>";
-                // line 68
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["product"], "genderShoe", [], "any", false, false, false, 68), "html", null, true);
+                // line 67
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["product"], "genderShoe", [], "any", false, false, false, 67), "html", null, true);
                 echo "</p>
 \t\t\t\t\t\t\t\t<p class=\"price\">R\$ ";
-                // line 69
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["product"], "priceShoe", [], "any", false, false, false, 69), "html", null, true);
+                // line 68
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["product"], "priceShoe", [], "any", false, false, false, 68), "html", null, true);
                 echo "</p>
-\t\t\t\t\t\t\t\t";
-                // line 71
-                echo "\t\t\t\t\t\t\t\t<button  class=\"details\">Detalhes</button>
+\t\t\t\t\t\t\t\t<a href=\"";
+                // line 69
+                echo twig_escape_filter($this->env, ($context["file"] ?? null), "html", null, true);
+                echo "product/details/";
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["product"], "_id", [], "any", false, false, false, 69), "html", null, true);
+                echo "\" class=\"details\" target=\"_blank\">Detalhes</a>
 \t\t\t\t\t\t\t</div>
 \t\t\t\t\t\t</div>
 \t\t\t\t\t";
@@ -197,11 +203,11 @@ class __TwigTemplate_a3ba0ecc365633952abb4ed62ffc9e0d730a9521bec0fcd367a8f27bfe2
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['_key'], $context['product'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 75
+            // line 73
             echo "
 \t\t\t\t";
         }
-        // line 77
+        // line 75
         echo "
 \t\t\t</div>
 
@@ -212,11 +218,11 @@ class __TwigTemplate_a3ba0ecc365633952abb4ed62ffc9e0d730a9521bec0fcd367a8f27bfe2
 ";
     }
 
-    // line 86
+    // line 84
     public function block_scripts($context, array $blocks = [])
     {
         $macros = $this->macros;
-        // line 87
+        // line 85
         echo "   <script type=\"text/javascript\" src=\"";
         echo twig_escape_filter($this->env, ($context["file"] ?? null), "html", null, true);
         echo "js/product.js\"></script>
@@ -235,7 +241,7 @@ class __TwigTemplate_a3ba0ecc365633952abb4ed62ffc9e0d730a9521bec0fcd367a8f27bfe2
 
     public function getDebugInfo()
     {
-        return array (  220 => 87,  216 => 86,  205 => 77,  201 => 75,  192 => 71,  188 => 69,  184 => 68,  180 => 67,  171 => 64,  167 => 62,  163 => 61,  160 => 60,  156 => 58,  147 => 54,  143 => 52,  139 => 51,  135 => 50,  126 => 47,  122 => 45,  117 => 44,  115 => 43,  83 => 14,  79 => 12,  75 => 11,  68 => 9,  64 => 8,  56 => 5,  50 => 3,  39 => 1,);
+        return array (  226 => 85,  222 => 84,  211 => 75,  207 => 73,  195 => 69,  191 => 68,  187 => 67,  183 => 66,  174 => 63,  170 => 61,  166 => 60,  163 => 59,  159 => 57,  147 => 53,  143 => 52,  139 => 51,  135 => 50,  126 => 47,  122 => 45,  117 => 44,  115 => 43,  83 => 14,  79 => 12,  75 => 11,  68 => 9,  64 => 8,  56 => 5,  50 => 3,  39 => 1,);
     }
 
     public function getSourceContext()

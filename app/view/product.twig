@@ -11,8 +11,8 @@
 {% block body %}
 	<main>
 
-			<form class="search" action="{{file}}product/selectLike" method="GET" >
-				<input type="search" minlength="3" maxlength="50" id="string" required class="input-search" placeholder="Pesquisar">
+			<form class="search" action="{{file}}product/buscar" method="GET" >
+				<input type="search" minlength="3" maxlength="50" id="string" class="input-search" placeholder="Pesquisar">
 				<button type="submit">
 					<i class="fas fa-search lupa"></i>
 				</button>
@@ -50,8 +50,7 @@
 									<h2>{{product.nameShoe}}</h2>
 									<p>{{product.genderShoe}}</p>
 									<p class="price">R$ {{ product.priceShoe }}</p>
-									{# <a href="{{file}}../app/controller/pdfController.php" class="details" target="_blank">pdf</a> #}
-									<button  class="details">Detalhes</button>
+									<a href="{{file}}product/details/{{product._id}}" class="details" target="_blank">Detalhes</a>
 								</div>
 							</div>
 						{% endfor %}
@@ -67,8 +66,7 @@
 								<h2>{{product.nameShoe}}</h2>
 								<p>{{product.genderShoe}}</p>
 								<p class="price">R$ {{ product.priceShoe }}</p>
-								{# <a href="{{file}}../app/controller/pdfController.php" class="details" target="_blank">pdf</a> #}
-								<button  class="details">Detalhes</button>
+								<a href="{{file}}product/details/{{product._id}}" class="details" target="_blank">Detalhes</a>
 							</div>
 						</div>
 					{% endfor %}

@@ -4,7 +4,7 @@ async function requests() {
       body: JSON.stringify({
         mult: true,
         query:
-          "select count(idCategory) as ct, nameCategory from tbshoe inner join tbcategory on tbshoe.idCategory = tbcategory._id GROUP by idCategory",
+          "select count(idCategory) as ct, nameCategory from tbshoe inner join tbcategory on tbshoe.idCategory = tbcategory._id GROUP by idCategory order by ct desc",
       }),
       cache: "default",
       method: "POST",
@@ -38,10 +38,4 @@ async function requests() {
     let resBrand = await reqBrand.json();
     let resGender = await reqGender.json();
     return [resBrand, resCate, resGender]
-    // console.log(resCate);
-    // console.log(resBrand);
-    // console.log(resGender);
   }
-  //   $filterCate = $product->personSelects('select count(idBrand), nameBrand from tbshoe inner join tbbrand on tbshoe.idBrand = tbbrand._id GROUP by idBrand');
-  //     $filterBrand = $product->personSelects("select count(idCategory), nameCategory from tbshoe inner join tbcategory on tbshoe.idCategory = tbcategory._id GROUP by idCategory");
-  //     $filterGender = $product->personSelects("select count(genderShoe), genderShoe from tbshoe GROUP by genderShoe");

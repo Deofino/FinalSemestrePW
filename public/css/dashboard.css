@@ -1,6 +1,6 @@
 /* BOX'S INICIAIS */
-#dashboard{
-    padding: 10rem 0;
+main{
+    padding: 4rem 0;
 }
 .box_cima{
     display: flex;
