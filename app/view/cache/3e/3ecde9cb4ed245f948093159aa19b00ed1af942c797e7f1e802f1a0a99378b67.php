@@ -40,7 +40,7 @@ class __TwigTemplate_3932a455baa3b8f718d563e7370bfc004a0309eff5f949257477ed1d74d
           <img src=\"";
         // line 4
         echo twig_escape_filter($this->env, ($context["file"] ?? null), "html", null, true);
-        echo "img/logo.ico\" alt='Logotipo'/>
+        echo "img/vectors/logo.ico\" alt='Logotipo'/>
         </a>
         <a id=\"logo\" href='#' onclick=\"scrollTo(0,0)\">Shoes</a>
       </div>

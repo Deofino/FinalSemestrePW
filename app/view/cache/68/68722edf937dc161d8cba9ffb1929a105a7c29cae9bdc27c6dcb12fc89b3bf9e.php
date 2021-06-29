@@ -97,7 +97,7 @@ class __TwigTemplate_0d86fbe144c192664c79e7fd62f938c7301699207937d9149121b12276e
         <a href='#' onclick=\"scrollTo(0,0)\" ><img class=\"image\" src='";
         // line 34
         echo twig_escape_filter($this->env, ($context["file"] ?? null), "html", null, true);
-        echo "img/logo.png'alt=\"Logotipo\"></a>
+        echo "img/vectors/logo.png'alt=\"Logotipo\"></a>
     </div>
     <div id=\"div-copy\" >
         <p class=\"direito\">Todos os direitos reservados por Shoes &copy; 2021.</p>
