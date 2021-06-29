@@ -74,7 +74,7 @@ Procure seu projeto no seu servidor Apache e entre na pasta "public"
 ![App Screenshot](https://localhost/FinalSemestrePW/public/img/github-print/home.png)
 ![App Screenshot](https://localhost/FinalSemestrePW/public/img/github-print/dashboard.png)
 ![App Screenshot](https://localhost/FinalSemestrePW/public/img/github-print/produtos.png)
-
+![home](https://user-images.githubusercontent.com/56117556/123862459-bed73600-d8fe-11eb-820b-aaee0903473d.png)
 
 
 ## API Reference
