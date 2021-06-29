@@ -147,7 +147,7 @@ select::-ms-expand {
  .form-filters {
     position: relative;
     display: flex;
-    width: 100%;
+    width: 60%;
     height: 3em;
     box-shadow: 0 4px 4px var(--shadow);
     line-height: 3;
