@@ -88,7 +88,7 @@ class __TwigTemplate_3932a455baa3b8f718d563e7370bfc004a0309eff5f949257477ed1d74d
             // line 24
             echo twig_escape_filter($this->env, ($context["file"] ?? null), "html", null, true);
             echo "admin/delete\">Excluir</a></li>
-                  <hr>
+                  <hr class=\"hr\">
                   <li>
                     <a href=\"";
             // line 27
