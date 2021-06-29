@@ -71,9 +71,9 @@ Procure seu projeto no seu servidor Apache e entre na pasta "public"
 
 ## Screenshots
 
-![App Screenshot](https://public/img/github-print/home.png)
-![App Screenshot](https://public/img/github-print/dashboard.png)
-![App Screenshot](https://public/img/github-print/produtos.png)
+![App Screenshot](https://localhost/FinalSemestrePW/public/img/github-print/home.png)
+![App Screenshot](https://localhost/FinalSemestrePW/public/img/github-print/dashboard.png)
+![App Screenshot](https://localhost/FinalSemestrePW/public/img/github-print/produtos.png)
 
 
 
