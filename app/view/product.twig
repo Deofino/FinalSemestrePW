@@ -11,10 +11,12 @@
 {% block body %}
 	<main>
 
-		<div class="search">
-				<input type="search" class="input-search" placeholder="Pesquisar">
-				<i class="fas fa-search lupa"></i>
-		</div>
+			<form class="search" action="{{file}}product/selectLike" method="GET" >
+				<input type="search" minlength="3" maxlength="50" id="string" required class="input-search" placeholder="Pesquisar">
+				<button type="submit">
+					<i class="fas fa-search lupa"></i>
+				</button>
+			</form>
 
 		<section class="grid-main" id="l_cards">
 			<div class="filters">
@@ -38,26 +40,40 @@
 			</div>
 			<div class="products">
 
-				{% for product in products %}
-					<div class="card">
-				
-						<div class="card_header">
-							<img src="{{ file }}{{product.dirImageShoe}}" width="200" height="200" alt="{{product.nameShoe}}">
+				{% if like %}
+						{% for product in like %}
+							<div class="card">
+								<div class="card_header">
+									<img src="{{ file }}{{product.dirImageShoe}}" width="200" height="200" alt="{{product.nameShoe}}">
+								</div>
+								<div class="card_body">
+									<h2>{{product.nameShoe}}</h2>
+									<p>{{product.genderShoe}}</p>
+									<p class="price">R$ {{ product.priceShoe }}</p>
+									{# <a href="{{file}}../app/controller/pdfController.php" class="details" target="_blank">pdf</a> #}
+									<button  class="details">Detalhes</button>
+								</div>
+							</div>
+						{% endfor %}
+						
+				{% else %}
+
+					{% for product in products %}
+						<div class="card">
+							<div class="card_header">
+								<img src="{{ file }}{{product.dirImageShoe}}" width="200" height="200" alt="{{product.nameShoe}}">
+							</div>
+							<div class="card_body">
+								<h2>{{product.nameShoe}}</h2>
+								<p>{{product.genderShoe}}</p>
+								<p class="price">R$ {{ product.priceShoe }}</p>
+								{# <a href="{{file}}../app/controller/pdfController.php" class="details" target="_blank">pdf</a> #}
+								<button  class="details">Detalhes</button>
+							</div>
 						</div>
-						<div class="card_body">
-							<h2>{{product.nameShoe}}</h2>
-							<!-- <p>Descricao bonita bem cheia Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis odio exercitationem velit perferendis. Placeat possimus illo eius sequi laboriosam nobis vel in quis! Fugit, corrupti temporibus aliquid dolorum quam doloremque.</p> -->
-							<p>{{product.genderShoe}}</p>
-							<p class="price">R$ {{ product.priceShoe }}</p>
-							{# <a href="{{file}}../app/controller/pdfController.php" class="details" target="_blank">pdf</a> #}
-							<button  class="details">Detalhes</button>
-						</div>
+					{% endfor %}
 
-					</div>
-
-
-				{% endfor %}
-
+				{% endif %}
 
 			</div>
 
@@ -67,4 +83,6 @@
 
 {% endblock %}
 
-{% block scripts %}{% endblock %}
+{% block scripts %}
+   <script type="text/javascript" src="{{file}}js/product.js"></script>
+{% endblock %}

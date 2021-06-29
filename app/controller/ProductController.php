@@ -9,9 +9,9 @@ use DateTime;
 
 class ProductController extends Twig
 {
-    public function index()
+    public function index($data=null)
     {
-        echo $this->twig->render('product.twig', ['file' => URL_MAIN . 'public/','products'=>json_decode($this->read())]);
+        echo $this->twig->render('product.twig', ['file' => URL_MAIN . 'public/','products'=>json_decode($this->read()),'like'=>json_decode($data)]);
     }
 
     public function select(){
@@ -28,6 +28,17 @@ class ProductController extends Twig
             }
         }
         return Twig::loadJson('bad', 404, 'METHOD ON POST');
+    }
+    public function selectLike($string=null){
+        AdminController::wardStatic();
+        try {
+            if($string!=null){
+                $product = new Product();
+                $this->index(json_encode($product->selectLike($string[0])));
+            }
+        } catch (\Throwable $th) {
+            return Twig::loadJson('bad', 404, $th->getMessage());
+        }
     }
     public function create()
     {

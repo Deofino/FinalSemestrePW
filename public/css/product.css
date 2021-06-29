@@ -120,6 +120,11 @@ main{
   justify-content: center;
   align-items: center;
 }
+.search button[type='submit']{
+  border: none;
+  outline: none;
+  background-color: transparent;
+}
 .input-search {
   width: 100%;
   padding: 0.7rem;
@@ -243,6 +248,9 @@ main{
     margin-top: 4px;
     letter-spacing: 0.5px;
     font-size: clamp(1.1rem, 0.5rem + 1vw, 1.3rem);
+  }
+  .search .lupa {
+    width: 3rem;
   }
 }
 
