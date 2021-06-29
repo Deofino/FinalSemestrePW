@@ -142,7 +142,7 @@ class __TwigTemplate_a23138c0ffee8f569faa661a8791ef87cf188d760e5f1ccd9bced755f0e
             </div>
             <div class=\"content_6\">
                 <h2 class=\"title_filter\">FILTROS</h2>
-
+                <div id=\"filter\">
                 <div class=\"form-filters\">
                     <select name=\"selectFilter\" required id=\"selectFilter\">
                         <option value='0'>Selecione</option>
@@ -151,6 +151,7 @@ class __TwigTemplate_a23138c0ffee8f569faa661a8791ef87cf188d760e5f1ccd9bced755f0e
                         <option value=\"3\">Gênero</option>
                     </select>
              </div>
+            </div>
         </div>
         
     </div>
@@ -159,11 +160,11 @@ class __TwigTemplate_a23138c0ffee8f569faa661a8791ef87cf188d760e5f1ccd9bced755f0e
 ";
     }
 
-    // line 70
+    // line 71
     public function block_scripts($context, array $blocks = [])
     {
         $macros = $this->macros;
-        // line 71
+        // line 72
         echo "<script type=\"text/javascript\" src=\"";
         echo twig_escape_filter($this->env, ($context["file"] ?? null), "html", null, true);
         echo "js/dashboard.js\"></script>
@@ -221,7 +222,7 @@ class __TwigTemplate_a23138c0ffee8f569faa661a8791ef87cf188d760e5f1ccd9bced755f0e
     };
 
     // Instantiate and draw our chart, passing in some options.
-    var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
+    var chart = new google.visualization.PieChart(document.querySelector('.content_5'));
     chart.draw(data, options);
   }
 </script>
@@ -240,7 +241,7 @@ class __TwigTemplate_a23138c0ffee8f569faa661a8791ef87cf188d760e5f1ccd9bced755f0e
 
     public function getDebugInfo()
     {
-        return array (  167 => 71,  163 => 70,  126 => 36,  122 => 35,  115 => 31,  111 => 30,  104 => 26,  100 => 25,  93 => 21,  89 => 20,  82 => 15,  78 => 14,  70 => 10,  66 => 9,  59 => 7,  54 => 4,  50 => 3,  39 => 1,);
+        return array (  168 => 72,  164 => 71,  126 => 36,  122 => 35,  115 => 31,  111 => 30,  104 => 26,  100 => 25,  93 => 21,  89 => 20,  82 => 15,  78 => 14,  70 => 10,  66 => 9,  59 => 7,  54 => 4,  50 => 3,  39 => 1,);
     }
 
     public function getSourceContext()

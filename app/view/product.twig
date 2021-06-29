@@ -6,11 +6,10 @@
 {% endblock %}
 
 {% block styles %}
-   <link rel="stylesheet" href="{{file}}css/products.css">
+   <link rel="stylesheet" href="{{file}}css/product.css">
 {% endblock %}
 {% block body %}
-
-	<main id="produtos">
+	<main>
 
 		<div class="search">
 				<input type="search" class="input-search" placeholder="Pesquisar">
@@ -19,18 +18,20 @@
 
 		<section class="grid-main" id="l_cards">
 			<div class="filters">
-            <label for="">Filtrar por:</label>
-				<select name="" id="" >
+            <label for="filter">Filtrar por:</label>
+				<select name="filter" id="filter" >
                <option value="0">Selecione</option>
-               <option value="categoria">Categoria</option>
-               <option value="gênero">Gênero</option>
-               <option value="marca">Marca</option>
+               <option value="1">Categoria</option>
+               <option value="2">Marca</option>
+               <option value="3">Gênero</option>
             </select>
-            <label for="">Ordernar em:</label>
-				<select name="" id="">
+            <label for="order">Ordernar em:</label>
+				<select name="order" id="order">
                <option value="0">Selecione</option>
-               <option value="crescente">Crescente</option>
-               <option value="decrescente">Decrescente</option>
+               <option value="1">Crescente</option>
+               <option value="2">Descrescente</option>
+               <option value="3">Maior preço</option>
+               <option value="4">Menor preço</option>
 
             </select>
             <button>Filtrar</button>
@@ -39,18 +40,21 @@
 
 				{% for product in products %}
 					<div class="card">
+				
 						<div class="card_header">
-							<img src="{{ file }}{{product.dirImageShoe}}" width="200" height="200" alt="Fofo">
+							<img src="{{ file }}{{product.dirImageShoe}}" width="200" height="200" alt="{{product.nameShoe}}">
 						</div>
 						<div class="card_body">
 							<h2>{{product.nameShoe}}</h2>
 							<!-- <p>Descricao bonita bem cheia Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis odio exercitationem velit perferendis. Placeat possimus illo eius sequi laboriosam nobis vel in quis! Fugit, corrupti temporibus aliquid dolorum quam doloremque.</p> -->
-							<!-- <p>Cor : Branco</p> -->
+							<p>{{product.genderShoe}}</p>
 							<p class="price">R$ {{ product.priceShoe }}</p>
-							<a href="{{file}}../app/controller/pdfController.php" class="details" target="_blank">pdf</a>
+							{# <a href="{{file}}../app/controller/pdfController.php" class="details" target="_blank">pdf</a> #}
 							<button  class="details">Detalhes</button>
 						</div>
+
 					</div>
+
 
 				{% endfor %}
 
