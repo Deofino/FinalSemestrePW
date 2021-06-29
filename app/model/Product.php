@@ -135,4 +135,16 @@ class Product
             return Twig::loadJson("bad", 400, "Shoe error to read: $th");
         }
     }
+    public function selectLike($string){
+        try {
+            // return $string;
+            $stmt = Connection::getConnection()->prepare("SELECT * FROM tbshoe WHERE nameShoe LIKE '%$string%'");
+            if($stmt->execute()){
+                return $stmt->fetchAll();
+            }
+            return Twig::loadJson("bad", 400, "Shoe error to read");
+        } catch (\Throwable $th) {
+            return Twig::loadJson("bad", 400, "Shoe error to read: $th");
+        }
+    }
 }

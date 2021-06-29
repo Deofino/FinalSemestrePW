@@ -153,18 +153,17 @@ class __TwigTemplate_a23138c0ffee8f569faa661a8791ef87cf188d760e5f1ccd9bced755f0e
              </div>
             </div>
         </div>
-        
-    </div>
+        </div>
   
     
 ";
     }
 
-    // line 71
+    // line 70
     public function block_scripts($context, array $blocks = [])
     {
         $macros = $this->macros;
-        // line 72
+        // line 71
         echo "<script type=\"text/javascript\" src=\"";
         echo twig_escape_filter($this->env, ($context["file"] ?? null), "html", null, true);
         echo "js/dashboard.js\"></script>
@@ -241,7 +240,7 @@ class __TwigTemplate_a23138c0ffee8f569faa661a8791ef87cf188d760e5f1ccd9bced755f0e
 
     public function getDebugInfo()
     {
-        return array (  168 => 72,  164 => 71,  126 => 36,  122 => 35,  115 => 31,  111 => 30,  104 => 26,  100 => 25,  93 => 21,  89 => 20,  82 => 15,  78 => 14,  70 => 10,  66 => 9,  59 => 7,  54 => 4,  50 => 3,  39 => 1,);
+        return array (  167 => 71,  163 => 70,  126 => 36,  122 => 35,  115 => 31,  111 => 30,  104 => 26,  100 => 25,  93 => 21,  89 => 20,  82 => 15,  78 => 14,  70 => 10,  66 => 9,  59 => 7,  54 => 4,  50 => 3,  39 => 1,);
     }
 
     public function getSourceContext()
