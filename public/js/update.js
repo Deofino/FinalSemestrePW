@@ -16,18 +16,18 @@ inputs.forEach(a => {
         let resCategories = await reqCategories.json();
         let resBrand = await reqBrand.json();
 
-        
+
         // CREATE FORM
-        createModal(document.querySelector('#c_form'),resData);
+        createModal(document.querySelector('#c_form'),resData[0]);
         setTimeout(() => {
             document.querySelector('#l_form').classList.toggle('visible');
         }, 100);
         close()
         /* INSERT DATAS */
-        insertDatas(resData, resBrand, resCategories);
+        insertDatas(resData[0],  resBrand, resCategories);
 
         /* IMAGE AND COLOR */
-        let colors = JSON.parse(resData.colorsShoe);
+        let colors = JSON.parse(resData[0].colorsShoe);
         addColor(resData, colors);
         removeColor(colors);
         addImage();

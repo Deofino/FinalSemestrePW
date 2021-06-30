@@ -139,7 +139,7 @@ select{
     font-weight: bold;
     border-radius: 8px;
     cursor:pointer;
-    font-size: 1em;
+    font-size: max(.7rem, 1vw);
 }
 select::-ms-expand {
     display: none;

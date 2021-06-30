@@ -12,6 +12,15 @@ checkbox.addEventListener('click',(evt)=>{
 })
 //End checkbox
 
+function showAlert(title,message,icon){
+    swal({
+        title: title,
+        text: message,
+        icon: icon,
+    });
+}
+
+
 //Login
 const form = document.querySelector('main form');
 const inputs = document.querySelectorAll('main form input');
@@ -84,10 +93,10 @@ form.addEventListener('submit',async(evt)=>{
         if(response.status === 'ok'){
             window.location.reload();
         }else{
-            alert('E-mail e/ou senha incorreto(s)');
+            showAlert('Ops...', `E-mail e/ou senha incorreto(s)`, 'error');
         }
     }else{
-        alert("Corriga os erros que estão aparecendo na tela bro!")
+        showAlert('Eitaa', `Corriga os erros que estão aparecendo na tela bro!`, 'warning');
     }
 })
 

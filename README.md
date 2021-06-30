@@ -30,7 +30,8 @@ A aplicação será em volta de uma apresentação de SAPATOS e TÊNIS, semelhan
 - Api do Google Maps
 - Leitura de PDF dinâmica
 - Site responsivo
-- More features...
+- MVC
+
  
   
 
@@ -66,9 +67,6 @@ Procure seu projeto no seu servidor Apache e entre na pasta "public"
 
 
 
-
-# To do...
-
 ## Screenshots
 
 
@@ -81,26 +79,54 @@ Procure seu projeto no seu servidor Apache e entre na pasta "public"
 
 
 ## API Reference
-
-#### Get all items
+#### Login 
+```http
+  EMAIL: admin@admin.com
+```
+```http
+  SENHA: 12345678
+``` 
+#### Get products
+```http
+  GET /public/product/read
+```
+```http
+  GET /public/product/buscar/{string a ser buscada}
+```
+```http
+  GET /public/product/orderar/{1(Nome crescente), 1!(Nome descrescente), 2(Valor crescente), 2!(Valor decrescente)}
+```
+```http
+  GET /public/product/filtrar/{categoria,genero,marca}
+```
+```http
+  POST /public/product/create (recebe dados do post)
+```
+```http
+  POST /public/product/update (recebe dados do post)
+```
+```http
+  DELETE /public/product/delete/{id}
+```
+#### Get categories
 
 ```http
-  GET /api/items
+  GET /public/category/read
 ```
-
-| Parameter | Type     | Description                |
-| :-------- | :------- | :------------------------- |
-| `api_key` | `string` | **Required**. Your API key |
-
-#### Get item
+```http
+  POST /public/category/create
+```
+```http
+  GET /public/category/create
+```
+#### Get brands
 
 ```http
-  GET /api/items/${id}
+  GET /public/brand/read
 ```
-
-| Parameter | Type     | Description                       |
-| :-------- | :------- | :-------------------------------- |
-| `id`      | `string` | **Required**. Id of item to fetch |
-
-
-  
+```http
+  POST /public/brand/create
+```
+```http
+  GET /public/brand/create
+```

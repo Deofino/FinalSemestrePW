@@ -97,11 +97,10 @@ header nav #admin:hover ul{
    box-shadow: 1px 2px 7px var(--black);
    opacity: 1;
    background-color: var(--background_color_dark);
-   min-height: 210px;
-   max-height: 220px;
-   min-width: 100px;
    max-width: 150px;
-   transition-timing-function: cubic-bezier(0.005, 0.625, 0.365, 0.0840);
+   height: min-content;
+   padding-bottom: 10px;
+   transition-timing-function: 1s cubic-bezier(0.3, 0.8, 0.3, 1.2);
 }
 header nav #admin ul li{
    margin: 20px 0 0 10px;
@@ -213,19 +212,27 @@ header nav #admin ul li a{
       box-shadow: 1px 2px 7px var(--black);
       opacity: 1;
       background-color: var(--background_color_dark);
-      min-height: 210px;
-      max-height: 200px;
-      min-width: 100px;
-      max-width: 150px;
-      margin-top: -0.7rem;
-      transition-timing-function: cubic-bezier(0.005, 0.625, 0.365, 0.0840);
+      width: 90%;
+      min-width: none;
+      max-width: none;
+      left: 50%;
+      transform: translateX(-50%);
+      top: 100%;
+      padding: 0 2rem;
+      height: min-content;
+      padding-bottom: none;
+      transition: 1s cubic-bezier(0.3, 0.8, 0.3, 1.2);
    }
    header nav #admin ul li{
       margin: 10px 0;
+      opacity: .8;
       width: 100%;
    }
+   header nav #admin ul li:hover{
+      opacity: 1;
+   }
    header nav #admin ul li a{
-      font-size: .8rem;
+      font-size: 1rem;
       width: 100%;
       font-weight: 500;
    }

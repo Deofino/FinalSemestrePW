@@ -8,8 +8,8 @@
     display: flex;
     justify-content: center;
     border-radius: 4px;
-    margin: 1rem auto;
-    padding: 1rem;
+    overflow: auto;
+    margin: 0 auto;
     background-color: var(--background_color);
     box-shadow: 2px 4px 10px var(--shadow);
 }
@@ -28,6 +28,8 @@
 th,td{
     font-weight: 500;
     color: var(--black);
+    overflow: visible;
+    font-size: max(.6rem,min(1vw, .9rem));
 }
 #delete td a{
     padding: .4rem 1rem;

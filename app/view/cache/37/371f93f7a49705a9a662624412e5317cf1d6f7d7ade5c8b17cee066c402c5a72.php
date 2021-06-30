@@ -68,19 +68,19 @@ class __TwigTemplate_5ffbe6b29571a7bfa71d952efcb5b60dc7dcc3f5ab3ea3a71f5095882ab
             <li class=\"items\"><a href=\"";
         // line 17
         echo twig_escape_filter($this->env, ($context["file"] ?? null), "html", null, true);
-        echo "products/casual\">Casual</a></li>
+        echo "product/filtrar/categoria\">Casual</a></li>
             <li class=\"items\"><a href=\"";
         // line 18
         echo twig_escape_filter($this->env, ($context["file"] ?? null), "html", null, true);
-        echo "products/corrida\">Corrida</a></li>
+        echo "product/filtrar/categoria\">Corrida</a></li>
             <li class=\"items\"><a href=\"";
         // line 19
         echo twig_escape_filter($this->env, ($context["file"] ?? null), "html", null, true);
-        echo "products/social\">Social</a></li>
+        echo "product/filtrar/categoria\">Social</a></li>
             <li class=\"items\"><a href=\"";
         // line 20
         echo twig_escape_filter($this->env, ($context["file"] ?? null), "html", null, true);
-        echo "products/basquete\">Basquete</a></li>
+        echo "product/filtrar/categoria\">Basquete</a></li>
         </ul>
     </div>
     <div class=\"footer-item\" id=\"social\">

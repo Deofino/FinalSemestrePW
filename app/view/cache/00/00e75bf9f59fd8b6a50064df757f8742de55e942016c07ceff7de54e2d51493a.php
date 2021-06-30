@@ -229,7 +229,7 @@ class __TwigTemplate_a23138c0ffee8f569faa661a8791ef87cf188d760e5f1ccd9bced755f0e
         document.querySelector(\"#chart_div\")
       );
       chart.draw(data, options);
-    },1000)
+    },2000)
   }
 </script>
 ";

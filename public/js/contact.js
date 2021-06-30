@@ -16,7 +16,7 @@ let map;
             position: coordenadas,
             title: "Shoes :-D",
             map: mapa,
-            icon: URL+"public/img/icon32px.png"
+            icon: URL+"public/img/vectors/logo.ico"
         });
         
     }

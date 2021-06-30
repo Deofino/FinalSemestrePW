@@ -32,4 +32,18 @@ document.querySelector('#order')
         window.location.href = `${URL}public/product/ordernar/2`;
     }
 })
+document.querySelector('#filter')
+.addEventListener('change', e=>{
+    e.preventDefault();
+    let options = e.target.options;
+    if(options.selectedIndex == 1){
+        window.location.href = `${URL}public/product/filtrar/categoria`;
+    }
+    if(options.selectedIndex == 2){
+        window.location.href = `${URL}public/product/filtrar/marca`;
+    }
+    if(options.selectedIndex == 3){
+        window.location.href = `${URL}public/product/filtrar/genero`;
+    }
+})
 

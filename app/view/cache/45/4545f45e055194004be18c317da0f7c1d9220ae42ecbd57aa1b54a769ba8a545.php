@@ -110,45 +110,39 @@ class __TwigTemplate_d775e8e9ee2e29a33f6570991c3bf8650aac9e08938d19639db0b3de84d
 \t\t\t</div>
 \t\t\t<div class=\"card_body\">
 \t\t\t\t<h2>Adidas Pastel</h2>
-\t\t\t\t<!-- <p>Descricao bonita bem cheia Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis odio exercitationem velit perferendis. Placeat possimus illo eius sequi laboriosam nobis vel in quis! Fugit, corrupti temporibus aliquid dolorum quam doloremque.</p> -->
 \t\t\t\t<p>Casual</p>
-\t\t\t\t<!-- <p>Cor : Branco</p> -->
 \t\t\t\t<p>R\$ 290,00</p>
-\t\t\t\t<button class=\"details\">Detalhes</button>
+\t\t\t\t<button class=\"details\">Ver mais</button>
 \t\t\t</div>
 \t\t</div>
 
 \t\t<div class=\"card\">
 \t\t\t<div class=\"card_header\">
 \t\t\t\t<img src=\"";
-        // line 50
+        // line 48
         echo twig_escape_filter($this->env, ($context["file"] ?? null), "html", null, true);
         echo "img/home/paralax3.jpg\" width=\"200\" height=\"200\" alt=\"Fofo\">
 \t\t\t</div>
 \t\t\t<div class=\"card_body\">
 \t\t\t\t<h2>Adidas bonito</h2>
-\t\t\t\t<!-- <p>Descricao bonita bem cheia Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis odio exercitationem velit perferendis. Placeat possimus illo eius sequi laboriosam nobis vel in quis! Fugit, corrupti temporibus aliquid dolorum quam doloremque.</p> -->
 \t\t\t\t<p>Casual</p>
-\t\t\t\t<!-- <p>Cor : Branco</p> -->
 \t\t\t\t<p>R\$ 240,00</p>
-\t\t\t\t<button class=\"details\">Detalhes</button>
+\t\t\t\t<button class=\"details\">Ver mais</button>
 \t\t\t</div>
 \t\t</div>
 
 \t\t<div class=\"card\">
 \t\t\t<div class=\"card_header\">
 \t\t\t\t<img src=\"";
-        // line 64
+        // line 60
         echo twig_escape_filter($this->env, ($context["file"] ?? null), "html", null, true);
         echo "img/home/paralax1.jpg\" width=\"200\" height=\"200\" alt=\"Fofo\">
 \t\t\t</div>
 \t\t\t<div class=\"card_body\">
 \t\t\t\t<h2>Nike Air Max</h2>
-\t\t\t\t<!-- <p>Descricao bonita bem cheia Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis odio exercitationem velit perferendis. Placeat possimus illo eius sequi laboriosam nobis vel in quis! Fugit, corrupti temporibus aliquid dolorum quam doloremque.</p> -->
 \t\t\t\t<p>Casual</p>
-\t\t\t\t<!-- <p>Cor : Branco</p> -->
 \t\t\t\t<p>R\$ 300,00</p>
-\t\t\t\t<button class=\"details\">Detalhes</button>
+\t\t\t\t<button class=\"details\">Ver mais</button>
 \t\t\t</div>
 \t\t</div>
 
@@ -165,7 +159,7 @@ class __TwigTemplate_d775e8e9ee2e29a33f6570991c3bf8650aac9e08938d19639db0b3de84d
 \t\t\t    conhecer nossa loja.
 \t\t</p>
 \t\t<a href=\"";
-        // line 88
+        // line 82
         echo twig_escape_filter($this->env, ($context["file"] ?? null), "html", null, true);
         echo "product\">
 \t\t\t<i class=\"fas fa-long-arrow-alt-right\"></i>
@@ -175,7 +169,7 @@ class __TwigTemplate_d775e8e9ee2e29a33f6570991c3bf8650aac9e08938d19639db0b3de84d
 ";
     }
 
-    // line 94
+    // line 88
     public function block_scripts($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -193,7 +187,7 @@ class __TwigTemplate_d775e8e9ee2e29a33f6570991c3bf8650aac9e08938d19639db0b3de84d
 
     public function getDebugInfo()
     {
-        return array (  179 => 94,  169 => 88,  142 => 64,  125 => 50,  108 => 36,  82 => 12,  78 => 11,  71 => 9,  67 => 8,  62 => 6,  58 => 5,  50 => 2,  39 => 1,);
+        return array (  173 => 88,  163 => 82,  138 => 60,  123 => 48,  108 => 36,  82 => 12,  78 => 11,  71 => 9,  67 => 8,  62 => 6,  58 => 5,  50 => 2,  39 => 1,);
     }
 
     public function getSourceContext()

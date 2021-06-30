@@ -26,7 +26,6 @@ class ProductController extends Twig
 
     public function select()
     {
-        AdminController::wardStatic();
         if ($_SERVER['REQUEST_METHOD'] === "POST") {
             try {
                 $product = new Product();
@@ -42,7 +41,6 @@ class ProductController extends Twig
     }
     public function buscar($string = null)
     {
-        AdminController::wardStatic();
         try {
             if ($string != null) {
                 $product = new Product();
@@ -54,12 +52,27 @@ class ProductController extends Twig
     }
     public function ordernar($category = null)
     {
-        AdminController::wardStatic();
         try {
             if (isset($category[0])) {
                 $product = new Product();
-                $string = $category[0]=='1'?'nameShoe':'priceShoe';
+                $string = str_contains($category[0],1)==1?'nameShoe':'priceShoe';
                 $string = !strpos($category[0],'!')?$string. ' ASC': $string. ' DESC';
+                return $this->index(json_encode($product->read(null,$string)));
+            }
+            return Twig::loadJson('bad', 404, "Not params!");
+        } catch (\Throwable $th) {
+            return Twig::loadJson('bad', 404, $th->getMessage());
+        }
+    }
+    public function filtrar($category = null)
+    {
+        try {
+            if (isset($category[0])) {
+                $product = new Product();
+                $string = 'nameShoe ASC';
+                if($category[0]=='categoria') $string = 'idCategory ASC';
+                if($category[0]=='marca') $string = 'idBrand ASC';
+                if($category[0]=='genero') $string = 'genderShoe ASC';
                 return $this->index(json_encode($product->read(null,$string)));
             }
             return Twig::loadJson('bad', 404, "Not params!");
@@ -105,7 +118,6 @@ class ProductController extends Twig
     }
     public function read($id = null, $orderBy='nameShoe ASC')
     {
-        AdminController::wardStatic();
         if ($_SERVER['REQUEST_METHOD'] === "GET") {
             try {
                 $product = new Product();
@@ -196,8 +208,7 @@ class ProductController extends Twig
         if (isset($id)) {
             $ca = new Category('ds');
             $br = new Brand('d');
-
-            $data = json_decode($this->read($id[0]));
+            $data = json_decode($this->read($id))[0];
             $name = $data->nameShoe;
             $description = $data->descriptionShoe;
             $gender = $data->genderShoe;
@@ -211,10 +222,10 @@ class ProductController extends Twig
             $brand = $br->read($brand)[0][1];
 
             $options = new Options();
-            $options->set('defaultFont', 'Arial');
+            // $options->set('defaultFont', 'Courier');
             $dompdf = new DOMPDF($options);
 
-            $dompdf->load_html(
+            $dompdf->loadHtml(
                 "
                 <head>
                 <meta charset='UTF-8'>
@@ -225,9 +236,10 @@ class ProductController extends Twig
                         margin: 0;
                         padding: 0;
                         box-sizing: 0;
+                        font-family: monospace;
                     }
                     body{
-                        font-family: sans-serif;
+                        font-family: monospace;
                         font-size: 100%;
                     }
                     header{
@@ -279,6 +291,7 @@ class ProductController extends Twig
                     main section p{
                         font-size: 1rem;
                         font-weight: 500;
+                        font-family: monospace;
                         line-height: 1.5;
                         margin-top: 5px;
                     }
@@ -292,6 +305,9 @@ class ProductController extends Twig
                         font-size: 1rem;
             
                         box-shadow: 2px 2px 10px #3338;
+                    }
+                    img{
+                        width: 200px;
                     }
                 </style>
             
@@ -317,7 +333,6 @@ class ProductController extends Twig
                     <span>Todos os direitos reservados &copy; 2021</span>
                 </footer>
             </body>
-            </html>
                 "
             );
             $dompdf->setPaper('A4', 'portrait'); //portrait
