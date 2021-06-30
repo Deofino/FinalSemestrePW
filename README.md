@@ -116,9 +116,6 @@ Procure seu projeto no seu servidor Apache e entre na pasta "public"
 ```http
   POST /public/category/create
 ```
-```http
-  GET /public/category/create
-```
 #### Get brands
 
 ```http
@@ -126,7 +123,4 @@ Procure seu projeto no seu servidor Apache e entre na pasta "public"
 ```
 ```http
   POST /public/brand/create
-```
-```http
-  GET /public/brand/create
 ```
