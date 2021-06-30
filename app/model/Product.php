@@ -53,16 +53,16 @@ class Product
             return Twig::loadJson("bad", 400, "Shoe error to insert: $th");
         }
     }
-    public function read($id=null)
+    public function read($id=null, $orderBy='nameShoe ASC')
     {
         try {
             if($id==null){
-                $stmt = Connection::getConnection()->prepare('SELECT * FROM tbshoe');
+                $stmt = Connection::getConnection()->prepare("SELECT * FROM tbshoe ORDER BY $orderBy");
                 if($stmt->execute()){
                     return $stmt->fetchAll();
                 }
             }else{
-                $stmt = Connection::getConnection()->prepare('SELECT * FROM tbshoe WHERE _id = ?');
+                $stmt = Connection::getConnection()->prepare("SELECT * FROM tbshoe WHERE _id = ? ORDER BY $orderBy");
                 if($stmt->execute([$id])){
                     return $stmt->fetchAll();
                 }
@@ -84,7 +84,6 @@ class Product
             return Twig::loadJson("bad", 400, "Shoe error to delete: $th");
         }
     }
-
     public function update($id, $data)
     {
         try {
@@ -112,7 +111,6 @@ class Product
             return json_encode(Twig::loadJson("bad", 400, "Shoe error to update: ".$th->getMessage()));
         }
     }
-
     public function personSelect($query){
         try {
             $stmt = Connection::getConnection()->prepare($query);

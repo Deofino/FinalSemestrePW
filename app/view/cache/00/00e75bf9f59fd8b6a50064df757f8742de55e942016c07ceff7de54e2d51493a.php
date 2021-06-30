@@ -86,7 +86,7 @@ class __TwigTemplate_a23138c0ffee8f569faa661a8791ef87cf188d760e5f1ccd9bced755f0e
       <img class=\"nike\" src=\"";
         // line 14
         echo twig_escape_filter($this->env, ($context["file"] ?? null), "html", null, true);
-        echo "img/logo_NIKE.svg\" />
+        echo "img/vectors/logo_NIKE.svg\" />
       <p>";
         // line 15
         echo twig_escape_filter($this->env, twig_upper_filter($this->env, ($context["countBrand"] ?? null)), "html", null, true);
@@ -97,7 +97,7 @@ class __TwigTemplate_a23138c0ffee8f569faa661a8791ef87cf188d760e5f1ccd9bced755f0e
       <img class=\"money\" src=\"";
         // line 19
         echo twig_escape_filter($this->env, ($context["file"] ?? null), "html", null, true);
-        echo "img/S.svg\" />
+        echo "img/vectors/S.svg\" />
       <p class=\"media\">R\$ ";
         // line 20
         echo twig_escape_filter($this->env, ($context["avgPrice"] ?? null), "html", null, true);
@@ -108,7 +108,7 @@ class __TwigTemplate_a23138c0ffee8f569faa661a8791ef87cf188d760e5f1ccd9bced755f0e
       <img class=\"catego\" src=\"";
         // line 24
         echo twig_escape_filter($this->env, ($context["file"] ?? null), "html", null, true);
-        echo "img/list.svg\" />
+        echo "img/vectors/list.svg\" />
       <p>";
         // line 25
         echo twig_escape_filter($this->env, twig_upper_filter($this->env, ($context["countCategory"] ?? null)), "html", null, true);
@@ -119,7 +119,7 @@ class __TwigTemplate_a23138c0ffee8f569faa661a8791ef87cf188d760e5f1ccd9bced755f0e
       <img class=\"unissex\" src=\"";
         // line 29
         echo twig_escape_filter($this->env, ($context["file"] ?? null), "html", null, true);
-        echo "img/Unissex.svg\" />
+        echo "img/vectors/Unissex.svg\" />
       <p>";
         // line 30
         echo twig_escape_filter($this->env, twig_upper_filter($this->env, ($context["genderA"] ?? null)), "html", null, true);

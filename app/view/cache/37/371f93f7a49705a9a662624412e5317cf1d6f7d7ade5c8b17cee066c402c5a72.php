@@ -40,7 +40,7 @@ class __TwigTemplate_5ffbe6b29571a7bfa71d952efcb5b60dc7dcc3f5ab3ea3a71f5095882ab
             <a href='#' onclick=\"scrollTo(0,0)\" ><img class=\"image\" src=\"";
         // line 4
         echo twig_escape_filter($this->env, ($context["file"] ?? null), "html", null, true);
-        echo "img/logo.png\" alt=\"Logotipo\"></a>
+        echo "img/vectors/logo.png\" alt=\"Logotipo\"></a>
         </div>
         <ul id=\"list-items\">
             <a href='#' onclick=\"scrollTo(0,0)\"><h2>Shoes</h2></a>
@@ -97,7 +97,7 @@ class __TwigTemplate_5ffbe6b29571a7bfa71d952efcb5b60dc7dcc3f5ab3ea3a71f5095882ab
         <a href='#' onclick=\"scrollTo(0,0)\" ><img class=\"image\" src='";
         // line 34
         echo twig_escape_filter($this->env, ($context["file"] ?? null), "html", null, true);
-        echo "img/logo.png'alt=\"Logotipo\"></a>
+        echo "img/vectors/logo.png'alt=\"Logotipo\"></a>
     </div>
     <div id=\"div-copy\" >
         <p class=\"direito\">Todos os direitos reservados por Shoes &copy; 2021.</p>

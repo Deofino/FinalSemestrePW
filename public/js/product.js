@@ -1,4 +1,5 @@
 'use strict';
+const URL = document.URL.split('public')[0];
 document.querySelector('form')
 .addEventListener('submit',readToLike);
 function readToLike(e){
@@ -14,15 +15,21 @@ function readToLike(e){
         window.location.href = `${url}product`;
     }
 }
-
-// let links = document.querySelectorAll('.card a');
-// links.forEach(el=>{
-//     el.addEventListener('click', e=>{
-//         e.preventDefault();
-
-//         let url = e.target.href;
-//         console.log(url);
-//         window.open(url,'_blank');
-//     })
-// })
+document.querySelector('#order')
+.addEventListener('change', e=>{
+    e.preventDefault();
+    let options = e.target.options;
+    if(options.selectedIndex == 1){
+        window.location.href = `${URL}public/product/ordernar/1`;
+    }
+    if(options.selectedIndex == 2){
+        window.location.href = `${URL}public/product/ordernar/1!`;
+    }
+    if(options.selectedIndex == 3){
+        window.location.href = `${URL}public/product/ordernar/2!`;
+    }
+    if(options.selectedIndex == 4){
+        window.location.href = `${URL}public/product/ordernar/2`;
+    }
+})
 

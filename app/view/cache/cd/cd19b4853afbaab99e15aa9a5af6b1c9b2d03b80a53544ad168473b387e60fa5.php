@@ -58,7 +58,7 @@ class __TwigTemplate_7d7776fe10a95614d2f33801af55d2eb1d5380039a1eff4341b8f8608a7
     <meta id=\"meta-item-image\" itemprop=\"image\" content=\"";
         // line 17
         echo twig_escape_filter($this->env, ($context["file"] ?? null), "html", null, true);
-        echo "img/logo.png\"/> 
+        echo "img/vectors/logo.png\"/> 
     <meta id=\"twt-card\" name=\"twitter:card\" content=\"summary\" />
     <meta id=\"twt-site\" name=\"twitter:site\" content=\"@shoes\" />
     <meta id=\"twt-title\" name=\"twitter:title\" content=\"Shoes\" />
@@ -67,14 +67,14 @@ class __TwigTemplate_7d7776fe10a95614d2f33801af55d2eb1d5380039a1eff4341b8f8608a7
     <meta id=\"twt-image\" name=\"twitter:image\" content=\"";
         // line 23
         echo twig_escape_filter($this->env, ($context["file"] ?? null), "html", null, true);
-        echo "img/logo.png\"/> 
+        echo "img/vectors/logo.png\"/> 
     <meta id=\"og-title\" property=\"og:title\" content=\"Shoes\" />
     <meta id=\"og-type\" property=\"og:type\" content=\"website\" />
     <meta id=\"og-url\" property=\"og:url\" content=\"https://dvshoes.com.br\" />
     <meta id=\"og-image\" property=\"og:image\" content=\"";
         // line 27
         echo twig_escape_filter($this->env, ($context["file"] ?? null), "html", null, true);
-        echo "img/logo.png\"/> 
+        echo "img/vectors/logo.png\"/> 
     <meta id=\"og-description\" property=\"og:description\" content=\"A melhor loja de todas para se encontrar tenis e sapatos lindissimos para programadores ainda mais lindissimos, com muito orgulho apresento a vocês... SHOES!\" />
     <meta property=\"og:type\" content=\"website\">
     <meta property=\"og:title\" content=\"Shoes\">
@@ -84,7 +84,7 @@ class __TwigTemplate_7d7776fe10a95614d2f33801af55d2eb1d5380039a1eff4341b8f8608a7
     <link rel=\"shortcut icon\" href=\"";
         // line 34
         echo twig_escape_filter($this->env, ($context["file"] ?? null), "html", null, true);
-        echo "img/logo.png\" type=\"image/png\" />   
+        echo "img/vectors/logo.png\" type=\"image/png\" />   
     ";
         // line 35
         $this->displayBlock('metas_data', $context, $blocks);

@@ -52,6 +52,21 @@ class ProductController extends Twig
             return Twig::loadJson('bad', 404, $th->getMessage());
         }
     }
+    public function ordernar($category = null)
+    {
+        AdminController::wardStatic();
+        try {
+            if (isset($category[0])) {
+                $product = new Product();
+                $string = $category[0]=='1'?'nameShoe':'priceShoe';
+                $string = !strpos($category[0],'!')?$string. ' ASC': $string. ' DESC';
+                return $this->index(json_encode($product->read(null,$string)));
+            }
+            return Twig::loadJson('bad', 404, "Not params!");
+        } catch (\Throwable $th) {
+            return Twig::loadJson('bad', 404, $th->getMessage());
+        }
+    }
     public function create()
     {
         AdminController::wardStatic();
@@ -88,13 +103,13 @@ class ProductController extends Twig
 
         return Twig::loadJson('bad', 404, 'METHOD GET NOT FOUND');
     }
-    public function read($id = null)
+    public function read($id = null, $orderBy='nameShoe ASC')
     {
         AdminController::wardStatic();
         if ($_SERVER['REQUEST_METHOD'] === "GET") {
             try {
                 $product = new Product();
-                return isset($id[0]) ? json_encode($product->read($id[0])[0]) : json_encode($product->read());
+                return isset($id[0]) ? json_encode($product->read($id[0],$orderBy)) : json_encode($product->read(null,$orderBy));
             } catch (\Throwable $th) {
                 return Twig::loadJson('bad', 404, $th);
             }
@@ -317,4 +332,5 @@ class ProductController extends Twig
             );
         }
     }
+
 }

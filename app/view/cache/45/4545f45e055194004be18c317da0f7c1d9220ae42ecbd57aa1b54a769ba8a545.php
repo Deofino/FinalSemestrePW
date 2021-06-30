@@ -106,7 +106,7 @@ class __TwigTemplate_d775e8e9ee2e29a33f6570991c3bf8650aac9e08938d19639db0b3de84d
 \t\t\t\t<img src=\"";
         // line 36
         echo twig_escape_filter($this->env, ($context["file"] ?? null), "html", null, true);
-        echo "img/c.jpg\" width=\"200\" height=\"200\" alt=\"Fofo\">
+        echo "img/home/c.jpg\" width=\"200\" height=\"200\" alt=\"Fofo\">
 \t\t\t</div>
 \t\t\t<div class=\"card_body\">
 \t\t\t\t<h2>Adidas Pastel</h2>

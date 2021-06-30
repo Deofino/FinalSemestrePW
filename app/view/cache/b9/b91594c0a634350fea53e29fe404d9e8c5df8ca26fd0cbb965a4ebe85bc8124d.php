@@ -40,7 +40,7 @@ class __TwigTemplate_c249b2508c0c16b7b8a5227d21dd1c5715589f0a9cec3db36365554b317
           <img src=\"";
         // line 4
         echo twig_escape_filter($this->env, ($context["file"] ?? null), "html", null, true);
-        echo "img/logo.ico\" alt='Logotipo'/>
+        echo "img/vectors/logo.ico\" alt='Logotipo'/>
         </a>
         <a id=\"logo\" href='#' onclick=\"scrollTo(0,0)\">Shoes</a>
       </div>
@@ -88,7 +88,7 @@ class __TwigTemplate_c249b2508c0c16b7b8a5227d21dd1c5715589f0a9cec3db36365554b317
             // line 24
             echo twig_escape_filter($this->env, ($context["file"] ?? null), "html", null, true);
             echo "admin/delete\">Excluir</a></li>
-                  <hr>
+                  <hr class=\"hr\">
                   <li>
                     <a href=\"";
             // line 27
